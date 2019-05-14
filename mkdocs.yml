@@ -1,0 +1,4 @@
+docs_dir: 'docs'
+site_name: 'googleclosure.dev'
+theme:
+  name: 'material'
