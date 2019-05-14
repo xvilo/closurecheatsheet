@@ -1,4 +1,7 @@
 docs_dir: 'docs'
 site_name: 'googleclosure.dev'
+highlightjs: true
+markdown_extensions:
+  - codehilite
 theme:
   name: 'material'

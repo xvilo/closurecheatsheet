@@ -1,7 +1,7 @@
 For more examples visit [compiler annotation](https://developers.google.com/closure/compiler/docs/js-for-compiler)
 
 ## Usage
-```javascript
+```js
 /**
  * @param {type} a
  * @return {type}

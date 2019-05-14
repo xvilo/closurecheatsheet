@@ -467,296 +467,303 @@
                   <h1>Ui</h1>
                 
                 <h2 id="life-cycle">Life cycle</h2>
-<pre><code>         [construct]
-         /         \
-    [render]     [decorate]
-         \         /
-        [enterDocument]
-              |
-            [...]
-              |
-        [exitDocument]
-              |
-          [dispose]
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="w">         </span><span class="o">[</span><span class="n">construct</span><span class="o">]</span><span class="w"></span>
+<span class="w">         </span><span class="o">/</span><span class="w">         </span><span class="err">\</span><span class="w"></span>
+<span class="w">    </span><span class="o">[</span><span class="n">render</span><span class="o">]</span><span class="w">     </span><span class="o">[</span><span class="n">decorate</span><span class="o">]</span><span class="w"></span>
+<span class="w">         </span><span class="err">\</span><span class="w">         </span><span class="o">/</span><span class="w"></span>
+<span class="w">        </span><span class="o">[</span><span class="n">enterDocument</span><span class="o">]</span><span class="w"></span>
+<span class="w">              </span><span class="o">|</span><span class="w"></span>
+<span class="w">            </span><span class="o">[</span><span class="n">...</span><span class="o">]</span><span class="w"></span>
+<span class="w">              </span><span class="o">|</span><span class="w"></span>
+<span class="w">        </span><span class="o">[</span><span class="n">exitDocument</span><span class="o">]</span><span class="w"></span>
+<span class="w">              </span><span class="o">|</span><span class="w"></span>
+<span class="w">          </span><span class="o">[</span><span class="n">dispose</span><span class="o">]</span><span class="w"></span>
+</pre></div>
+
 
 <h2 id="component">Component</h2>
-<pre><code class="javascript">/**
- * @param {goog.dom.DomHelper=} opt_domHelper
- * @constructor
- * @extends {goog.ui.Component}
- */
-app.Component = function(opt_domHelper) {
-    goog.base(this, opt_domHelper);
-};
+<div class="codehilite"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * @param {goog.dom.DomHelper=} opt_domHelper</span>
+<span class="cm"> * @constructor</span>
+<span class="cm"> * @extends {goog.ui.Component}</span>
+<span class="cm"> */</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">Component</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">opt_domHelper</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">goog</span><span class="p">.</span><span class="nx">base</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">opt_domHelper</span><span class="p">);</span>
+<span class="p">};</span>
 
-goog.inherits(app.Component, goog.ui.Component);
+<span class="nx">goog</span><span class="p">.</span><span class="nx">inherits</span><span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="nx">Component</span><span class="p">,</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nx">Component</span><span class="p">);</span>
 
-/**
- * Used in render scenario
- * @override
- */
-app.Component.prototype.createDom = function() {
-    var element = this.getDomHelper().createDom('div');
-    // ...
-    this.setElementInternal(element);
-};
+<span class="cm">/**</span>
+<span class="cm"> * Used in render scenario</span>
+<span class="cm"> * @override</span>
+<span class="cm"> */</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">Component</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">createDom</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">element</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">getDomHelper</span><span class="p">().</span><span class="nx">createDom</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">);</span>
+    <span class="c1">// ...</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">setElementInternal</span><span class="p">(</span><span class="nx">element</span><span class="p">);</span>
+<span class="p">};</span>
 
-/**
- * Used in decorate scenario
- * @override
- */
-app.Component.prototype.decorateInternal = function(element) {
-    goog.base(this, 'decorateInternal', element);
-    // ...
-};
+<span class="cm">/**</span>
+<span class="cm"> * Used in decorate scenario</span>
+<span class="cm"> * @override</span>
+<span class="cm"> */</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">Component</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">decorateInternal</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">element</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">goog</span><span class="p">.</span><span class="nx">base</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s1">&#39;decorateInternal&#39;</span><span class="p">,</span> <span class="nx">element</span><span class="p">);</span>
+    <span class="c1">// ...</span>
+<span class="p">};</span>
 
-/**
- * Can be component used in decorate scenario
- * @override
- */
-app.Component.prototype.canDecorate = function() {
-    return true;
-}
+<span class="cm">/**</span>
+<span class="cm"> * Can be component used in decorate scenario</span>
+<span class="cm"> * @override</span>
+<span class="cm"> */</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">Component</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">canDecorate</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+<span class="p">}</span>
 
-/**
- * @override
- */
-app.Component.prototype.enterDocument = function() {
-    goog.base(this, 'enterDocument');
+<span class="cm">/**</span>
+<span class="cm"> * @override</span>
+<span class="cm"> */</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">Component</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">enterDocument</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">goog</span><span class="p">.</span><span class="nx">base</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s1">&#39;enterDocument&#39;</span><span class="p">);</span>
 
-    // this.getHandler().listen()
-    // ...
-};
+    <span class="c1">// this.getHandler().listen()</span>
+    <span class="c1">// ...</span>
+<span class="p">};</span>
 
-/**
- * @override
- */
-app.Component.prototype.exitDocument = function() {
-    goog.base(this, 'exitDocument');
+<span class="cm">/**</span>
+<span class="cm"> * @override</span>
+<span class="cm"> */</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">Component</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">exitDocument</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">goog</span><span class="p">.</span><span class="nx">base</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s1">&#39;exitDocument&#39;</span><span class="p">);</span>
 
-    // unlisten is not necessary, parent remove all listeners from handler
-    // ...
-};
+    <span class="c1">// unlisten is not necessary, parent remove all listeners from handler</span>
+    <span class="c1">// ...</span>
+<span class="p">};</span>
 
-/**
- * @override
- */
-app.Component.prototype.disposeInternal = function() {
-    // ...
-    goog.base(this, 'disposeInternal');
-};
-</code></pre>
+<span class="cm">/**</span>
+<span class="cm"> * @override</span>
+<span class="cm"> */</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">Component</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">disposeInternal</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+    <span class="nx">goog</span><span class="p">.</span><span class="nx">base</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s1">&#39;disposeInternal&#39;</span><span class="p">);</span>
+<span class="p">};</span>
+</pre></div>
 
-<pre><code class="javascript">var component = new app.Component();
-component.render();
 
-// var container = goog.dom.getDocument().body;
-// component.render(body);
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">component</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">app</span><span class="p">.</span><span class="nx">Component</span><span class="p">();</span>
+<span class="nx">component</span><span class="p">.</span><span class="nx">render</span><span class="p">();</span>
 
-<pre><code class="javascript">var item = goog.dom.getElement('item');
-var component = new app.Component();
-component.decorate(item);
-</code></pre>
+<span class="c1">// var container = goog.dom.getDocument().body;</span>
+<span class="c1">// component.render(body);</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">item</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getElement</span><span class="p">(</span><span class="s1">&#39;item&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">component</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">app</span><span class="p">.</span><span class="nx">Component</span><span class="p">();</span>
+<span class="nx">component</span><span class="p">.</span><span class="nx">decorate</span><span class="p">(</span><span class="nx">item</span><span class="p">);</span>
+</pre></div>
+
 
 <h2 id="control">Control</h2>
-<pre><code class="javascript">/**
- * @param {goog.ui.ControlContent} content
- * @param {goog.ui.ControlRenderer=} opt_renderer
- * @param {goog.dom.DomHelper=} opt_domHelper
- * @constructor
- * @extends {goog.ui.Control}
- */
-app.Control = function(content, opt_renderer, opt_domHelper) {
-    goog.base(this, content, opt_renderer, opt_domHelper);
+<div class="codehilite"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * @param {goog.ui.ControlContent} content</span>
+<span class="cm"> * @param {goog.ui.ControlRenderer=} opt_renderer</span>
+<span class="cm"> * @param {goog.dom.DomHelper=} opt_domHelper</span>
+<span class="cm"> * @constructor</span>
+<span class="cm"> * @extends {goog.ui.Control}</span>
+<span class="cm"> */</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">Control</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">content</span><span class="p">,</span> <span class="nx">opt_renderer</span><span class="p">,</span> <span class="nx">opt_domHelper</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">goog</span><span class="p">.</span><span class="nx">base</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">content</span><span class="p">,</span> <span class="nx">opt_renderer</span><span class="p">,</span> <span class="nx">opt_domHelper</span><span class="p">);</span>
 
-    // this.setId();
-    // this.setAllowTextSelection(true);
-    // this.setSupportedState(goog.ui.Component.State.ALL, false);
-};
+    <span class="c1">// this.setId();</span>
+    <span class="c1">// this.setAllowTextSelection(true);</span>
+    <span class="c1">// this.setSupportedState(goog.ui.Component.State.ALL, false);</span>
+<span class="p">};</span>
 
-goog.inherits(app.Control, goog.ui.Control);
+<span class="nx">goog</span><span class="p">.</span><span class="nx">inherits</span><span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="nx">Control</span><span class="p">,</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nx">Control</span><span class="p">);</span>
 
-/**
- * @override
- */
-app.Control.prototype.enterDocument = function() {
-    goog.base(this, 'enterDocument');
-    // ...
-};
+<span class="cm">/**</span>
+<span class="cm"> * @override</span>
+<span class="cm"> */</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">Control</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">enterDocument</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">goog</span><span class="p">.</span><span class="nx">base</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s1">&#39;enterDocument&#39;</span><span class="p">);</span>
+    <span class="c1">// ...</span>
+<span class="p">};</span>
 
-/**
- * @override
- */
-app.Control.prototype.exitDocument = function() {
-    goog.base(this, 'exitDocument');
-    // ...
-};
+<span class="cm">/**</span>
+<span class="cm"> * @override</span>
+<span class="cm"> */</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">Control</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">exitDocument</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">goog</span><span class="p">.</span><span class="nx">base</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s1">&#39;exitDocument&#39;</span><span class="p">);</span>
+    <span class="c1">// ...</span>
+<span class="p">};</span>
 
-/**
- * @override
- */
-app.Control.prototype.disposeInternal = function() {
-    // ...
-    goog.base(this, 'disposeInternal');
-};
+<span class="cm">/**</span>
+<span class="cm"> * @override</span>
+<span class="cm"> */</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">Control</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">disposeInternal</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+    <span class="nx">goog</span><span class="p">.</span><span class="nx">base</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s1">&#39;disposeInternal&#39;</span><span class="p">);</span>
+<span class="p">};</span>
 
-/**
- * Default renderer
- */
-goog.ui.registry.setDefaultRenderer(
-    app.Control, app.ControlRenderer
-);
-</code></pre>
+<span class="cm">/**</span>
+<span class="cm"> * Default renderer</span>
+<span class="cm"> */</span>
+<span class="nx">goog</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nx">registry</span><span class="p">.</span><span class="nx">setDefaultRenderer</span><span class="p">(</span>
+    <span class="nx">app</span><span class="p">.</span><span class="nx">Control</span><span class="p">,</span> <span class="nx">app</span><span class="p">.</span><span class="nx">ControlRenderer</span>
+<span class="p">);</span>
+</pre></div>
+
 
 <h2 id="controlrenderer">ControlRenderer</h2>
-<pre><code class="javascript">/**
- * @constructor
- * @extends {goog.ui.ControlRenderer}
- */
-app.ControlRenderer = function() {
-    goog.base(this);
-};
+<div class="codehilite"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * @constructor</span>
+<span class="cm"> * @extends {goog.ui.ControlRenderer}</span>
+<span class="cm"> */</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">ControlRenderer</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">goog</span><span class="p">.</span><span class="nx">base</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+<span class="p">};</span>
 
-goog.inherits(app.ControlRenderer, goog.ui.ControlRenderer);
-goog.addSingletonGetter(app.ControlRenderer);
+<span class="nx">goog</span><span class="p">.</span><span class="nx">inherits</span><span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="nx">ControlRenderer</span><span class="p">,</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nx">ControlRenderer</span><span class="p">);</span>
+<span class="nx">goog</span><span class="p">.</span><span class="nx">addSingletonGetter</span><span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="nx">ControlRenderer</span><span class="p">);</span>
 
-/**
- * @type {string}
- */
-app.ControlRenderer.CSS_CLASS = 'control';
+<span class="cm">/**</span>
+<span class="cm"> * @type {string}</span>
+<span class="cm"> */</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">ControlRenderer</span><span class="p">.</span><span class="nx">CSS_CLASS</span> <span class="o">=</span> <span class="s1">&#39;control&#39;</span><span class="p">;</span>
 
-/**
- * @return {string}
- */
-app.ControlRenderer.prototype.getCssClass = function() {
-    return app.ControlRenderer.CSS_CLASS;
-};
+<span class="cm">/**</span>
+<span class="cm"> * @return {string}</span>
+<span class="cm"> */</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">ControlRenderer</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">getCssClass</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">app</span><span class="p">.</span><span class="nx">ControlRenderer</span><span class="p">.</span><span class="nx">CSS_CLASS</span><span class="p">;</span>
+<span class="p">};</span>
 
-/**
- * @override
- */
-app.ControlRenderer.prototype.createDom = function(control) {
-    var element = control.getDomHelper().createDom('div');
-    // ...
-    return element;
-};
+<span class="cm">/**</span>
+<span class="cm"> * @override</span>
+<span class="cm"> */</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">ControlRenderer</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">createDom</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">control</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">element</span> <span class="o">=</span> <span class="nx">control</span><span class="p">.</span><span class="nx">getDomHelper</span><span class="p">().</span><span class="nx">createDom</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">);</span>
+    <span class="c1">// ...</span>
+    <span class="k">return</span> <span class="nx">element</span><span class="p">;</span>
+<span class="p">};</span>
 
-/**
- * @override
- */
-app.ControlRenderer.prototype.canDecorate = function(element) {
-    return true;
-};
+<span class="cm">/**</span>
+<span class="cm"> * @override</span>
+<span class="cm"> */</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">ControlRenderer</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">canDecorate</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">element</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+<span class="p">};</span>
 
-/**
- * @override
- */
-app.ControlRenderer.prototype.decorate = function(control, element) {
-    var element = goog.base(this, 'decorate', control, element);
-    // ...
-    return element;
-};
+<span class="cm">/**</span>
+<span class="cm"> * @override</span>
+<span class="cm"> */</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">ControlRenderer</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">decorate</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">control</span><span class="p">,</span> <span class="nx">element</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">element</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">base</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s1">&#39;decorate&#39;</span><span class="p">,</span> <span class="nx">control</span><span class="p">,</span> <span class="nx">element</span><span class="p">);</span>
+    <span class="c1">// ...</span>
+    <span class="k">return</span> <span class="nx">element</span><span class="p">;</span>
+<span class="p">};</span>
 
-/**
- * Register control to CSS class name
- */
-goog.ui.registry.setDecoratorByClassName(
-    app.ControlRenderer.CSS_CLASS,
-    function() {
-        return new app.Control();
-    }
-);
-</code></pre>
+<span class="cm">/**</span>
+<span class="cm"> * Register control to CSS class name</span>
+<span class="cm"> */</span>
+<span class="nx">goog</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nx">registry</span><span class="p">.</span><span class="nx">setDecoratorByClassName</span><span class="p">(</span>
+    <span class="nx">app</span><span class="p">.</span><span class="nx">ControlRenderer</span><span class="p">.</span><span class="nx">CSS_CLASS</span><span class="p">,</span>
+    <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nx">app</span><span class="p">.</span><span class="nx">Control</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">);</span>
+</pre></div>
+
 
 <h2 id="container">Container</h2>
-<pre><code class="javascript">/**
- * @param {?goog.ui.Container.Orientation=} opt_orientation
- * @param {goog.ui.ContainerRenderer=} opt_renderer
- * @param {goog.dom.DomHelper=} opt_domHelper
- * @constructor
- * @extends {goog.ui.Container}
- */
-app.Container = function(opt_orientation, opt_renderer, opt_domHelper) {
-    // renderer app.ContainerRenderer.getInstance()
+<div class="codehilite"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * @param {?goog.ui.Container.Orientation=} opt_orientation</span>
+<span class="cm"> * @param {goog.ui.ContainerRenderer=} opt_renderer</span>
+<span class="cm"> * @param {goog.dom.DomHelper=} opt_domHelper</span>
+<span class="cm"> * @constructor</span>
+<span class="cm"> * @extends {goog.ui.Container}</span>
+<span class="cm"> */</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">Container</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">opt_orientation</span><span class="p">,</span> <span class="nx">opt_renderer</span><span class="p">,</span> <span class="nx">opt_domHelper</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// renderer app.ContainerRenderer.getInstance()</span>
 
-    goog.base(this, opt_orientation, opt_renderer, opt_domHelper);
+    <span class="nx">goog</span><span class="p">.</span><span class="nx">base</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">opt_orientation</span><span class="p">,</span> <span class="nx">opt_renderer</span><span class="p">,</span> <span class="nx">opt_domHelper</span><span class="p">);</span>
 
-    // this.setFocusable(false);
-};
+    <span class="c1">// this.setFocusable(false);</span>
+<span class="p">};</span>
 
-goog.inherits(app.Container, goog.ui.Container);
+<span class="nx">goog</span><span class="p">.</span><span class="nx">inherits</span><span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="nx">Container</span><span class="p">,</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nx">Container</span><span class="p">);</span>
 
-/**
- * @override
- */
-app.Container.prototype.enterDocument = function() {
-    goog.base(this, 'enterDocument');
-    // ...
-};
+<span class="cm">/**</span>
+<span class="cm"> * @override</span>
+<span class="cm"> */</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">Container</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">enterDocument</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">goog</span><span class="p">.</span><span class="nx">base</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s1">&#39;enterDocument&#39;</span><span class="p">);</span>
+    <span class="c1">// ...</span>
+<span class="p">};</span>
 
-// get control based on event target:
-//      var control = this.getOwnerControl(/** @type {Node} */ (e.target));
+<span class="c1">// get control based on event target:</span>
+<span class="c1">//      var control = this.getOwnerControl(/** @type {Node} */ (e.target));</span>
 
-// get control
-//      var control = this.getChild(id);
+<span class="c1">// get control</span>
+<span class="c1">//      var control = this.getChild(id);</span>
 
-// remove all children
-//      this.removeChildren(true);
-</code></pre>
+<span class="c1">// remove all children</span>
+<span class="c1">//      this.removeChildren(true);</span>
+</pre></div>
+
 
 <h2 id="containerrenderer">ContainerRenderer</h2>
-<pre><code class="javascript">/**
- * @constructor
- * @extends {goog.ui.ContainerRenderer}
- */
-app.ContainerRenderer = function() {
-    goog.base(this);
-};
+<div class="codehilite"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * @constructor</span>
+<span class="cm"> * @extends {goog.ui.ContainerRenderer}</span>
+<span class="cm"> */</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">ContainerRenderer</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">goog</span><span class="p">.</span><span class="nx">base</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+<span class="p">};</span>
 
-goog.inherits(app.ContainerRenderer, goog.ui.ContainerRenderer);
-goog.addSingletonGetter(app.ContainerRenderer);
+<span class="nx">goog</span><span class="p">.</span><span class="nx">inherits</span><span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="nx">ContainerRenderer</span><span class="p">,</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nx">ContainerRenderer</span><span class="p">);</span>
+<span class="nx">goog</span><span class="p">.</span><span class="nx">addSingletonGetter</span><span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="nx">ContainerRenderer</span><span class="p">);</span>
 
-/**
- * @type {string}
- */
-app.ContainerRenderer.CSS_CLASS = 'container';
+<span class="cm">/**</span>
+<span class="cm"> * @type {string}</span>
+<span class="cm"> */</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">ContainerRenderer</span><span class="p">.</span><span class="nx">CSS_CLASS</span> <span class="o">=</span> <span class="s1">&#39;container&#39;</span><span class="p">;</span>
 
-/**
- * @inheritDoc
- */
-app.ContainerRenderer.prototype.getCssClass = function() {
-    return app.ContainerRenderer.CSS_CLASS;
-};
+<span class="cm">/**</span>
+<span class="cm"> * @inheritDoc</span>
+<span class="cm"> */</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">ContainerRenderer</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">getCssClass</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">app</span><span class="p">.</span><span class="nx">ContainerRenderer</span><span class="p">.</span><span class="nx">CSS_CLASS</span><span class="p">;</span>
+<span class="p">};</span>
 
-/**
- * @override
- */
-app.ContainerRenderer.prototype.createDom = function(container) {
-    var element = container.getDomHelper().createDom(
-        'div', this.getClassNames(container).join(' ')
-    );
-    // ...
-    return element;
-};
+<span class="cm">/**</span>
+<span class="cm"> * @override</span>
+<span class="cm"> */</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">ContainerRenderer</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">createDom</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">container</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">element</span> <span class="o">=</span> <span class="nx">container</span><span class="p">.</span><span class="nx">getDomHelper</span><span class="p">().</span><span class="nx">createDom</span><span class="p">(</span>
+        <span class="s1">&#39;div&#39;</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">getClassNames</span><span class="p">(</span><span class="nx">container</span><span class="p">).</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+    <span class="p">);</span>
+    <span class="c1">// ...</span>
+    <span class="k">return</span> <span class="nx">element</span><span class="p">;</span>
+<span class="p">};</span>
 
-/**
- * @override
- */
-app.ContainerRenderer.prototype.canDecorate = function(element) {
-    return true;
-};
+<span class="cm">/**</span>
+<span class="cm"> * @override</span>
+<span class="cm"> */</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">ContainerRenderer</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">canDecorate</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">element</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+<span class="p">};</span>
 
-/**
- * @override
- */
-app.ContainerRenderer.prototype.decorate = function(container, element) {
-    var element = goog.base(this, 'decorate', container, element);
-    // ...
-    return element;
-};
-</code></pre>
+<span class="cm">/**</span>
+<span class="cm"> * @override</span>
+<span class="cm"> */</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">ContainerRenderer</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">decorate</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">container</span><span class="p">,</span> <span class="nx">element</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">element</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">base</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s1">&#39;decorate&#39;</span><span class="p">,</span> <span class="nx">container</span><span class="p">,</span> <span class="nx">element</span><span class="p">);</span>
+    <span class="c1">// ...</span>
+    <span class="k">return</span> <span class="nx">element</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
                 
                   
                 

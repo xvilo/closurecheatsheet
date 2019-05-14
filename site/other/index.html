@@ -670,141 +670,153 @@
                 
                 <h2 id="googarray">goog.array</h2>
 <h3 id="googarrayforeach">goog.array.forEach</h3>
-<pre><code class="javascript">app.Foo = function() {
-    var dataToAdd = [1, 2, 3];
-    this.bar = 0;
+<div class="codehilite"><pre><span></span><span class="nx">app</span><span class="p">.</span><span class="nx">Foo</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">dataToAdd</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">bar</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 
-    goog.array.forEach(dataToAdd, function(item) {
-        this.bar += item;
-    }, this);
+    <span class="nx">goog</span><span class="p">.</span><span class="nx">array</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">dataToAdd</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">item</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">bar</span> <span class="o">+=</span> <span class="nx">item</span><span class="p">;</span>
+    <span class="p">},</span> <span class="k">this</span><span class="p">);</span>
 
-    // this.bar 6
-};
+    <span class="c1">// this.bar 6</span>
+<span class="p">};</span>
 
-/**
- * @type {number}
- */
-app.Foo.prototype.bar;
-</code></pre>
+<span class="cm">/**</span>
+<span class="cm"> * @type {number}</span>
+<span class="cm"> */</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">Foo</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">bar</span><span class="p">;</span>
+</pre></div>
+
 
 <h2 id="googis">goog.is...</h2>
-<pre><code class="javascript">// @return true/false
-goog.isArrayLike(val);
-goog.isDef(val);
-goog.isDefAndNotNull(val);
-goog.isNull(val);
-goog.isNumber(val);
-goog.isFunction(val);
-goog.isObject(val);
-goog.isString(val);
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="c1">// @return true/false</span>
+<span class="nx">goog</span><span class="p">.</span><span class="nx">isArrayLike</span><span class="p">(</span><span class="nx">val</span><span class="p">);</span>
+<span class="nx">goog</span><span class="p">.</span><span class="nx">isDef</span><span class="p">(</span><span class="nx">val</span><span class="p">);</span>
+<span class="nx">goog</span><span class="p">.</span><span class="nx">isDefAndNotNull</span><span class="p">(</span><span class="nx">val</span><span class="p">);</span>
+<span class="nx">goog</span><span class="p">.</span><span class="nx">isNull</span><span class="p">(</span><span class="nx">val</span><span class="p">);</span>
+<span class="nx">goog</span><span class="p">.</span><span class="nx">isNumber</span><span class="p">(</span><span class="nx">val</span><span class="p">);</span>
+<span class="nx">goog</span><span class="p">.</span><span class="nx">isFunction</span><span class="p">(</span><span class="nx">val</span><span class="p">);</span>
+<span class="nx">goog</span><span class="p">.</span><span class="nx">isObject</span><span class="p">(</span><span class="nx">val</span><span class="p">);</span>
+<span class="nx">goog</span><span class="p">.</span><span class="nx">isString</span><span class="p">(</span><span class="nx">val</span><span class="p">);</span>
+</pre></div>
+
 
 <h2 id="googjson">goog.json</h2>
 <h3 id="googjsonparse">goog.json.parse</h3>
-<pre><code class="javascript">/**
- * Safe parse
- *
- * @param {*} s The JSON string to parse.
- * @return {Object} The object generated from the JSON string.
- */
-goog.json.parse = function(s) {}
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * Safe parse</span>
+<span class="cm"> *</span>
+<span class="cm"> * @param {*} s The JSON string to parse.</span>
+<span class="cm"> * @return {Object} The object generated from the JSON string.</span>
+<span class="cm"> */</span>
+<span class="nx">goog</span><span class="p">.</span><span class="nx">json</span><span class="p">.</span><span class="nx">parse</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="p">{}</span>
+</pre></div>
+
 
 <h3 id="googjsonserialize">goog.json.serialize</h3>
-<pre><code class="javascript">/**
- * Serializes an object or a value to a JSON string.
- *
- * @param {*} object The object to serialize.
- * @param {?goog.json.Replacer=} opt_replacer
- * @throws Error if there are loops in the object graph.
- * @return {string} A JSON string representation of the input.
- */
-goog.json.serialize = function(object, opt_replacer) {}
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * Serializes an object or a value to a JSON string.</span>
+<span class="cm"> *</span>
+<span class="cm"> * @param {*} object The object to serialize.</span>
+<span class="cm"> * @param {?goog.json.Replacer=} opt_replacer</span>
+<span class="cm"> * @throws Error if there are loops in the object graph.</span>
+<span class="cm"> * @return {string} A JSON string representation of the input.</span>
+<span class="cm"> */</span>
+<span class="nx">goog</span><span class="p">.</span><span class="nx">json</span><span class="p">.</span><span class="nx">serialize</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">object</span><span class="p">,</span> <span class="nx">opt_replacer</span><span class="p">)</span> <span class="p">{}</span>
+</pre></div>
+
 
 <h3 id="googjsonunsafeparse">goog.json.unsafeParse</h3>
-<pre><code class="javascript">/**
- * @param {string} s The JSON string to parse.
- * @return {Object} The object generated from the JSON string.
- */
-goog.json.unsafeParse = function(s) {}
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * @param {string} s The JSON string to parse.</span>
+<span class="cm"> * @return {Object} The object generated from the JSON string.</span>
+<span class="cm"> */</span>
+<span class="nx">goog</span><span class="p">.</span><span class="nx">json</span><span class="p">.</span><span class="nx">unsafeParse</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="p">{}</span>
+</pre></div>
+
 
 <h2 id="googobject">goog.object</h2>
 <h3 id="googobjectgetvalues">goog.object.getValues</h3>
-<pre><code class="javascript">var obj = {
-    &quot;key1&quot;: &quot;value1&quot;,
-    &quot;key2&quot;: &quot;value2&quot;
-};
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;key1&quot;</span><span class="o">:</span> <span class="s2">&quot;value1&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;key2&quot;</span><span class="o">:</span> <span class="s2">&quot;value2&quot;</span>
+<span class="p">};</span>
 
-var arr = goog.object.getValues(obj); // [&quot;value1&quot;, &quot;value2&quot;]
-</code></pre>
+<span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">object</span><span class="p">.</span><span class="nx">getValues</span><span class="p">(</span><span class="nx">obj</span><span class="p">);</span> <span class="c1">// [&quot;value1&quot;, &quot;value2&quot;]</span>
+</pre></div>
+
 
 <h3 id="googobjectsetifundefined">goog.object.setIfUndefined</h3>
-<pre><code class="javascript">var obj = {
-    &quot;key1&quot;: &quot;value1&quot;,
-    &quot;key2&quot;: &quot;value2&quot;
-};
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;key1&quot;</span><span class="o">:</span> <span class="s2">&quot;value1&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;key2&quot;</span><span class="o">:</span> <span class="s2">&quot;value2&quot;</span>
+<span class="p">};</span>
 
-var set1 = goog.object.setIfUndefined(obj, 'key1', 'value11111'); // value1
-var set2 = goog.object.setIfUndefined(obj, 'key3', 'value3'); // value3
-// obj {key1: &quot;value1&quot;, key2: &quot;value2&quot;, key3: &quot;value3&quot;}
-</code></pre>
+<span class="kd">var</span> <span class="nx">set1</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">object</span><span class="p">.</span><span class="nx">setIfUndefined</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="s1">&#39;key1&#39;</span><span class="p">,</span> <span class="s1">&#39;value11111&#39;</span><span class="p">);</span> <span class="c1">// value1</span>
+<span class="kd">var</span> <span class="nx">set2</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">object</span><span class="p">.</span><span class="nx">setIfUndefined</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="s1">&#39;key3&#39;</span><span class="p">,</span> <span class="s1">&#39;value3&#39;</span><span class="p">);</span> <span class="c1">// value3</span>
+<span class="c1">// obj {key1: &quot;value1&quot;, key2: &quot;value2&quot;, key3: &quot;value3&quot;}</span>
+</pre></div>
+
 
 <h2 id="googstring">goog.string</h2>
 <h3 id="googstringpadnumber">goog.string.padNumber</h3>
-<pre><code class="javascript">goog.string.padNumber(1.5, 2, 2)); // 01.50
-goog.string.padNumber(1.5, 2, 0)); // 02
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="nx">goog</span><span class="p">.</span><span class="nx">string</span><span class="p">.</span><span class="nx">padNumber</span><span class="p">(</span><span class="mf">1.5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">));</span> <span class="c1">// 01.50</span>
+<span class="nx">goog</span><span class="p">.</span><span class="nx">string</span><span class="p">.</span><span class="nx">padNumber</span><span class="p">(</span><span class="mf">1.5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">));</span> <span class="c1">// 02</span>
+</pre></div>
+
 
 <h3 id="googstringtrim">goog.string.trim</h3>
-<pre><code class="javascript">goog.string.trim('    string-to-trim     '); // string-to-trim
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="nx">goog</span><span class="p">.</span><span class="nx">string</span><span class="p">.</span><span class="nx">trim</span><span class="p">(</span><span class="s1">&#39;    string-to-trim     &#39;</span><span class="p">);</span> <span class="c1">// string-to-trim</span>
+</pre></div>
+
 
 <p>goog.string.htmlEscape</p>
-<pre><code class="javascript">goog.string.htmlEscape(
-    '&lt;a href=&quot;href&quot;&gt;Link&lt;/a&gt;' // &amp;lt;a href=&amp;quot;href&amp;quot;&amp;gt;Link&amp;lt;/a&amp;gt;
-);
+<div class="codehilite"><pre><span></span><span class="nx">goog</span><span class="p">.</span><span class="nx">string</span><span class="p">.</span><span class="nx">htmlEscape</span><span class="p">(</span>
+    <span class="s1">&#39;&lt;a href=&quot;href&quot;&gt;Link&lt;/a&gt;&#39;</span> <span class="c1">// &amp;lt;a href=&amp;quot;href&amp;quot;&amp;gt;Link&amp;lt;/a&amp;gt;</span>
+<span class="p">);</span>
+</pre></div>
 
-</code></pre>
 
 <h3 id="googstringregexpescape">goog.string.regExpEscape</h3>
-<pre><code class="javascript">goog.string.regExpEscape('Strange (character)'); // Strange \(character\)
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="nx">goog</span><span class="p">.</span><span class="nx">string</span><span class="p">.</span><span class="nx">regExpEscape</span><span class="p">(</span><span class="s1">&#39;Strange (character)&#39;</span><span class="p">);</span> <span class="c1">// Strange \(character\)</span>
+</pre></div>
+
 
 <h3 id="googstringwhitespaceescape">goog.string.whitespaceEscape</h3>
-<pre><code class="javascript">goog.string.whitespaceEscape(
-    'Text\nwith whitespace', // Text&lt;br /&gt;with &amp;nbsp;whitespace
-    true
-);
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="nx">goog</span><span class="p">.</span><span class="nx">string</span><span class="p">.</span><span class="nx">whitespaceEscape</span><span class="p">(</span>
+    <span class="s1">&#39;Text\nwith whitespace&#39;</span><span class="p">,</span> <span class="c1">// Text&lt;br /&gt;with &amp;nbsp;whitespace</span>
+    <span class="kc">true</span>
+<span class="p">);</span>
+</pre></div>
+
 
 <h2 id="googuseragent">goog.userAgent</h2>
-<pre><code class="javascript">if (goog.userAgent.IE) {
-    // run away
-};
+<div class="codehilite"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nx">goog</span><span class="p">.</span><span class="nx">userAgent</span><span class="p">.</span><span class="nx">IE</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// run away</span>
+<span class="p">};</span>
 
-/**
- * Condition will be true for IE &lt; 9.0
- * @see goog.string.compareVersions
- */
-if (goog.userAgent.IE &amp;&amp; goog.userAgent.compare(9, goog.userAgent.VERSION) == 1) {
-    // run away even faster
-}
+<span class="cm">/**</span>
+<span class="cm"> * Condition will be true for IE &lt; 9.0</span>
+<span class="cm"> * @see goog.string.compareVersions</span>
+<span class="cm"> */</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">goog</span><span class="p">.</span><span class="nx">userAgent</span><span class="p">.</span><span class="nx">IE</span> <span class="o">&amp;&amp;</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">userAgent</span><span class="p">.</span><span class="nx">compare</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">userAgent</span><span class="p">.</span><span class="nx">VERSION</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// run away even faster</span>
+<span class="p">}</span>
 
-/**
- * Condition will be true for IE &gt;= 10.0
- */
-if (goog.userAgent.IE &amp;&amp; goog.userAgent.isVersionOrHigher(10)) {
-    // ...
-}
-</code></pre>
+<span class="cm">/**</span>
+<span class="cm"> * Condition will be true for IE &gt;= 10.0</span>
+<span class="cm"> */</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">goog</span><span class="p">.</span><span class="nx">userAgent</span><span class="p">.</span><span class="nx">IE</span> <span class="o">&amp;&amp;</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">userAgent</span><span class="p">.</span><span class="nx">isVersionOrHigher</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+<span class="p">}</span>
+</pre></div>
+
 
 <h2 id="googtypeof">goog.typeOf</h2>
-<pre><code class="javascript">var a = ...;
-goog.typeOf(a);
-// 'array', 'object', 'function', 'null', 'string', 'number', 'boolean', 'undefined'
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">...;</span>
+<span class="nx">goog</span><span class="p">.</span><span class="nx">typeOf</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>
+<span class="c1">// &#39;array&#39;, &#39;object&#39;, &#39;function&#39;, &#39;null&#39;, &#39;string&#39;, &#39;number&#39;, &#39;boolean&#39;, &#39;undefined&#39;</span>
+</pre></div>
                 
                   
                 

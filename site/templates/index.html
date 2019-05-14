@@ -528,7 +528,7 @@
 <li>https://github.com/google/closure-templates/tree/master/examples/features.soy</li>
 </ul>
 <h3 id="basic">Basic</h3>
-<pre><code>{namespace app.template}
+<div class="codehilite"><pre><span></span>{namespace app.template}
 
 /**
  * DOC
@@ -536,206 +536,220 @@
 {template .test}
 {@param p1: string}
 {@param p2: string}
-&lt;div&gt;{$p1}&lt;/div&gt; // one line comment
-&lt;div&gt;{$p2}&lt;/div&gt; /* block comment */
+<span class="nt">&lt;div&gt;</span>{$p1}<span class="nt">&lt;/div&gt;</span> // one line comment
+<span class="nt">&lt;div&gt;</span>{$p2}<span class="nt">&lt;/div&gt;</span> /* block comment */
 {/template}
-</code></pre>
+</pre></div>
+
 
 <h3 id="character-commands">Character commands</h3>
-<pre><code>/**
- * Character commands
- */
-{template .test}
-{sp} = space
-{nil} = empty string
-{\n} = newline (line feed)
-{\r} = carriage return
-{\t} = tab
-{lb} = left brace
-{rb} = right brace
-{/template}
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * Character commands</span>
+<span class="cm"> */</span>
+{<span class="nv">template</span> .<span class="nv">test</span>}
+{<span class="nv">sp</span>} <span class="o">=</span> <span class="nv">space</span>
+{<span class="nv">nil</span>} <span class="o">=</span> <span class="nv">empty</span> <span class="nv">string</span>
+{\<span class="nv">n</span>} <span class="o">=</span> <span class="nv">newline</span> <span class="ss">(</span><span class="nv">line</span> <span class="nv">feed</span><span class="ss">)</span>
+{\<span class="nv">r</span>} <span class="o">=</span> <span class="nv">carriage</span> <span class="k">return</span>
+{\<span class="nv">t</span>} <span class="o">=</span> <span class="nv">tab</span>
+{<span class="nv">lb</span>} <span class="o">=</span> <span class="nv">left</span> <span class="nv">brace</span>
+{<span class="nv">rb</span>} <span class="o">=</span> <span class="nv">right</span> <span class="nv">brace</span>
+{<span class="o">/</span><span class="nv">template</span>}
+</pre></div>
 
-<pre><code>/**
- * RAW text example
- */
-{template .test}
-{literal}
-    RAW text ...
-    preformatted
-{/literal}
-{/template}
-</code></pre>
+
+<div class="codehilite"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * RAW text example</span>
+<span class="cm"> */</span><span class="w"></span>
+<span class="err">{</span>template<span class="w"> </span><span class="o">.</span>test<span class="err">}</span><span class="w"></span>
+<span class="err">{</span>literal<span class="err">}</span><span class="w"></span>
+<span class="w">    </span>RAW<span class="w"> </span>text<span class="w"> </span><span class="o">...</span><span class="w"></span>
+<span class="w">    </span>preformatted<span class="w"></span>
+<span class="err">{</span><span class="o">/</span>literal<span class="err">}</span><span class="w"></span>
+<span class="err">{</span><span class="o">/</span>template<span class="err">}</span><span class="w"></span>
+</pre></div>
+
 
 <h3 id="commands">Commands</h3>
-<pre><code>{print ...}
-{...}    // implied 'print' command
-{css ...}
-{let ... /}
-{let ...}...{/let}
-{if ...}...{elseif ...}...{else ...}...{/if}
-{switch ...}{case ...}...{default}...{/switch}
-{foreach ...}...{ifempty}...{/foreach}
-{for ...}...{/for}
-{call ... /}
-{delcall ... /}
-{call ...}{param ... /}{param ...}...{/param}{/call}
-{delcall ...}{param ... /}{param ...}...{/param}{/delcall}
-{log}...{/log}
-{debugger}
-{msg ...}...{/msg}
-</code></pre>
+<div class="codehilite"><pre><span></span>{<span class="nv">print</span> ...}
+{...}    <span class="o">//</span> <span class="nv">implied</span> <span class="s1">&#39;</span><span class="s">print</span><span class="s1">&#39;</span> <span class="nv">command</span>
+{<span class="nv">css</span> ...}
+{<span class="nv">let</span> ... <span class="o">/</span>}
+{<span class="nv">let</span> ...}...{<span class="o">/</span><span class="nv">let</span>}
+{<span class="k">if</span> ...}...{<span class="k">elseif</span> ...}...{<span class="k">else</span> ...}...{<span class="o">/</span><span class="k">if</span>}
+{<span class="nv">switch</span> ...}{<span class="nv">case</span> ...}...{<span class="nv">default</span>}...{<span class="o">/</span><span class="nv">switch</span>}
+{<span class="nv">foreach</span> ...}...{<span class="nv">ifempty</span>}...{<span class="o">/</span><span class="nv">foreach</span>}
+{<span class="k">for</span> ...}...{<span class="o">/</span><span class="k">for</span>}
+{<span class="nv">call</span> ... <span class="o">/</span>}
+{<span class="nv">delcall</span> ... <span class="o">/</span>}
+{<span class="nv">call</span> ...}{<span class="nv">param</span> ... <span class="o">/</span>}{<span class="nv">param</span> ...}...{<span class="o">/</span><span class="nv">param</span>}{<span class="o">/</span><span class="nv">call</span>}
+{<span class="nv">delcall</span> ...}{<span class="nv">param</span> ... <span class="o">/</span>}{<span class="nv">param</span> ...}...{<span class="o">/</span><span class="nv">param</span>}{<span class="o">/</span><span class="nv">delcall</span>}
+{<span class="nv">log</span>}...{<span class="o">/</span><span class="nv">log</span>}
+{<span class="nv">debugger</span>}
+{<span class="nv">msg</span> ...}...{<span class="o">/</span><span class="nv">msg</span>}
+</pre></div>
 
-<pre><code>/**
- * LET example
- */
-{template .test}
-{let $a}10{/let}
-{let $b:10 /}
-Value for a = {$a}
-Value for b = {$b}
-{/template}
-</code></pre>
 
-<pre><code>/**
+<div class="codehilite"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * LET example</span>
+<span class="cm"> */</span>
+{<span class="nv">template</span> .<span class="nv">test</span>}
+{<span class="nv">let</span> <span class="mh">$a</span>}<span class="mi">10</span>{<span class="o">/</span><span class="nv">let</span>}
+{<span class="nv">let</span> <span class="mh">$b</span>:<span class="mi">10</span> <span class="o">/</span>}
+<span class="nv">Value</span> <span class="k">for</span> <span class="nv">a</span> <span class="o">=</span> {<span class="mh">$a</span>}
+<span class="nv">Value</span> <span class="k">for</span> <span class="nv">b</span> <span class="o">=</span> {<span class="mh">$b</span>}
+{<span class="o">/</span><span class="nv">template</span>}
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>/**
  * LOG example -&gt; `window.console.log(...);`
  */
 {template .test}
 {@param p1: number}
-&lt;div&gt;...&lt;/div&gt;
+<span class="nt">&lt;div&gt;</span>...<span class="nt">&lt;/div&gt;</span>
 {log}Value of p1 = {$p1}{/log}
 {/template}
-</code></pre>
+</pre></div>
 
-<pre><code>/**
- * DEBUGGER example -&gt; `debugger;`
- */
-{template .test}
-{if ...}
-    {debugger}
-{/if}
-{/template}
-</code></pre>
+
+<div class="codehilite"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * DEBUGGER example -&gt; `debugger;`</span>
+<span class="cm"> */</span>
+{<span class="nv">template</span> .<span class="nv">test</span>}
+{<span class="k">if</span> ...}
+    {<span class="nv">debugger</span>}
+{<span class="o">/</span><span class="k">if</span>}
+{<span class="o">/</span><span class="nv">template</span>}
+</pre></div>
+
 
 <h3 id="directive-helpers">Directive (helpers)</h3>
-<pre><code>/**
- * Soy Directives.
- */
-{template .test}
-{@param p1: any}
-{$p1|noAutoescape}
-{$p1|escapeCssString}
-{$p1|filterCssValue}
-{$p1|cleanHtml}
-{$p1|escapeHtmlRcdata}
-{$p1|escapeHtmlAttribute}
-{$p1|escapeHtmlAttributeNospace}
-{$p1|filterHtmlAttributes}
-{$p1|filterHtmlElementName}
-{$p1|escapeJsRegex}
-{$p1|escapeJsString}
-{$p1|escapeJsValue}
-{$p1|filterNormalizeUri}
-{$p1|normalizeUri}
-{$p1|escapeUri}
-{$p1|changeNewlineToBr}
-{$p1|insertWordBreaks:1}
-{$p1|truncate:1,false}
-{/template}
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * Soy Directives.</span>
+<span class="cm"> */</span><span class="w"></span>
+<span class="err">{</span><span class="n">template</span><span class="w"> </span><span class="p">.</span><span class="n">test</span><span class="err">}</span><span class="w"></span>
+<span class="err">{</span><span class="nv">@param</span><span class="w"> </span><span class="nl">p1</span><span class="p">:</span><span class="w"> </span><span class="ow">any</span><span class="err">}</span><span class="w"></span>
+<span class="err">{$</span><span class="n">p1</span><span class="o">|</span><span class="n">noAutoescape</span><span class="err">}</span><span class="w"></span>
+<span class="err">{$</span><span class="n">p1</span><span class="o">|</span><span class="n">escapeCssString</span><span class="err">}</span><span class="w"></span>
+<span class="err">{$</span><span class="n">p1</span><span class="o">|</span><span class="n">filterCssValue</span><span class="err">}</span><span class="w"></span>
+<span class="err">{$</span><span class="n">p1</span><span class="o">|</span><span class="n">cleanHtml</span><span class="err">}</span><span class="w"></span>
+<span class="err">{$</span><span class="n">p1</span><span class="o">|</span><span class="n">escapeHtmlRcdata</span><span class="err">}</span><span class="w"></span>
+<span class="err">{$</span><span class="n">p1</span><span class="o">|</span><span class="n">escapeHtmlAttribute</span><span class="err">}</span><span class="w"></span>
+<span class="err">{$</span><span class="n">p1</span><span class="o">|</span><span class="n">escapeHtmlAttributeNospace</span><span class="err">}</span><span class="w"></span>
+<span class="err">{$</span><span class="n">p1</span><span class="o">|</span><span class="n">filterHtmlAttributes</span><span class="err">}</span><span class="w"></span>
+<span class="err">{$</span><span class="n">p1</span><span class="o">|</span><span class="n">filterHtmlElementName</span><span class="err">}</span><span class="w"></span>
+<span class="err">{$</span><span class="n">p1</span><span class="o">|</span><span class="n">escapeJsRegex</span><span class="err">}</span><span class="w"></span>
+<span class="err">{$</span><span class="n">p1</span><span class="o">|</span><span class="n">escapeJsString</span><span class="err">}</span><span class="w"></span>
+<span class="err">{$</span><span class="n">p1</span><span class="o">|</span><span class="n">escapeJsValue</span><span class="err">}</span><span class="w"></span>
+<span class="err">{$</span><span class="n">p1</span><span class="o">|</span><span class="n">filterNormalizeUri</span><span class="err">}</span><span class="w"></span>
+<span class="err">{$</span><span class="n">p1</span><span class="o">|</span><span class="n">normalizeUri</span><span class="err">}</span><span class="w"></span>
+<span class="err">{$</span><span class="n">p1</span><span class="o">|</span><span class="n">escapeUri</span><span class="err">}</span><span class="w"></span>
+<span class="err">{$</span><span class="n">p1</span><span class="o">|</span><span class="n">changeNewlineToBr</span><span class="err">}</span><span class="w"></span>
+<span class="err">{$</span><span class="n">p1</span><span class="o">|</span><span class="nl">insertWordBreaks</span><span class="p">:</span><span class="mi">1</span><span class="err">}</span><span class="w"></span>
+<span class="err">{$</span><span class="n">p1</span><span class="o">|</span><span class="k">truncate</span><span class="err">:</span><span class="mi">1</span><span class="p">,</span><span class="k">false</span><span class="err">}</span><span class="w"></span>
+<span class="err">{</span><span class="o">/</span><span class="n">template</span><span class="err">}</span><span class="w"></span>
+</pre></div>
 
-<pre><code>/**
- * Assume p1 = &quot;&lt;div&gt;content&lt;/div&gt;&quot;
- */
-{template .test}
-{@param p1: html}
-{$p1|cleanHtml} // shows only `content`
-{/template}
-</code></pre>
 
-<pre><code>/**
- * Assume p1 = &quot;Test value&quot;
- */
-{template .test}
-{@param p1: string}
-{$p1|truncate:4,false} // shows `Test`
-{$p1|truncate:4,true} // shows `T...`
-{/template}
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * Assume p1 = &quot;&lt;div&gt;content&lt;/div&gt;&quot;</span>
+<span class="cm"> */</span>
+<span class="err">{</span><span class="n">template</span> <span class="p">.</span><span class="n">test</span><span class="err">}</span>
+<span class="err">{</span><span class="o">@</span><span class="n">param</span> <span class="n">p1</span><span class="p">:</span> <span class="n">html</span><span class="err">}</span>
+<span class="err">{$</span><span class="n">p1</span><span class="o">|</span><span class="n">cleanHtml</span><span class="err">}</span> <span class="o">//</span> <span class="n">shows</span> <span class="n">only</span> <span class="ss">`content`</span>
+<span class="err">{</span><span class="o">/</span><span class="n">template</span><span class="err">}</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * Assume p1 = &quot;Test value&quot;</span>
+<span class="cm"> */</span>
+<span class="err">{</span><span class="n">template</span> <span class="p">.</span><span class="n">test</span><span class="err">}</span>
+<span class="err">{</span><span class="o">@</span><span class="n">param</span> <span class="n">p1</span><span class="p">:</span> <span class="n">string</span><span class="err">}</span>
+<span class="err">{$</span><span class="n">p1</span><span class="o">|</span><span class="n">truncate</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span><span class="no">false</span><span class="err">}</span> <span class="o">//</span> <span class="n">shows</span> <span class="ss">`Test`</span>
+<span class="err">{$</span><span class="n">p1</span><span class="o">|</span><span class="n">truncate</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span><span class="no">true</span><span class="err">}</span> <span class="o">//</span> <span class="n">shows</span> <span class="ss">`T...`</span>
+<span class="err">{</span><span class="o">/</span><span class="n">template</span><span class="err">}</span>
+</pre></div>
+
 
 <h3 id="function">Function</h3>
-<pre><code>/**
- * Soy Functions
- */
-{template .test}
-{@param p1: any} /** Dummy example parameter. */
-{@param p2: any} /** Dummy example parameter. */
-{augmentMap($p1, $p2)}
-{ceiling($p1)}
-{floor($p1)}
-{isNonnull($p1)}
-{keys($p1)}
-{length($p1)}
-{max($p1, $p2)}
-{min($p1, $p2)}
-{randomInt($p1)}
-{round($p1)}
-{strContains($p1, $p2)}
-{/template}
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * Soy Functions</span>
+<span class="cm"> */</span><span class="w"></span>
+<span class="err">{</span><span class="n">template</span><span class="w"> </span><span class="p">.</span><span class="n">test</span><span class="err">}</span><span class="w"></span>
+<span class="err">{</span><span class="nv">@param</span><span class="w"> </span><span class="nl">p1</span><span class="p">:</span><span class="w"> </span><span class="ow">any</span><span class="err">}</span><span class="w"> </span><span class="cm">/** Dummy example parameter. */</span><span class="w"></span>
+<span class="err">{</span><span class="nv">@param</span><span class="w"> </span><span class="nl">p2</span><span class="p">:</span><span class="w"> </span><span class="ow">any</span><span class="err">}</span><span class="w"> </span><span class="cm">/** Dummy example parameter. */</span><span class="w"></span>
+<span class="err">{</span><span class="n">augmentMap</span><span class="p">(</span><span class="err">$</span><span class="n">p1</span><span class="p">,</span><span class="w"> </span><span class="err">$</span><span class="n">p2</span><span class="p">)</span><span class="err">}</span><span class="w"></span>
+<span class="err">{</span><span class="nf">ceiling</span><span class="p">(</span><span class="err">$</span><span class="n">p1</span><span class="p">)</span><span class="err">}</span><span class="w"></span>
+<span class="err">{</span><span class="nf">floor</span><span class="p">(</span><span class="err">$</span><span class="n">p1</span><span class="p">)</span><span class="err">}</span><span class="w"></span>
+<span class="err">{</span><span class="n">isNonnull</span><span class="p">(</span><span class="err">$</span><span class="n">p1</span><span class="p">)</span><span class="err">}</span><span class="w"></span>
+<span class="err">{</span><span class="n">keys</span><span class="p">(</span><span class="err">$</span><span class="n">p1</span><span class="p">)</span><span class="err">}</span><span class="w"></span>
+<span class="err">{</span><span class="n">length</span><span class="p">(</span><span class="err">$</span><span class="n">p1</span><span class="p">)</span><span class="err">}</span><span class="w"></span>
+<span class="err">{</span><span class="nf">max</span><span class="p">(</span><span class="err">$</span><span class="n">p1</span><span class="p">,</span><span class="w"> </span><span class="err">$</span><span class="n">p2</span><span class="p">)</span><span class="err">}</span><span class="w"></span>
+<span class="err">{</span><span class="nf">min</span><span class="p">(</span><span class="err">$</span><span class="n">p1</span><span class="p">,</span><span class="w"> </span><span class="err">$</span><span class="n">p2</span><span class="p">)</span><span class="err">}</span><span class="w"></span>
+<span class="err">{</span><span class="n">randomInt</span><span class="p">(</span><span class="err">$</span><span class="n">p1</span><span class="p">)</span><span class="err">}</span><span class="w"></span>
+<span class="err">{</span><span class="nf">round</span><span class="p">(</span><span class="err">$</span><span class="n">p1</span><span class="p">)</span><span class="err">}</span><span class="w"></span>
+<span class="err">{</span><span class="n">strContains</span><span class="p">(</span><span class="err">$</span><span class="n">p1</span><span class="p">,</span><span class="w"> </span><span class="err">$</span><span class="n">p2</span><span class="p">)</span><span class="err">}</span><span class="w"></span>
+<span class="err">{</span><span class="o">/</span><span class="n">template</span><span class="err">}</span><span class="w"></span>
+</pre></div>
+
 
 <h3 id="i18n">i18n</h3>
-<pre><code>/**
- * MSG-PLURAL example -&gt; `goog.getMsg`, `goog.i18n.MessageFormat()`
- */
-{template .test}
-{@param p1: int}
-{msg desc=&quot;Test message&quot;}
-    {plural $p1}
-        {case 1}
-            Message if p1 = 1
-        {case 2}
-            Message if p1 = 2
-        {default}
-            Message for all other cases
-    {/plural}
-{/msg}
-{/template}
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * MSG-PLURAL example -&gt; `goog.getMsg`, `goog.i18n.MessageFormat()`</span>
+<span class="cm"> */</span>
+{<span class="nv">template</span> .<span class="nv">test</span>}
+{@<span class="nv">param</span> <span class="nv">p1</span>: <span class="nv">int</span>}
+{<span class="nv">msg</span> <span class="nv">desc</span><span class="o">=</span><span class="s2">&quot;</span><span class="s">Test message</span><span class="s2">&quot;</span>}
+    {<span class="nv">plural</span> $<span class="nv">p1</span>}
+        {<span class="nv">case</span> <span class="mi">1</span>}
+            <span class="nv">Message</span> <span class="k">if</span> <span class="nv">p1</span> <span class="o">=</span> <span class="mi">1</span>
+        {<span class="nv">case</span> <span class="mi">2</span>}
+            <span class="nv">Message</span> <span class="k">if</span> <span class="nv">p1</span> <span class="o">=</span> <span class="mi">2</span>
+        {<span class="nv">default</span>}
+            <span class="nv">Message</span> <span class="k">for</span> <span class="nv">all</span> <span class="nv">other</span> <span class="nv">cases</span>
+    {<span class="o">/</span><span class="nv">plural</span>}
+{<span class="o">/</span><span class="nv">msg</span>}
+{<span class="o">/</span><span class="nv">template</span>}
+</pre></div>
 
-<pre><code>/**
- * MSG-SELECT example -&gt; `goog.getMsg`, goog.i18n.MessageFormat()`
- */
-{template .test}
-{@param p1: string}
-{msg desc=&quot;Test message&quot;}
-    {select $p1}
-        {case 'male'}
-            Message for male
-        {case 'female'}
-            Message for female
-        {default}
-            Message for all other cases
-    {/select}
-{/msg}
-{/template}
-</code></pre>
+
+<div class="codehilite"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * MSG-SELECT example -&gt; `goog.getMsg`, goog.i18n.MessageFormat()`</span>
+<span class="cm"> */</span>
+{<span class="nv">template</span> .<span class="nv">test</span>}
+{@<span class="nv">param</span> <span class="nv">p1</span>: <span class="nv">string</span>}
+{<span class="nv">msg</span> <span class="nv">desc</span><span class="o">=</span><span class="s2">&quot;</span><span class="s">Test message</span><span class="s2">&quot;</span>}
+    {<span class="nv">select</span> $<span class="nv">p1</span>}
+        {<span class="nv">case</span> <span class="s1">&#39;</span><span class="s">male</span><span class="s1">&#39;</span>}
+            <span class="nv">Message</span> <span class="k">for</span> <span class="nv">male</span>
+        {<span class="nv">case</span> <span class="s1">&#39;</span><span class="s">female</span><span class="s1">&#39;</span>}
+            <span class="nv">Message</span> <span class="k">for</span> <span class="nv">female</span>
+        {<span class="nv">default</span>}
+            <span class="nv">Message</span> <span class="k">for</span> <span class="nv">all</span> <span class="nv">other</span> <span class="nv">cases</span>
+    {<span class="o">/</span><span class="nv">select</span>}
+{<span class="o">/</span><span class="nv">msg</span>}
+{<span class="o">/</span><span class="nv">template</span>}
+</pre></div>
+
 
 <h3 id="call-function-outside-soy">Call function outside SOY</h3>
-<pre><code class="javascript">goog.provide('app.helpers');
+<div class="codehilite"><pre><span></span><span class="nx">goog</span><span class="p">.</span><span class="nx">provide</span><span class="p">(</span><span class="s1">&#39;app.helpers&#39;</span><span class="p">);</span>
 
-/**
- * @param {Object.&lt;string, *&gt;=} opt_data
- * @param {(null|undefined)=} opt_ignored
- * @return {string}
- * @notypecheck
- */
-app.helpers.sum = function(opt_data, opt_ignored) {
-    return &quot;&quot; + (opt_data.first + opt_data.second);
-};
-</code></pre>
+<span class="cm">/**</span>
+<span class="cm"> * @param {Object.&lt;string, *&gt;=} opt_data</span>
+<span class="cm"> * @param {(null|undefined)=} opt_ignored</span>
+<span class="cm"> * @return {string}</span>
+<span class="cm"> * @notypecheck</span>
+<span class="cm"> */</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">helpers</span><span class="p">.</span><span class="nx">sum</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">opt_data</span><span class="p">,</span> <span class="nx">opt_ignored</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="s2">&quot;&quot;</span> <span class="o">+</span> <span class="p">(</span><span class="nx">opt_data</span><span class="p">.</span><span class="nx">first</span> <span class="o">+</span> <span class="nx">opt_data</span><span class="p">.</span><span class="nx">second</span><span class="p">);</span>
+<span class="p">};</span>
+</pre></div>
 
-<pre><code>{namespace app.templates}
+
+<div class="codehilite"><pre><span></span>{namespace app.templates}
 
 /**
  * Calling function outside SOY
@@ -743,40 +757,42 @@ app.helpers.sum = function(opt_data, opt_ignored) {
 {template .test}
 {@param first: number}
 {@param second: number}
-&lt;div&gt;
-    Sum &lt;em&gt;{$first}&lt;/em&gt; and &lt;em&gt;{$second}&lt;/em&gt; is{sp}
-    &lt;strong&gt;
+<span class="nt">&lt;div&gt;</span>
+    Sum <span class="nt">&lt;em&gt;</span>{$first}<span class="nt">&lt;/em&gt;</span> and <span class="nt">&lt;em&gt;</span>{$second}<span class="nt">&lt;/em&gt;</span> is{sp}
+    <span class="nt">&lt;strong&gt;</span>
         {call app.helpers.sum}
             {param first: $first /}
             {param second: $second /}
         {/call}
-    &lt;/strong&gt;
-&lt;/div&gt;
+    <span class="nt">&lt;/strong&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
 
-&lt;div&gt;
-    Sum &lt;strong&gt;{call app.helpers.sum data=&quot;all&quot; /}&lt;/strong&gt;
-&lt;/div&gt;
+<span class="nt">&lt;div&gt;</span>
+    Sum <span class="nt">&lt;strong&gt;</span>{call app.helpers.sum data=&quot;all&quot; /}<span class="nt">&lt;/strong&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
 {/template}
-</code></pre>
+</pre></div>
 
-<pre><code class="javascript">var template = app.templates.test({
-    first: 1,
-    second: 5
-});
-</code></pre>
+
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">template</span> <span class="o">=</span> <span class="nx">app</span><span class="p">.</span><span class="nx">templates</span><span class="p">.</span><span class="nx">test</span><span class="p">({</span>
+    <span class="nx">first</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nx">second</span><span class="o">:</span> <span class="mi">5</span>
+<span class="p">});</span>
+</pre></div>
+
 
 <h2 id="googsoyrenderelement">goog.soy.renderElement</h2>
-<pre><code class="javascript">var templateData = {
-    first: 1,
-    second: 5
-};
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">templateData</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">first</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nx">second</span><span class="o">:</span> <span class="mi">5</span>
+<span class="p">};</span>
 
-goog.soy.renderElement(
-    goog.dom.getElement('container'), // element with innerHTML
-    app.templates.test, // template
-    templateData
-);
-</code></pre>
+<span class="nx">goog</span><span class="p">.</span><span class="nx">soy</span><span class="p">.</span><span class="nx">renderElement</span><span class="p">(</span>
+    <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getElement</span><span class="p">(</span><span class="s1">&#39;container&#39;</span><span class="p">),</span> <span class="c1">// element with innerHTML</span>
+    <span class="nx">app</span><span class="p">.</span><span class="nx">templates</span><span class="p">.</span><span class="nx">test</span><span class="p">,</span> <span class="c1">// template</span>
+    <span class="nx">templateData</span>
+<span class="p">);</span>
+</pre></div>
                 
                   
                 
