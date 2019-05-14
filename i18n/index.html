@@ -454,7 +454,7 @@
                 
                 <h2 id="googgetmsg">goog.getMsg</h2>
 <div class="codehilite"><pre><span></span><span class="cm">/** @desc Test */</span>
-<span class="kd">var</span> <span class="nx">MSG_TEST</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">getMsg</span><span class="p">(</span><span class="s1">&#39;Test&#39;</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">MSG_TEST</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">getMsg</span><span class="p">(</span><span class="s1">&#39;Test&#39;</span><span class="p">);</span>
 </pre></div>
 
 
@@ -462,12 +462,12 @@
 <span class="cm"> * @meaning Meaning</span>
 <span class="cm"> * @desc Test</span>
 <span class="cm"> */</span>
-<span class="kd">var</span> <span class="nx">MSG_TEST_MEANING</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">getMsg</span><span class="p">(</span><span class="s1">&#39;Test meaning&#39;</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">MSG_TEST_MEANING</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">getMsg</span><span class="p">(</span><span class="s1">&#39;Test meaning&#39;</span><span class="p">);</span>
 </pre></div>
 
 
 <div class="codehilite"><pre><span></span><span class="cm">/** @desc Test with placeholder */</span>
-<span class="kd">var</span> <span class="nx">MSG_TEST_PLACEHOLDER</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">getMsg</span><span class="p">(</span><span class="s1">&#39;Test with {$ph}&#39;</span><span class="p">,</span> <span class="p">{</span>
+<span class="kd">let</span> <span class="nx">MSG_TEST_PLACEHOLDER</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">getMsg</span><span class="p">(</span><span class="s1">&#39;Test with {$ph}&#39;</span><span class="p">,</span> <span class="p">{</span>
     <span class="nx">ph</span><span class="o">:</span> <span class="s1">&#39;placeholder&#39;</span>
 <span class="p">});</span>
 </pre></div>
@@ -556,32 +556,32 @@
 
 
 <h2 id="googi18ndatetimeformat">goog.i18n.DateTimeFormat</h2>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">fmt</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">DateTimeFormat</span><span class="p">(</span>
+<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nx">fmt</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">DateTimeFormat</span><span class="p">(</span>
     <span class="nx">goog</span><span class="p">.</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">DateTimeFormat</span><span class="p">.</span><span class="nx">Format</span><span class="p">.</span><span class="nx">FULL_DATETIME</span>
 <span class="p">);</span>
-<span class="kd">var</span> <span class="nx">formattedDateTime</span> <span class="o">=</span> <span class="nx">fmt</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">());</span>
+<span class="kd">let</span> <span class="nx">formattedDateTime</span> <span class="o">=</span> <span class="nx">fmt</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">());</span>
 <span class="c1">// CS pondělí, 25. března 2013 16:38:36 UTC+1</span>
 <span class="c1">// EN Monday, March 25, 2013 4:38:36 PM UTC+1</span>
 </pre></div>
 
 
 <h2 id="googi18nmessageformat">goog.i18n.MessageFormat</h2>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">fmt</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">MessageFormat</span><span class="p">(</span>
+<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nx">fmt</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">MessageFormat</span><span class="p">(</span>
     <span class="s1">&#39;There {EXAMPLE, select, &#39;</span> <span class="o">+</span>
         <span class="s1">&#39;0 {is no example} &#39;</span> <span class="o">+</span>
         <span class="s1">&#39;1 {is one example} &#39;</span> <span class="o">+</span>
         <span class="s1">&#39;other {are many examples}} &#39;</span><span class="o">+</span>
     <span class="s1">&#39;in messageformat_test.html&#39;</span>
 <span class="p">);</span>
-<span class="kd">var</span> <span class="nx">msg</span> <span class="o">=</span> <span class="nx">fmt</span><span class="p">.</span><span class="nx">format</span><span class="p">({</span><span class="s1">&#39;EXAMPLE&#39;</span><span class="o">:</span> <span class="mi">0</span><span class="p">});</span> <span class="c1">// There is no example in messageformat_test.html</span>
-<span class="kd">var</span> <span class="nx">msg</span> <span class="o">=</span> <span class="nx">fmt</span><span class="p">.</span><span class="nx">format</span><span class="p">({</span><span class="s1">&#39;EXAMPLE&#39;</span><span class="o">:</span> <span class="mi">1</span><span class="p">});</span> <span class="c1">// There is one example in messageformat_test.html</span>
-<span class="kd">var</span> <span class="nx">msg</span> <span class="o">=</span> <span class="nx">fmt</span><span class="p">.</span><span class="nx">format</span><span class="p">({</span><span class="s1">&#39;EXAMPLE&#39;</span><span class="o">:</span> <span class="mi">2</span><span class="p">});</span> <span class="c1">// There are many examples in messageformat_test.html</span>
+<span class="kd">let</span> <span class="nx">msg</span> <span class="o">=</span> <span class="nx">fmt</span><span class="p">.</span><span class="nx">format</span><span class="p">({</span><span class="s1">&#39;EXAMPLE&#39;</span><span class="o">:</span> <span class="mi">0</span><span class="p">});</span> <span class="c1">// There is no example in messageformat_test.html</span>
+<span class="kd">let</span> <span class="nx">msg</span> <span class="o">=</span> <span class="nx">fmt</span><span class="p">.</span><span class="nx">format</span><span class="p">({</span><span class="s1">&#39;EXAMPLE&#39;</span><span class="o">:</span> <span class="mi">1</span><span class="p">});</span> <span class="c1">// There is one example in messageformat_test.html</span>
+<span class="kd">let</span> <span class="nx">msg</span> <span class="o">=</span> <span class="nx">fmt</span><span class="p">.</span><span class="nx">format</span><span class="p">({</span><span class="s1">&#39;EXAMPLE&#39;</span><span class="o">:</span> <span class="mi">2</span><span class="p">});</span> <span class="c1">// There are many examples in messageformat_test.html</span>
 </pre></div>
 
 
 <h2 id="googi18nnumberformat">goog.i18n.NumberFormat</h2>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">fmt</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">NumberFormat</span><span class="p">(</span><span class="nx">goog</span><span class="p">.</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">NumberFormat</span><span class="p">.</span><span class="nx">Format</span><span class="p">.</span><span class="nx">CURRENCY</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">currency</span> <span class="o">=</span> <span class="nx">fmt</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="mf">9999.99</span><span class="p">);</span>
+<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nx">fmt</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">NumberFormat</span><span class="p">(</span><span class="nx">goog</span><span class="p">.</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">NumberFormat</span><span class="p">.</span><span class="nx">Format</span><span class="p">.</span><span class="nx">CURRENCY</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">currency</span> <span class="o">=</span> <span class="nx">fmt</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="mf">9999.99</span><span class="p">);</span>
 <span class="c1">// CS currency 9 999,99 Kč</span>
 <span class="c1">// EN currency $9,999.99</span>
 </pre></div>

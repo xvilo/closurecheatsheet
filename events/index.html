@@ -626,7 +626,7 @@
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">container</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getElement</span><span class="p">(</span><span class="s1">&#39;container&#39;</span><span class="p">);</span>
+<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nx">container</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getElement</span><span class="p">(</span><span class="s1">&#39;container&#39;</span><span class="p">);</span>
 
 <span class="nx">goog</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span>
     <span class="nx">container</span><span class="p">,</span>
@@ -650,7 +650,7 @@
 <span class="cm"> * @constructor</span>
 <span class="cm"> */</span>
 <span class="nx">app</span><span class="p">.</span><span class="nx">Foo</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">container</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getElement</span><span class="p">(</span><span class="s1">&#39;container&#39;</span><span class="p">);</span>
+    <span class="kd">let</span> <span class="nx">container</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getElement</span><span class="p">(</span><span class="s1">&#39;container&#39;</span><span class="p">);</span>
 
     <span class="nx">goog</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span>
         <span class="nx">container</span><span class="p">,</span>
@@ -686,8 +686,8 @@
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">container</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getElement</span><span class="p">(</span><span class="s1">&#39;container&#39;</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">clickHandler</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nx">container</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getElement</span><span class="p">(</span><span class="s1">&#39;container&#39;</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">clickHandler</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// ...</span>
 <span class="p">};</span>
 
@@ -719,7 +719,7 @@
 <span class="nx">app</span><span class="p">.</span><span class="nx">Foo</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">app</span><span class="p">.</span><span class="nx">Foo</span><span class="p">.</span><span class="nx">base</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s1">&#39;constructor&#39;</span><span class="p">);</span>
 
-    <span class="kd">var</span> <span class="nx">container</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getRequiredElement</span><span class="p">(</span><span class="s1">&#39;container&#39;</span><span class="p">);</span>
+    <span class="kd">let</span> <span class="nx">container</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getRequiredElement</span><span class="p">(</span><span class="s1">&#39;container&#39;</span><span class="p">);</span>
 
     <span class="c1">// listen for CLICK -&gt; handled by this.handleClick_ </span>
     <span class="c1">// note: this.listenOnce() is also useful.</span>
@@ -745,7 +745,7 @@
 <span class="cm"> * @private</span>
 <span class="cm"> */</span>
 <span class="nx">app</span><span class="p">.</span><span class="nx">Foo</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">handleMouseEvent_</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">type</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">type</span><span class="p">;</span>  <span class="c1">// e.g. goog.events.EventType.MOUSEOVER</span>
+    <span class="kd">let</span> <span class="nx">type</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">type</span><span class="p">;</span>  <span class="c1">// e.g. goog.events.EventType.MOUSEOVER</span>
     <span class="c1">// ...</span>
 <span class="p">};</span>
 
@@ -762,7 +762,7 @@
 
 
 <h2 id="history">History</h2>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">history</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">History</span><span class="p">();</span>
+<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nx">history</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">History</span><span class="p">();</span>
 <span class="nx">history</span><span class="p">.</span><span class="nx">setEnabled</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
 
 <span class="nx">goog</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span>
@@ -779,7 +779,7 @@
 
 <h2 id="key-handler">Key Handler</h2>
 <h3 id="googeventskeyhandler">goog.events.KeyHandler</h3>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">keyHandler</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">KeyHandler</span><span class="p">(</span><span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getDocument</span><span class="p">().</span><span class="nx">body</span><span class="p">);</span>
+<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nx">keyHandler</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">KeyHandler</span><span class="p">(</span><span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getDocument</span><span class="p">().</span><span class="nx">body</span><span class="p">);</span>
 
 <span class="nx">goog</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span>
     <span class="nx">keyHandler</span><span class="p">,</span>
@@ -917,7 +917,7 @@
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">target</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">app</span><span class="p">.</span><span class="nx">EventTarget</span><span class="p">();</span>
+<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nx">target</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">app</span><span class="p">.</span><span class="nx">EventTarget</span><span class="p">();</span>
 
 <span class="nx">goog</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span>
     <span class="nx">target</span><span class="p">,</span>
@@ -936,8 +936,8 @@
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">parent</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">app</span><span class="p">.</span><span class="nx">EventTarget</span><span class="p">();</span>
-<span class="kd">var</span> <span class="nx">child</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">app</span><span class="p">.</span><span class="nx">EventTarget</span><span class="p">();</span>
+<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nx">parent</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">app</span><span class="p">.</span><span class="nx">EventTarget</span><span class="p">();</span>
+<span class="kd">let</span> <span class="nx">child</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">app</span><span class="p">.</span><span class="nx">EventTarget</span><span class="p">();</span>
 
 <span class="c1">// set parent for child, so event will bubble up (capture) to parent</span>
 <span class="nx">child</span><span class="p">.</span><span class="nx">setParentEventTarget</span><span class="p">(</span><span class="nx">parent</span><span class="p">);</span>

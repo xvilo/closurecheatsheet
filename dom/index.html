@@ -819,8 +819,8 @@
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">container</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getElement</span><span class="p">(</span><span class="s1">&#39;container&#39;</span><span class="p">);</span> <span class="c1">// get &lt;div id=&quot;container&gt;</span>
-<span class="kd">var</span> <span class="nx">child</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">createDom</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">);</span> <span class="c1">// create empty &lt;div&gt;</span>
+<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nx">container</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getElement</span><span class="p">(</span><span class="s1">&#39;container&#39;</span><span class="p">);</span> <span class="c1">// get &lt;div id=&quot;container&gt;</span>
+<span class="kd">let</span> <span class="nx">child</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">createDom</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">);</span> <span class="c1">// create empty &lt;div&gt;</span>
 <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="nx">container</span><span class="p">,</span> <span class="nx">child</span><span class="p">);</span> <span class="c1">// append &lt;div&gt; into &lt;div id=&quot;container&quot;&gt;</span>
 </pre></div>
 
@@ -846,13 +846,13 @@
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">div</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">createDom</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">,</span> <span class="s1">&#39;Div text content&#39;</span><span class="p">);</span>
+<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nx">div</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">createDom</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">,</span> <span class="s1">&#39;Div text content&#39;</span><span class="p">);</span>
 <span class="c1">// &lt;div&gt;Div text content&lt;/div&gt;</span>
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">createDom</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;href&#39;</span><span class="o">:</span> <span class="s1">&#39;#href&#39;</span><span class="p">},</span> <span class="s1">&#39;Link&#39;</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">li</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">createDom</span><span class="p">(</span><span class="s1">&#39;li&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="o">:</span> <span class="s1">&#39;menu-item&#39;</span><span class="p">},</span> <span class="nx">a</span><span class="p">);</span>
+<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">createDom</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;href&#39;</span><span class="o">:</span> <span class="s1">&#39;#href&#39;</span><span class="p">},</span> <span class="s1">&#39;Link&#39;</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">li</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">createDom</span><span class="p">(</span><span class="s1">&#39;li&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="o">:</span> <span class="s1">&#39;menu-item&#39;</span><span class="p">},</span> <span class="nx">a</span><span class="p">);</span>
 
 <span class="c1">// &lt;li class=&quot;menu-item&quot;&gt;&lt;a href=&quot;#href&quot;&gt;Link&lt;/a&gt;&lt;/li&gt;</span>
 </pre></div>
@@ -877,7 +877,7 @@
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">container</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getElement</span><span class="p">(</span><span class="s1">&#39;container&#39;</span><span class="p">);</span>
+<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nx">container</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getElement</span><span class="p">(</span><span class="s1">&#39;container&#39;</span><span class="p">);</span>
 <span class="c1">// &lt;div id=&quot;container&quot;&gt;&lt;/div&gt;</span>
 </pre></div>
 
@@ -910,19 +910,19 @@
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">allLi</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getElementsByTagNameAndClass</span><span class="p">(</span><span class="s1">&#39;li&#39;</span><span class="p">);</span>
+<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nx">allLi</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getElementsByTagNameAndClass</span><span class="p">(</span><span class="s1">&#39;li&#39;</span><span class="p">);</span>
 <span class="c1">// allLi.length 4</span>
 <span class="c1">// allLi[0] &lt;li&gt;Menu item 1&lt;/li&gt;</span>
 <span class="c1">// ...</span>
 <span class="c1">// allLi[3] &lt;li&gt;Navigation item 2&lt;/li&gt;</span>
 
-<span class="kd">var</span> <span class="nx">menuLi</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getElementsByTagNameAndClass</span><span class="p">(</span><span class="s1">&#39;li&#39;</span><span class="p">,</span> <span class="s1">&#39;menu&#39;</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">menuLi</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getElementsByTagNameAndClass</span><span class="p">(</span><span class="s1">&#39;li&#39;</span><span class="p">,</span> <span class="s1">&#39;menu&#39;</span><span class="p">);</span>
 <span class="c1">// menuLi.length 2</span>
 <span class="c1">// menuLi[0] &lt;li class=&quot;menu&quot;&gt;Menu item 1&lt;/li&gt;</span>
 <span class="c1">// menuLi[1] &lt;li class=&quot;menu&quot;&gt;Menu item 2&lt;/li&gt;</span>
 
-<span class="kd">var</span> <span class="nx">navigation</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getElement</span><span class="p">(</span><span class="s1">&#39;navigation&#39;</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">navigationLi</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getElementsByTagNameAndClass</span><span class="p">(</span><span class="s1">&#39;li&#39;</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">,</span> <span class="nx">navigation</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">navigation</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getElement</span><span class="p">(</span><span class="s1">&#39;navigation&#39;</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">navigationLi</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getElementsByTagNameAndClass</span><span class="p">(</span><span class="s1">&#39;li&#39;</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">,</span> <span class="nx">navigation</span><span class="p">);</span>
 <span class="c1">// navigationLi.length 2</span>
 <span class="c1">// navigationLi[0] &lt;li&gt;Navigation item 1&lt;/li&gt;</span>
 <span class="c1">// navigationLi[1] &lt;li&gt;Navigation item 2&lt;/li&gt;</span>
@@ -946,8 +946,8 @@
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">first</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getElementsByTagNameAndClass</span><span class="p">(</span><span class="s1">&#39;li&#39;</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span>
-<span class="kd">var</span> <span class="nx">next</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getNextElementSibling</span><span class="p">(</span><span class="nx">first</span><span class="p">);</span>
+<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nx">first</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getElementsByTagNameAndClass</span><span class="p">(</span><span class="s1">&#39;li&#39;</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span>
+<span class="kd">let</span> <span class="nx">next</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getNextElementSibling</span><span class="p">(</span><span class="nx">first</span><span class="p">);</span>
 <span class="c1">// next &lt;li&gt;Item 2&lt;/li&gt;</span>
 </pre></div>
 
@@ -969,8 +969,8 @@
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">li</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getElementsByTagNameAndClass</span><span class="p">(</span><span class="s1">&#39;li&#39;</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span>
-<span class="kd">var</span> <span class="nx">ul</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getParentElement</span><span class="p">(</span><span class="nx">li</span><span class="p">);</span>
+<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nx">li</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getElementsByTagNameAndClass</span><span class="p">(</span><span class="s1">&#39;li&#39;</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span>
+<span class="kd">let</span> <span class="nx">ul</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getParentElement</span><span class="p">(</span><span class="nx">li</span><span class="p">);</span>
 <span class="c1">// ul &lt;ul&gt;&lt;/ul&gt;</span>
 </pre></div>
 
@@ -992,8 +992,8 @@
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">container</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getElement</span><span class="p">(</span><span class="s1">&#39;container&#39;</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">text</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getTextContent</span><span class="p">(</span><span class="nx">container</span><span class="p">);</span> <span class="c1">// Span      Link        Text</span>
+<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nx">container</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getElement</span><span class="p">(</span><span class="s1">&#39;container&#39;</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">text</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getTextContent</span><span class="p">(</span><span class="nx">container</span><span class="p">);</span> <span class="c1">// Span      Link        Text</span>
 </pre></div>
 
 
@@ -1005,7 +1005,7 @@
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">viewPort</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getViewportSize</span><span class="p">();</span>
+<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nx">viewPort</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getViewportSize</span><span class="p">();</span>
 <span class="c1">// viewPort.width [px]</span>
 <span class="c1">// viewPort.height [px]</span>
 </pre></div>
@@ -1028,10 +1028,10 @@
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">firstLi</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getElementsByTagNameAndClass</span><span class="p">(</span><span class="s1">&#39;li&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span>
+<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nx">firstLi</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getElementsByTagNameAndClass</span><span class="p">(</span><span class="s1">&#39;li&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span>
 
-<span class="kd">var</span> <span class="nx">before</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">createDom</span><span class="p">(</span><span class="s1">&#39;li&#39;</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">,</span> <span class="s1">&#39;Item before&#39;</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">after</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">createDom</span><span class="p">(</span><span class="s1">&#39;li&#39;</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">,</span> <span class="s1">&#39;Item after&#39;</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">before</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">createDom</span><span class="p">(</span><span class="s1">&#39;li&#39;</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">,</span> <span class="s1">&#39;Item before&#39;</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">after</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">createDom</span><span class="p">(</span><span class="s1">&#39;li&#39;</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">,</span> <span class="s1">&#39;Item after&#39;</span><span class="p">);</span>
 
 <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">insertSiblingBefore</span><span class="p">(</span><span class="nx">before</span><span class="p">,</span> <span class="nx">firstLi</span><span class="p">);</span>
 <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">insertSiblingAfter</span><span class="p">(</span><span class="nx">after</span><span class="p">,</span> <span class="nx">firstLi</span><span class="p">);</span>
@@ -1067,7 +1067,7 @@
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">div</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">createDom</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">);</span>
+<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nx">div</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">createDom</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">);</span>
 <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">setProperties</span><span class="p">(</span><span class="nx">div</span><span class="p">,</span> <span class="p">{</span>
     <span class="s1">&#39;style&#39;</span><span class="o">:</span> <span class="s1">&#39;background-color: red&#39;</span><span class="p">,</span>
     <span class="s1">&#39;class&#39;</span><span class="o">:</span> <span class="s1">&#39;div-class&#39;</span><span class="p">,</span>
@@ -1103,9 +1103,9 @@
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">container</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getElement</span><span class="p">(</span><span class="s1">&#39;container&#39;</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">hasDataActionAttribute</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">dataset</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="nx">container</span><span class="p">,</span> <span class="s1">&#39;action&#39;</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">dataActionAttribute</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">dataset</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">container</span><span class="p">,</span> <span class="s1">&#39;action&#39;</span><span class="p">);</span>
+<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nx">container</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getElement</span><span class="p">(</span><span class="s1">&#39;container&#39;</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">hasDataActionAttribute</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">dataset</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="nx">container</span><span class="p">,</span> <span class="s1">&#39;action&#39;</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">dataActionAttribute</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">dataset</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">container</span><span class="p">,</span> <span class="s1">&#39;action&#39;</span><span class="p">);</span>
 <span class="c1">// hasDataActionAttribute true</span>
 <span class="c1">// dataActionAttribute test</span>
 </pre></div>
@@ -1133,8 +1133,8 @@
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">form</span> <span class="o">=</span> <span class="cm">/** @type {HTMLFormElement} */</span> <span class="p">(</span><span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getElement</span><span class="p">(</span><span class="s1">&#39;form&#39;</span><span class="p">));</span>
-<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">forms</span><span class="p">.</span><span class="nx">getFormDataMap</span><span class="p">(</span><span class="nx">form</span><span class="p">);</span>
+<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nx">form</span> <span class="o">=</span> <span class="cm">/** @type {HTMLFormElement} */</span> <span class="p">(</span><span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getElement</span><span class="p">(</span><span class="s1">&#39;form&#39;</span><span class="p">));</span>
+<span class="kd">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">forms</span><span class="p">.</span><span class="nx">getFormDataMap</span><span class="p">(</span><span class="nx">form</span><span class="p">);</span>
 <span class="c1">// data.get(&#39;text&#39;)[0] text</span>
 <span class="c1">// data.get(&#39;radio&#39;)[0] 1</span>
 <span class="c1">// data.get(&#39;checkbox&#39;)[0] on</span>
@@ -1152,7 +1152,7 @@
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">form</span> <span class="o">=</span> <span class="cm">/** @type {HTMLFormElement} */</span> <span class="p">(</span><span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getElement</span><span class="p">(</span><span class="s1">&#39;form&#39;</span><span class="p">));</span>
+<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nx">form</span> <span class="o">=</span> <span class="cm">/** @type {HTMLFormElement} */</span> <span class="p">(</span><span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getElement</span><span class="p">(</span><span class="s1">&#39;form&#39;</span><span class="p">));</span>
 <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">forms</span><span class="p">.</span><span class="nx">setDisabled</span><span class="p">(</span><span class="nx">form</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
 <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">forms</span><span class="p">.</span><span class="nx">setDisabled</span><span class="p">(</span><span class="nx">form</span><span class="p">.</span><span class="nx">elements</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">],</span> <span class="kc">true</span><span class="p">);</span>
 </pre></div>
@@ -1199,7 +1199,7 @@
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">container</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getElement</span><span class="p">(</span><span class="s1">&#39;container&#39;</span><span class="p">);</span>
+<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nx">container</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getElement</span><span class="p">(</span><span class="s1">&#39;container&#39;</span><span class="p">);</span>
 <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">classlist</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">container</span><span class="p">,</span> <span class="s1">&#39;cls1&#39;</span><span class="p">);</span>
 </pre></div>
 
@@ -1214,8 +1214,8 @@
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">container</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getElement</span><span class="p">(</span><span class="s1">&#39;container&#39;</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">classes</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">classlist</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">container</span><span class="p">);</span>
+<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nx">container</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getElement</span><span class="p">(</span><span class="s1">&#39;container&#39;</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">classes</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">classlist</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">container</span><span class="p">);</span>
 <span class="c1">// classes [&#39;class1&#39;, &#39;class2&#39;]</span>
 </pre></div>
 
@@ -1243,7 +1243,7 @@
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">container</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getElement</span><span class="p">(</span><span class="s1">&#39;container&#39;</span><span class="p">);</span>
+<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nx">container</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getElement</span><span class="p">(</span><span class="s1">&#39;container&#39;</span><span class="p">);</span>
 <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">classlist</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="nx">container</span><span class="p">,</span> <span class="s1">&#39;cls1&#39;</span><span class="p">);</span>
 </pre></div>
 
@@ -1259,8 +1259,8 @@
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">container</span> <span class="o">=</span>  <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getElement</span><span class="p">(</span><span class="s1">&#39;container&#39;</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">size</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">getSize</span><span class="p">(</span><span class="nx">container</span><span class="p">);</span>
+<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nx">container</span> <span class="o">=</span>  <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getElement</span><span class="p">(</span><span class="s1">&#39;container&#39;</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">size</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">getSize</span><span class="p">(</span><span class="nx">container</span><span class="p">);</span>
 <span class="c1">// size.width [px]</span>
 <span class="c1">// size.height [px]</span>
 </pre></div>
@@ -1276,7 +1276,7 @@
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">container</span> <span class="o">=</span>  <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getElement</span><span class="p">(</span><span class="s1">&#39;container&#39;</span><span class="p">);</span>
+<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nx">container</span> <span class="o">=</span>  <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getElement</span><span class="p">(</span><span class="s1">&#39;container&#39;</span><span class="p">);</span>
 <span class="nx">goog</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">setElementShown</span><span class="p">(</span><span class="nx">container</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
 </pre></div>
 
@@ -1291,7 +1291,7 @@
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">container</span> <span class="o">=</span>  <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getElement</span><span class="p">(</span><span class="s1">&#39;container&#39;</span><span class="p">);</span>
+<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nx">container</span> <span class="o">=</span>  <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getElement</span><span class="p">(</span><span class="s1">&#39;container&#39;</span><span class="p">);</span>
 <span class="nx">goog</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">setHeight</span><span class="p">(</span><span class="nx">container</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
 </pre></div>
 
@@ -1306,7 +1306,7 @@
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">container</span> <span class="o">=</span>  <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getElement</span><span class="p">(</span><span class="s1">&#39;container&#39;</span><span class="p">);</span>
+<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nx">container</span> <span class="o">=</span>  <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getElement</span><span class="p">(</span><span class="s1">&#39;container&#39;</span><span class="p">);</span>
 <span class="nx">goog</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">setOpacity</span><span class="p">(</span><span class="nx">container</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">);</span>
 </pre></div>
 
@@ -1322,7 +1322,7 @@
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">container</span> <span class="o">=</span>  <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getElement</span><span class="p">(</span><span class="s1">&#39;container&#39;</span><span class="p">);</span>
+<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nx">container</span> <span class="o">=</span>  <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getElement</span><span class="p">(</span><span class="s1">&#39;container&#39;</span><span class="p">);</span>
 <span class="nx">goog</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">setStyle</span><span class="p">(</span><span class="nx">container</span><span class="p">,</span> <span class="p">{</span>
     <span class="s1">&#39;background-color&#39;</span><span class="o">:</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span>
     <span class="s1">&#39;height&#39;</span><span class="o">:</span> <span class="s1">&#39;100px&#39;</span>

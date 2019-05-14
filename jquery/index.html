@@ -487,17 +487,17 @@
 
 
 <div class="codehilite"><pre><span></span><span class="c1">// jQuery</span>
-<span class="kd">var</span> <span class="nx">firstItem</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#menu li:first&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span>
-<span class="kd">var</span> <span class="nx">lastItem</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#menu li:last&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span>
+<span class="kd">let</span> <span class="nx">firstItem</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#menu li:first&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span>
+<span class="kd">let</span> <span class="nx">lastItem</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#menu li:last&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span>
 
 <span class="c1">// closure</span>
-<span class="kd">var</span> <span class="nx">menuLi</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getElementsByTagNameAndClass</span><span class="p">(</span>
+<span class="kd">let</span> <span class="nx">menuLi</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getElementsByTagNameAndClass</span><span class="p">(</span>
     <span class="s1">&#39;li&#39;</span><span class="p">,</span>
     <span class="kc">undefined</span><span class="p">,</span>
     <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getElement</span><span class="p">(</span><span class="s1">&#39;menu&#39;</span><span class="p">)</span>
 <span class="p">);</span>
 
-<span class="kd">var</span> <span class="nx">firstItem</span> <span class="o">=</span> <span class="nx">menuLi</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+<span class="kd">let</span> <span class="nx">firstItem</span> <span class="o">=</span> <span class="nx">menuLi</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
     <span class="nx">lastItem</span> <span class="o">=</span>  <span class="nx">menuLi</span><span class="p">[</span><span class="nx">menuLi</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span>
 </pre></div>
 
@@ -515,8 +515,8 @@
 <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#menu&#39;</span><span class="p">).</span><span class="nx">prepend</span><span class="p">(</span><span class="s1">&#39;&lt;li&gt;Item 0&lt;/li&gt;&#39;</span><span class="p">);</span>
 
 <span class="c1">// closure</span>
-<span class="kd">var</span> <span class="nx">menu</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getElement</span><span class="p">(</span><span class="s1">&#39;menu&#39;</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">newItem</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">createDom</span><span class="p">(</span><span class="s1">&#39;li&#39;</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">,</span> <span class="s1">&#39;Item 0&#39;</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">menu</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getElement</span><span class="p">(</span><span class="s1">&#39;menu&#39;</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">newItem</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">createDom</span><span class="p">(</span><span class="s1">&#39;li&#39;</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">,</span> <span class="s1">&#39;Item 0&#39;</span><span class="p">);</span>
 <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">insertChildAt</span><span class="p">(</span><span class="nx">menu</span><span class="p">,</span> <span class="nx">newItem</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
 </pre></div>
 

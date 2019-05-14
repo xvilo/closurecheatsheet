@@ -498,7 +498,7 @@
 <span class="cm"> * @override</span>
 <span class="cm"> */</span>
 <span class="nx">app</span><span class="p">.</span><span class="nx">Component</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">createDom</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">element</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">getDomHelper</span><span class="p">().</span><span class="nx">createDom</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">);</span>
+    <span class="kd">let</span> <span class="nx">element</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">getDomHelper</span><span class="p">().</span><span class="nx">createDom</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">);</span>
     <span class="c1">// ...</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">setElementInternal</span><span class="p">(</span><span class="nx">element</span><span class="p">);</span>
 <span class="p">};</span>
@@ -550,16 +550,16 @@
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">component</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">app</span><span class="p">.</span><span class="nx">Component</span><span class="p">();</span>
+<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nx">component</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">app</span><span class="p">.</span><span class="nx">Component</span><span class="p">();</span>
 <span class="nx">component</span><span class="p">.</span><span class="nx">render</span><span class="p">();</span>
 
-<span class="c1">// var container = goog.dom.getDocument().body;</span>
+<span class="c1">// let container = goog.dom.getDocument().body;</span>
 <span class="c1">// component.render(body);</span>
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">item</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getElement</span><span class="p">(</span><span class="s1">&#39;item&#39;</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">component</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">app</span><span class="p">.</span><span class="nx">Component</span><span class="p">();</span>
+<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nx">item</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getElement</span><span class="p">(</span><span class="s1">&#39;item&#39;</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">component</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">app</span><span class="p">.</span><span class="nx">Component</span><span class="p">();</span>
 <span class="nx">component</span><span class="p">.</span><span class="nx">decorate</span><span class="p">(</span><span class="nx">item</span><span class="p">);</span>
 </pre></div>
 
@@ -643,7 +643,7 @@
 <span class="cm"> * @override</span>
 <span class="cm"> */</span>
 <span class="nx">app</span><span class="p">.</span><span class="nx">ControlRenderer</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">createDom</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">control</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">element</span> <span class="o">=</span> <span class="nx">control</span><span class="p">.</span><span class="nx">getDomHelper</span><span class="p">().</span><span class="nx">createDom</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">);</span>
+    <span class="kd">let</span> <span class="nx">element</span> <span class="o">=</span> <span class="nx">control</span><span class="p">.</span><span class="nx">getDomHelper</span><span class="p">().</span><span class="nx">createDom</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">);</span>
     <span class="c1">// ...</span>
     <span class="k">return</span> <span class="nx">element</span><span class="p">;</span>
 <span class="p">};</span>
@@ -659,7 +659,7 @@
 <span class="cm"> * @override</span>
 <span class="cm"> */</span>
 <span class="nx">app</span><span class="p">.</span><span class="nx">ControlRenderer</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">decorate</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">control</span><span class="p">,</span> <span class="nx">element</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">element</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">base</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s1">&#39;decorate&#39;</span><span class="p">,</span> <span class="nx">control</span><span class="p">,</span> <span class="nx">element</span><span class="p">);</span>
+    <span class="kd">let</span> <span class="nx">element</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">base</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s1">&#39;decorate&#39;</span><span class="p">,</span> <span class="nx">control</span><span class="p">,</span> <span class="nx">element</span><span class="p">);</span>
     <span class="c1">// ...</span>
     <span class="k">return</span> <span class="nx">element</span><span class="p">;</span>
 <span class="p">};</span>
@@ -703,10 +703,10 @@
 <span class="p">};</span>
 
 <span class="c1">// get control based on event target:</span>
-<span class="c1">//      var control = this.getOwnerControl(/** @type {Node} */ (e.target));</span>
+<span class="c1">//      let control = this.getOwnerControl(/** @type {Node} */ (e.target));</span>
 
 <span class="c1">// get control</span>
-<span class="c1">//      var control = this.getChild(id);</span>
+<span class="c1">//      let control = this.getChild(id);</span>
 
 <span class="c1">// remove all children</span>
 <span class="c1">//      this.removeChildren(true);</span>
@@ -741,7 +741,7 @@
 <span class="cm"> * @override</span>
 <span class="cm"> */</span>
 <span class="nx">app</span><span class="p">.</span><span class="nx">ContainerRenderer</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">createDom</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">container</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">element</span> <span class="o">=</span> <span class="nx">container</span><span class="p">.</span><span class="nx">getDomHelper</span><span class="p">().</span><span class="nx">createDom</span><span class="p">(</span>
+    <span class="kd">let</span> <span class="nx">element</span> <span class="o">=</span> <span class="nx">container</span><span class="p">.</span><span class="nx">getDomHelper</span><span class="p">().</span><span class="nx">createDom</span><span class="p">(</span>
         <span class="s1">&#39;div&#39;</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">getClassNames</span><span class="p">(</span><span class="nx">container</span><span class="p">).</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
     <span class="p">);</span>
     <span class="c1">// ...</span>
@@ -759,7 +759,7 @@
 <span class="cm"> * @override</span>
 <span class="cm"> */</span>
 <span class="nx">app</span><span class="p">.</span><span class="nx">ContainerRenderer</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">decorate</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">container</span><span class="p">,</span> <span class="nx">element</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">element</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">base</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s1">&#39;decorate&#39;</span><span class="p">,</span> <span class="nx">container</span><span class="p">,</span> <span class="nx">element</span><span class="p">);</span>
+    <span class="kd">let</span> <span class="nx">element</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">base</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s1">&#39;decorate&#39;</span><span class="p">,</span> <span class="nx">container</span><span class="p">,</span> <span class="nx">element</span><span class="p">);</span>
     <span class="c1">// ...</span>
     <span class="k">return</span> <span class="nx">element</span><span class="p">;</span>
 <span class="p">};</span>

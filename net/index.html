@@ -644,24 +644,24 @@
 
 <h3 id="simple-get">Simple GET</h3>
 <div class="codehilite"><pre><span></span><span class="nx">goog</span><span class="p">.</span><span class="nx">net</span><span class="p">.</span><span class="nx">XhrIo</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s1">&#39;/about&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">xhr</span> <span class="o">=</span> <span class="cm">/** @type {goog.net.XhrIo} */</span> <span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">);</span>
-    <span class="kd">var</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">xhr</span><span class="p">.</span><span class="nx">getResponse</span><span class="p">();</span>
-    <span class="c1">//var jsonResponse = xhr.getResponseJson();</span>
+    <span class="kd">let</span> <span class="nx">xhr</span> <span class="o">=</span> <span class="cm">/** @type {goog.net.XhrIo} */</span> <span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">);</span>
+    <span class="kd">let</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">xhr</span><span class="p">.</span><span class="nx">getResponse</span><span class="p">();</span>
+    <span class="c1">//let jsonResponse = xhr.getResponseJson();</span>
 <span class="p">});</span>
 </pre></div>
 
 
 <h3 id="post-with-query-data">POST with query data</h3>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">queryData</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">Uri</span><span class="p">.</span><span class="nx">QueryData</span><span class="p">();</span>
+<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nx">queryData</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">Uri</span><span class="p">.</span><span class="nx">QueryData</span><span class="p">();</span>
 <span class="nx">queryData</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;param1&#39;</span><span class="p">,</span> <span class="s1">&#39;value1&#39;</span><span class="p">);</span>
 <span class="nx">queryData</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;param2&#39;</span><span class="p">,</span> <span class="s1">&#39;value2&#39;</span><span class="p">);</span>
 
-<span class="kd">var</span> <span class="nx">responseHandler</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">xhr</span> <span class="o">=</span> <span class="cm">/** @type {goog.net.XhrIo} */</span> <span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">responseHandler</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">xhr</span> <span class="o">=</span> <span class="cm">/** @type {goog.net.XhrIo} */</span> <span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">);</span>
     <span class="c1">// ...</span>
 <span class="p">};</span>
 
-<span class="kd">var</span> <span class="nx">xhr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">net</span><span class="p">.</span><span class="nx">XhrIo</span><span class="p">();</span>
+<span class="kd">let</span> <span class="nx">xhr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">net</span><span class="p">.</span><span class="nx">XhrIo</span><span class="p">();</span>
 
 <span class="nx">goog</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span>
     <span class="nx">xhr</span><span class="p">,</span>
@@ -682,18 +682,18 @@
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">xhrManager</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">net</span><span class="p">.</span><span class="nx">XhrManager</span><span class="p">(</span><span class="cm">/** opt_maxRetries */</span> <span class="mi">0</span><span class="p">);</span>
+<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nx">xhrManager</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">net</span><span class="p">.</span><span class="nx">XhrManager</span><span class="p">(</span><span class="cm">/** opt_maxRetries */</span> <span class="mi">0</span><span class="p">);</span>
 
 <span class="nx">goog</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span>
     <span class="nx">xhrManager</span><span class="p">,</span>
     <span class="nx">goog</span><span class="p">.</span><span class="nx">net</span><span class="p">.</span><span class="nx">EventType</span><span class="p">.</span><span class="nx">SUCCESS</span><span class="p">,</span>
     <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kd">var</span> <span class="nx">xhr</span> <span class="o">=</span> <span class="cm">/** @type {goog.net.XhrIo} */</span> <span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">);</span>
+        <span class="kd">let</span> <span class="nx">xhr</span> <span class="o">=</span> <span class="cm">/** @type {goog.net.XhrIo} */</span> <span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">);</span>
         <span class="c1">// ...</span>
     <span class="p">}</span>
 <span class="p">);</span>
 
-<span class="kd">var</span> <span class="nx">requestId</span> <span class="o">=</span> <span class="s1">&#39;my-id&#39;</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">requestId</span> <span class="o">=</span> <span class="s1">&#39;my-id&#39;</span><span class="p">;</span>
 <span class="c1">// xhrManager.abort(requestId, true);</span>
 <span class="nx">xhrManager</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">requestId</span><span class="p">,</span> <span class="s1">&#39;/about&#39;</span><span class="p">);</span>
 </pre></div>
@@ -709,14 +709,14 @@
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">iFrameIo</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">net</span><span class="p">.</span><span class="nx">IframeIo</span><span class="p">();</span>
-<span class="kd">var</span> <span class="nx">form</span> <span class="o">=</span> <span class="cm">/** @type {HTMLFormElement} */</span> <span class="p">(</span><span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getElement</span><span class="p">(</span><span class="s1">&#39;form&#39;</span><span class="p">));</span>
+<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nx">iFrameIo</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">net</span><span class="p">.</span><span class="nx">IframeIo</span><span class="p">();</span>
+<span class="kd">let</span> <span class="nx">form</span> <span class="o">=</span> <span class="cm">/** @type {HTMLFormElement} */</span> <span class="p">(</span><span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getElement</span><span class="p">(</span><span class="s1">&#39;form&#39;</span><span class="p">));</span>
 
 <span class="nx">goog</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span>
     <span class="nx">iFrameIo</span><span class="p">,</span>
     <span class="nx">goog</span><span class="p">.</span><span class="nx">net</span><span class="p">.</span><span class="nx">EventType</span><span class="p">.</span><span class="nx">SUCCESS</span><span class="p">,</span>
     <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kd">var</span> <span class="nx">iFrameIo</span> <span class="o">=</span> <span class="cm">/** @type {goog.net.IframeIo} */</span> <span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">);</span>
+        <span class="kd">let</span> <span class="nx">iFrameIo</span> <span class="o">=</span> <span class="cm">/** @type {goog.net.IframeIo} */</span> <span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">);</span>
         <span class="c1">// iFrameIo.getResponseHtml()</span>
         <span class="c1">// iFrameIo.getResponseJson() -&gt; response Content-type: text/plain</span>
         <span class="c1">// ...</span>
@@ -734,19 +734,19 @@
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">imageLoader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">net</span><span class="p">.</span><span class="nx">ImageLoader</span><span class="p">();</span>
+<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nx">imageLoader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">net</span><span class="p">.</span><span class="nx">ImageLoader</span><span class="p">();</span>
 
 <span class="nx">goog</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span>
     <span class="nx">imageLoader</span><span class="p">,</span>
     <span class="nx">goog</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">EventType</span><span class="p">.</span><span class="nx">LOAD</span><span class="p">,</span>
     <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kd">var</span> <span class="nx">image</span> <span class="o">=</span> <span class="cm">/** @type {HTMLImageElement} */</span> <span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">);</span>
+        <span class="kd">let</span> <span class="nx">image</span> <span class="o">=</span> <span class="cm">/** @type {HTMLImageElement} */</span> <span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">);</span>
         <span class="c1">// ...</span>
     <span class="p">}</span>
 <span class="p">);</span>
 
-<span class="kd">var</span> <span class="nx">imageId</span> <span class="o">=</span> <span class="s1">&#39;image-id&#39;</span><span class="p">;</span>
-<span class="kd">var</span> <span class="nx">imageUrl</span> <span class="o">=</span> <span class="s1">&#39;http://.../....jpg&#39;</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">imageId</span> <span class="o">=</span> <span class="s1">&#39;image-id&#39;</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">imageUrl</span> <span class="o">=</span> <span class="s1">&#39;http://.../....jpg&#39;</span><span class="p">;</span>
 <span class="nx">imageLoader</span><span class="p">.</span><span class="nx">addImage</span><span class="p">(</span><span class="nx">imageId</span><span class="p">,</span> <span class="nx">imageUrl</span><span class="p">);</span>
 <span class="nx">imageLoader</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
 </pre></div>
@@ -754,7 +754,7 @@
 
 <h2 id="cookies">Cookies</h2>
 <h3 id="goognetcookiesisenabled">goog.net.cookies.isEnabled</h3>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">cookiesEnabled</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">net</span><span class="p">.</span><span class="nx">cookies</span><span class="p">.</span><span class="nx">isEnabled</span><span class="p">();</span>
+<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nx">cookiesEnabled</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">net</span><span class="p">.</span><span class="nx">cookies</span><span class="p">.</span><span class="nx">isEnabled</span><span class="p">();</span>
 <span class="c1">// true if cookies are enabled</span>
 <span class="c1">// false if cookies are disabled</span>
 </pre></div>
@@ -809,13 +809,13 @@
 
 <h2 id="uri">Uri</h2>
 <h3 id="googuriutilsgetfragment">goog.uri.utils.getFragment</h3>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">fragment</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">uri</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">getFragment</span><span class="p">(</span><span class="s1">&#39;http://www.closurecheatsheet.com/about#xtb-generator&#39;</span><span class="p">);</span>
+<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nx">fragment</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">uri</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">getFragment</span><span class="p">(</span><span class="s1">&#39;http://www.closurecheatsheet.com/about#xtb-generator&#39;</span><span class="p">);</span>
 <span class="c1">// xtb-generator</span>
 </pre></div>
 
 
 <h3 id="googuriutilsgetpath">goog.uri.utils.getPath</h3>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">uri</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">getPath</span><span class="p">(</span><span class="s1">&#39;http://www.closurecheatsheet.com/about#xtb-generator&#39;</span><span class="p">);</span>
+<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">uri</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">getPath</span><span class="p">(</span><span class="s1">&#39;http://www.closurecheatsheet.com/about#xtb-generator&#39;</span><span class="p">);</span>
 <span class="c1">// /about</span>
 </pre></div>
                 
