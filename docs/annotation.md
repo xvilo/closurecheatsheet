@@ -193,6 +193,19 @@ Foo.prototype.insertAll = function(var_args) {
 	// arguments, arguments.length
 };
 ```
+## Type casting
+
+```javascript
+/**
+ * @type {?string}
+ */
+let dataAttr = goog.dom.dataset.get(el, 'attrName');
+
+/**
+ * @type {string}
+ */
+let onlyString = /** @type {string} */ (dataAttr);
+```
 
 ## OOP
 ```javascript
@@ -234,3 +247,4 @@ app.Other = () {
 	goog.base(this);
 };
 ```
+
