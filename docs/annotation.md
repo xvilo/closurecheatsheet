@@ -55,6 +55,7 @@ Foo.prototype.b;
 Foo.prototype.c;
 ```
 
+### Required and optional arguments
 ```js
 /**
  * @param {!string} a Required parameter
