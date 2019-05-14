@@ -1,5 +1,6 @@
 docs_dir: 'docs'
 site_name: 'googleclosure.dev'
+site_url: 'https://googleclosure.dev'
 highlightjs: true
 markdown_extensions:
   - codehilite
