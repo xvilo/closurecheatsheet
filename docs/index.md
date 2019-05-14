@@ -1,5 +1,5 @@
 All credits goes to [Closure Library](https://developers.google.com/closure/library/)
-this is just a cheat sheet. Please feel free to contribute on [GitHub](https://github.com/kuzmisin/closurecheatsheet).
+this is just a cheat sheet. Please feel free to contribute on [GitHub](https://github.com/xvilo/closurecheatsheet). Original work by [kuzmisin - Github](https://github.com/kuzmisin/closurecheatsheet)
 
 This page is definitely not a tutorial. It is considered to be a quick reference with examples, tips, ...
 
