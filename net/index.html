@@ -632,177 +632,192 @@
 <ul>
 <li>https://developers.google.com/closure/library/docs/xhrio</li>
 </ul>
-<pre><code>               [goog.net.EventType.READY_STATE_CHANGE]
-                                 |
-                   [goog.net.EventType.COMPLETE]
-                   /                          \
-    [goog.net.EventType.SUCCESS]        [goog.net.EventType.ERROR]
-                   \                          /
-                    [goog.net.EventType.READY]
-</code></pre>
+<div class="codehilite"><pre><span></span>               <span class="p">[</span><span class="n">goog</span><span class="p">.</span><span class="n">net</span><span class="p">.</span><span class="n">EventType</span><span class="p">.</span><span class="n">READY_STATE_CHANGE</span><span class="p">]</span>
+                                 <span class="o">|</span>
+                   <span class="p">[</span><span class="n">goog</span><span class="p">.</span><span class="n">net</span><span class="p">.</span><span class="n">EventType</span><span class="p">.</span><span class="n">COMPLETE</span><span class="p">]</span>
+                   <span class="o">/</span>                          <span class="err">\</span>
+    <span class="p">[</span><span class="n">goog</span><span class="p">.</span><span class="n">net</span><span class="p">.</span><span class="n">EventType</span><span class="p">.</span><span class="n">SUCCESS</span><span class="p">]</span>        <span class="p">[</span><span class="n">goog</span><span class="p">.</span><span class="n">net</span><span class="p">.</span><span class="n">EventType</span><span class="p">.</span><span class="n">ERROR</span><span class="p">]</span>
+                   <span class="err">\</span>                          <span class="o">/</span>
+                    <span class="p">[</span><span class="n">goog</span><span class="p">.</span><span class="n">net</span><span class="p">.</span><span class="n">EventType</span><span class="p">.</span><span class="n">READY</span><span class="p">]</span>
+</pre></div>
+
 
 <h3 id="simple-get">Simple GET</h3>
-<pre><code class="javascript">goog.net.XhrIo.send('/about', function(e) {
-    var xhr = /** @type {goog.net.XhrIo} */ (e.target);
-    var response = xhr.getResponse();
-    //var jsonResponse = xhr.getResponseJson();
-});
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="nx">goog</span><span class="p">.</span><span class="nx">net</span><span class="p">.</span><span class="nx">XhrIo</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s1">&#39;/about&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">xhr</span> <span class="o">=</span> <span class="cm">/** @type {goog.net.XhrIo} */</span> <span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">xhr</span><span class="p">.</span><span class="nx">getResponse</span><span class="p">();</span>
+    <span class="c1">//var jsonResponse = xhr.getResponseJson();</span>
+<span class="p">});</span>
+</pre></div>
+
 
 <h3 id="post-with-query-data">POST with query data</h3>
-<pre><code class="javascript">var queryData = new goog.Uri.QueryData();
-queryData.set('param1', 'value1');
-queryData.set('param2', 'value2');
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">queryData</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">Uri</span><span class="p">.</span><span class="nx">QueryData</span><span class="p">();</span>
+<span class="nx">queryData</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;param1&#39;</span><span class="p">,</span> <span class="s1">&#39;value1&#39;</span><span class="p">);</span>
+<span class="nx">queryData</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;param2&#39;</span><span class="p">,</span> <span class="s1">&#39;value2&#39;</span><span class="p">);</span>
 
-var responseHandler = function(e) {
-    var xhr = /** @type {goog.net.XhrIo} */ (e.target);
-    // ...
-};
+<span class="kd">var</span> <span class="nx">responseHandler</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">xhr</span> <span class="o">=</span> <span class="cm">/** @type {goog.net.XhrIo} */</span> <span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">);</span>
+    <span class="c1">// ...</span>
+<span class="p">};</span>
 
-var xhr = new goog.net.XhrIo();
+<span class="kd">var</span> <span class="nx">xhr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">net</span><span class="p">.</span><span class="nx">XhrIo</span><span class="p">();</span>
 
-goog.events.listen(
-    xhr,
-    goog.net.EventType.SUCCESS,
-    responseHandler
-);
+<span class="nx">goog</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span>
+    <span class="nx">xhr</span><span class="p">,</span>
+    <span class="nx">goog</span><span class="p">.</span><span class="nx">net</span><span class="p">.</span><span class="nx">EventType</span><span class="p">.</span><span class="nx">SUCCESS</span><span class="p">,</span>
+    <span class="nx">responseHandler</span>
+<span class="p">);</span>
 
-xhr.send('/about', 'POST', queryData.toString());
-</code></pre>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s1">&#39;/about&#39;</span><span class="p">,</span> <span class="s1">&#39;POST&#39;</span><span class="p">,</span> <span class="nx">queryData</span><span class="p">.</span><span class="nx">toString</span><span class="p">());</span>
+</pre></div>
+
 
 <h2 id="goognetxhrmanager">goog.net.XhrManager</h2>
-<pre><code>                     [goog.net.EventType.READY]
-                                 |
-                   [goog.net.EventType.COMPLETE]
-                   /                          \
-    [goog.net.EventType.SUCCESS]        [goog.net.EventType.ERROR]
-</code></pre>
+<div class="codehilite"><pre><span></span>                     <span class="p">[</span><span class="n">goog</span><span class="p">.</span><span class="n">net</span><span class="p">.</span><span class="n">EventType</span><span class="p">.</span><span class="n">READY</span><span class="p">]</span>
+                                 <span class="o">|</span>
+                   <span class="p">[</span><span class="n">goog</span><span class="p">.</span><span class="n">net</span><span class="p">.</span><span class="n">EventType</span><span class="p">.</span><span class="n">COMPLETE</span><span class="p">]</span>
+                   <span class="o">/</span>                          <span class="err">\</span>
+    <span class="p">[</span><span class="n">goog</span><span class="p">.</span><span class="n">net</span><span class="p">.</span><span class="n">EventType</span><span class="p">.</span><span class="n">SUCCESS</span><span class="p">]</span>        <span class="p">[</span><span class="n">goog</span><span class="p">.</span><span class="n">net</span><span class="p">.</span><span class="n">EventType</span><span class="p">.</span><span class="n">ERROR</span><span class="p">]</span>
+</pre></div>
 
-<pre><code class="javascript">var xhrManager = new goog.net.XhrManager(/** opt_maxRetries */ 0);
 
-goog.events.listen(
-    xhrManager,
-    goog.net.EventType.SUCCESS,
-    function(e) {
-        var xhr = /** @type {goog.net.XhrIo} */ (e.target);
-        // ...
-    }
-);
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">xhrManager</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">net</span><span class="p">.</span><span class="nx">XhrManager</span><span class="p">(</span><span class="cm">/** opt_maxRetries */</span> <span class="mi">0</span><span class="p">);</span>
 
-var requestId = 'my-id';
-// xhrManager.abort(requestId, true);
-xhrManager.send(requestId, '/about');
-</code></pre>
+<span class="nx">goog</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span>
+    <span class="nx">xhrManager</span><span class="p">,</span>
+    <span class="nx">goog</span><span class="p">.</span><span class="nx">net</span><span class="p">.</span><span class="nx">EventType</span><span class="p">.</span><span class="nx">SUCCESS</span><span class="p">,</span>
+    <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">xhr</span> <span class="o">=</span> <span class="cm">/** @type {goog.net.XhrIo} */</span> <span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">);</span>
+        <span class="c1">// ...</span>
+    <span class="p">}</span>
+<span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">requestId</span> <span class="o">=</span> <span class="s1">&#39;my-id&#39;</span><span class="p">;</span>
+<span class="c1">// xhrManager.abort(requestId, true);</span>
+<span class="nx">xhrManager</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">requestId</span><span class="p">,</span> <span class="s1">&#39;/about&#39;</span><span class="p">);</span>
+</pre></div>
+
 
 <h2 id="goognetiframeio">goog.net.IframeIo</h2>
 <p>Very usefully for sending FORM 'behind' the scene (especially file upload).</p>
-<pre><code>                   [goog.net.EventType.COMPLETE]
-                   /                          \
-    [goog.net.EventType.SUCCESS]        [goog.net.EventType.ERROR]
-                   \                          /
-                    [goog.net.EventType.READY]
-</code></pre>
+<div class="codehilite"><pre><span></span>                   <span class="p">[</span><span class="n">goog</span><span class="p">.</span><span class="n">net</span><span class="p">.</span><span class="n">EventType</span><span class="p">.</span><span class="n">COMPLETE</span><span class="p">]</span>
+                   <span class="o">/</span>                          <span class="err">\</span>
+    <span class="p">[</span><span class="n">goog</span><span class="p">.</span><span class="n">net</span><span class="p">.</span><span class="n">EventType</span><span class="p">.</span><span class="n">SUCCESS</span><span class="p">]</span>        <span class="p">[</span><span class="n">goog</span><span class="p">.</span><span class="n">net</span><span class="p">.</span><span class="n">EventType</span><span class="p">.</span><span class="n">ERROR</span><span class="p">]</span>
+                   <span class="err">\</span>                          <span class="o">/</span>
+                    <span class="p">[</span><span class="n">goog</span><span class="p">.</span><span class="n">net</span><span class="p">.</span><span class="n">EventType</span><span class="p">.</span><span class="n">READY</span><span class="p">]</span>
+</pre></div>
 
-<pre><code class="javascript">var iFrameIo = new goog.net.IframeIo();
-var form = /** @type {HTMLFormElement} */ (goog.dom.getElement('form'));
 
-goog.events.listen(
-    iFrameIo,
-    goog.net.EventType.SUCCESS,
-    function(e) {
-        var iFrameIo = /** @type {goog.net.IframeIo} */ (e.target);
-        // iFrameIo.getResponseHtml()
-        // iFrameIo.getResponseJson() -&gt; response Content-type: text/plain
-        // ...
-    }
-);
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">iFrameIo</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">net</span><span class="p">.</span><span class="nx">IframeIo</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">form</span> <span class="o">=</span> <span class="cm">/** @type {HTMLFormElement} */</span> <span class="p">(</span><span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getElement</span><span class="p">(</span><span class="s1">&#39;form&#39;</span><span class="p">));</span>
 
-iFrameIo.sendFromForm(form);
-</code></pre>
+<span class="nx">goog</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span>
+    <span class="nx">iFrameIo</span><span class="p">,</span>
+    <span class="nx">goog</span><span class="p">.</span><span class="nx">net</span><span class="p">.</span><span class="nx">EventType</span><span class="p">.</span><span class="nx">SUCCESS</span><span class="p">,</span>
+    <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">iFrameIo</span> <span class="o">=</span> <span class="cm">/** @type {goog.net.IframeIo} */</span> <span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">);</span>
+        <span class="c1">// iFrameIo.getResponseHtml()</span>
+        <span class="c1">// iFrameIo.getResponseJson() -&gt; response Content-type: text/plain</span>
+        <span class="c1">// ...</span>
+    <span class="p">}</span>
+<span class="p">);</span>
+
+<span class="nx">iFrameIo</span><span class="p">.</span><span class="nx">sendFromForm</span><span class="p">(</span><span class="nx">form</span><span class="p">);</span>
+</pre></div>
+
 
 <h2 id="goognetimageloader">goog.net.ImageLoader</h2>
-<pre><code>    [goog.events.EventType.LOAD]     [goog.events.EventType.ERROR]
-                 \                           /
-                 [goog.net.EventType.COMPLETE]
-</code></pre>
+<div class="codehilite"><pre><span></span>    <span class="p">[</span><span class="n">goog</span><span class="p">.</span><span class="n">events</span><span class="p">.</span><span class="n">EventType</span><span class="p">.</span><span class="k">LOAD</span><span class="p">]</span>     <span class="p">[</span><span class="n">goog</span><span class="p">.</span><span class="n">events</span><span class="p">.</span><span class="n">EventType</span><span class="p">.</span><span class="n">ERROR</span><span class="p">]</span>
+                 <span class="err">\</span>                           <span class="o">/</span>
+                 <span class="p">[</span><span class="n">goog</span><span class="p">.</span><span class="n">net</span><span class="p">.</span><span class="n">EventType</span><span class="p">.</span><span class="n">COMPLETE</span><span class="p">]</span>
+</pre></div>
 
-<pre><code class="javascript">var imageLoader = new goog.net.ImageLoader();
 
-goog.events.listen(
-    imageLoader,
-    goog.events.EventType.LOAD,
-    function(e) {
-        var image = /** @type {HTMLImageElement} */ (e.target);
-        // ...
-    }
-);
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">imageLoader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">net</span><span class="p">.</span><span class="nx">ImageLoader</span><span class="p">();</span>
 
-var imageId = 'image-id';
-var imageUrl = 'http://.../....jpg';
-imageLoader.addImage(imageId, imageUrl);
-imageLoader.start();
-</code></pre>
+<span class="nx">goog</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span>
+    <span class="nx">imageLoader</span><span class="p">,</span>
+    <span class="nx">goog</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">EventType</span><span class="p">.</span><span class="nx">LOAD</span><span class="p">,</span>
+    <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">image</span> <span class="o">=</span> <span class="cm">/** @type {HTMLImageElement} */</span> <span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">);</span>
+        <span class="c1">// ...</span>
+    <span class="p">}</span>
+<span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">imageId</span> <span class="o">=</span> <span class="s1">&#39;image-id&#39;</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">imageUrl</span> <span class="o">=</span> <span class="s1">&#39;http://.../....jpg&#39;</span><span class="p">;</span>
+<span class="nx">imageLoader</span><span class="p">.</span><span class="nx">addImage</span><span class="p">(</span><span class="nx">imageId</span><span class="p">,</span> <span class="nx">imageUrl</span><span class="p">);</span>
+<span class="nx">imageLoader</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
+</pre></div>
+
 
 <h2 id="cookies">Cookies</h2>
 <h3 id="goognetcookiesisenabled">goog.net.cookies.isEnabled</h3>
-<pre><code class="javascript">var cookiesEnabled = goog.net.cookies.isEnabled();
-// true if cookies are enabled
-// false if cookies are disabled
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">cookiesEnabled</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">net</span><span class="p">.</span><span class="nx">cookies</span><span class="p">.</span><span class="nx">isEnabled</span><span class="p">();</span>
+<span class="c1">// true if cookies are enabled</span>
+<span class="c1">// false if cookies are disabled</span>
+</pre></div>
+
 
 <h3 id="goognetcookiescontainskey">goog.net.cookies.containsKey</h3>
-<pre><code class="javascript">/**
- * Returns whether there is a cookie with the given name.
- * @param {string} key The name of the cookie to test for.
- * @return {boolean} Whether there is a cookie by that name.
- */
-goog.net.cookies.containsKey = function(key) {}
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * Returns whether there is a cookie with the given name.</span>
+<span class="cm"> * @param {string} key The name of the cookie to test for.</span>
+<span class="cm"> * @return {boolean} Whether there is a cookie by that name.</span>
+<span class="cm"> */</span>
+<span class="nx">goog</span><span class="p">.</span><span class="nx">net</span><span class="p">.</span><span class="nx">cookies</span><span class="p">.</span><span class="nx">containsKey</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">key</span><span class="p">)</span> <span class="p">{}</span>
+</pre></div>
+
 
 <h3 id="goognetcookiesget">goog.net.cookies.get</h3>
-<pre><code class="javascript">/**
- * Returns the value for the first cookie with the given name.
- * @param {string} name  The name of the cookie to get.
- * @param {string=} opt_default  If not found this is returned instead.
- * @return {string|undefined}
- */
-goog.net.cookies.get = function(name, opt_default) {}
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * Returns the value for the first cookie with the given name.</span>
+<span class="cm"> * @param {string} name  The name of the cookie to get.</span>
+<span class="cm"> * @param {string=} opt_default  If not found this is returned instead.</span>
+<span class="cm"> * @return {string|undefined}</span>
+<span class="cm"> */</span>
+<span class="nx">goog</span><span class="p">.</span><span class="nx">net</span><span class="p">.</span><span class="nx">cookies</span><span class="p">.</span><span class="nx">get</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">opt_default</span><span class="p">)</span> <span class="p">{}</span>
+</pre></div>
+
 
 <h3 id="goognetcookiesremove">goog.net.cookies.remove</h3>
-<pre><code class="javascript">/**
- * Removes and expires a cookie.
- * @param {string} name  The cookie name.
- * @param {string=} opt_path  (the default is '/')
- * @param {string=} opt_domain  (default is null)
- * @return {boolean} Whether the cookie existed before it was removed.
- */
-goog.net.cookies.remove = function(name, opt_path, opt_domain) {}
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * Removes and expires a cookie.</span>
+<span class="cm"> * @param {string} name  The cookie name.</span>
+<span class="cm"> * @param {string=} opt_path  (the default is &#39;/&#39;)</span>
+<span class="cm"> * @param {string=} opt_domain  (default is null)</span>
+<span class="cm"> * @return {boolean} Whether the cookie existed before it was removed.</span>
+<span class="cm"> */</span>
+<span class="nx">goog</span><span class="p">.</span><span class="nx">net</span><span class="p">.</span><span class="nx">cookies</span><span class="p">.</span><span class="nx">remove</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">opt_path</span><span class="p">,</span> <span class="nx">opt_domain</span><span class="p">)</span> <span class="p">{}</span>
+</pre></div>
+
 
 <h3 id="goognetcookiesset">goog.net.cookies.set</h3>
-<pre><code class="javascript">/**
- * @param {string} name
- * @param {string} value
- * @param {number=} opt_maxAge in seconds (from now), -1 session cookie
- * @param {?string=} opt_path
- * @param {?string=} opt_domain
- * @param {boolean=} opt_secure
- */
-goog.net.cookies.set = function(
-    name, value, opt_maxAge, opt_path, opt_domain, opt_secure) {}
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * @param {string} name</span>
+<span class="cm"> * @param {string} value</span>
+<span class="cm"> * @param {number=} opt_maxAge in seconds (from now), -1 session cookie</span>
+<span class="cm"> * @param {?string=} opt_path</span>
+<span class="cm"> * @param {?string=} opt_domain</span>
+<span class="cm"> * @param {boolean=} opt_secure</span>
+<span class="cm"> */</span>
+<span class="nx">goog</span><span class="p">.</span><span class="nx">net</span><span class="p">.</span><span class="nx">cookies</span><span class="p">.</span><span class="nx">set</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span>
+    <span class="nx">name</span><span class="p">,</span> <span class="nx">value</span><span class="p">,</span> <span class="nx">opt_maxAge</span><span class="p">,</span> <span class="nx">opt_path</span><span class="p">,</span> <span class="nx">opt_domain</span><span class="p">,</span> <span class="nx">opt_secure</span><span class="p">)</span> <span class="p">{}</span>
+</pre></div>
+
 
 <h2 id="uri">Uri</h2>
 <h3 id="googuriutilsgetfragment">goog.uri.utils.getFragment</h3>
-<pre><code class="javascript">var fragment = goog.uri.utils.getFragment('http://www.closurecheatsheet.com/about#xtb-generator');
-// xtb-generator
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">fragment</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">uri</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">getFragment</span><span class="p">(</span><span class="s1">&#39;http://www.closurecheatsheet.com/about#xtb-generator&#39;</span><span class="p">);</span>
+<span class="c1">// xtb-generator</span>
+</pre></div>
+
 
 <h3 id="googuriutilsgetpath">goog.uri.utils.getPath</h3>
-<pre><code class="javascript">var path = goog.uri.utils.getPath('http://www.closurecheatsheet.com/about#xtb-generator');
-// /about
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">uri</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">getPath</span><span class="p">(</span><span class="s1">&#39;http://www.closurecheatsheet.com/about#xtb-generator&#39;</span><span class="p">);</span>
+<span class="c1">// /about</span>
+</pre></div>
                 
                   
                 

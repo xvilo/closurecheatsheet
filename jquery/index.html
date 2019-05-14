@@ -478,64 +478,69 @@
                 
                 <h2 id="dom">DOM</h2>
 <h3 id="first-last">:first, :last</h3>
-<pre><code class="html">&lt;ul id=&quot;menu&quot;&gt;
-    &lt;li&gt;Item 1&lt;/li&gt;
-    &lt;li&gt;Item 2&lt;/li&gt;
-    &lt;li&gt;Item 3&lt;/li&gt;
-&lt;/ul&gt;
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">ul</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;menu&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Item 1<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Item 2<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Item 3<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</pre></div>
 
-<pre><code class="javascript">// jQuery
-var firstItem = $('#menu li:first')[0];
-var lastItem = $('#menu li:last')[0];
 
-// closure
-var menuLi = goog.dom.getElementsByTagNameAndClass(
-    'li',
-    undefined,
-    goog.dom.getElement('menu')
-);
+<div class="codehilite"><pre><span></span><span class="c1">// jQuery</span>
+<span class="kd">var</span> <span class="nx">firstItem</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#menu li:first&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span>
+<span class="kd">var</span> <span class="nx">lastItem</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#menu li:last&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span>
 
-var firstItem = menuLi[0],
-    lastItem =  menuLi[menuLi.length - 1];
-</code></pre>
+<span class="c1">// closure</span>
+<span class="kd">var</span> <span class="nx">menuLi</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getElementsByTagNameAndClass</span><span class="p">(</span>
+    <span class="s1">&#39;li&#39;</span><span class="p">,</span>
+    <span class="kc">undefined</span><span class="p">,</span>
+    <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getElement</span><span class="p">(</span><span class="s1">&#39;menu&#39;</span><span class="p">)</span>
+<span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">firstItem</span> <span class="o">=</span> <span class="nx">menuLi</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+    <span class="nx">lastItem</span> <span class="o">=</span>  <span class="nx">menuLi</span><span class="p">[</span><span class="nx">menuLi</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span>
+</pre></div>
+
 
 <h3 id="prepend">.prepend()</h3>
-<pre><code class="html">&lt;ul id=&quot;menu&quot;&gt;
-    &lt;li&gt;Item 1&lt;/li&gt;
-    &lt;li&gt;Item 2&lt;/li&gt;
-    &lt;li&gt;Item 3&lt;/li&gt;
-&lt;/ul&gt;
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">ul</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;menu&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Item 1<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Item 2<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Item 3<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</pre></div>
 
-<pre><code class="javascript">// jQuery
-$('#menu').prepend('&lt;li&gt;Item 0&lt;/li&gt;');
 
-// closure
-var menu = goog.dom.getElement('menu');
-var newItem = goog.dom.createDom('li', undefined, 'Item 0');
-goog.dom.insertChildAt(menu, newItem, 0);
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="c1">// jQuery</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#menu&#39;</span><span class="p">).</span><span class="nx">prepend</span><span class="p">(</span><span class="s1">&#39;&lt;li&gt;Item 0&lt;/li&gt;&#39;</span><span class="p">);</span>
+
+<span class="c1">// closure</span>
+<span class="kd">var</span> <span class="nx">menu</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getElement</span><span class="p">(</span><span class="s1">&#39;menu&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">newItem</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">createDom</span><span class="p">(</span><span class="s1">&#39;li&#39;</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">,</span> <span class="s1">&#39;Item 0&#39;</span><span class="p">);</span>
+<span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">insertChildAt</span><span class="p">(</span><span class="nx">menu</span><span class="p">,</span> <span class="nx">newItem</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</pre></div>
+
 
 <h2 id="event">Event</h2>
 <h3 id="click-handler">Click handler</h3>
-<pre><code class="html">&lt;div id=&quot;container&quot; style=&quot;width: 100px; height: 100px;&quot;&gt;&lt;/div&gt;
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;container&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;width: 100px; height: 100px;&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
 
-<pre><code class="javascript">// jQuery
-$('#container').click(function(e) {
-    // ...
-});
 
-// closure
-goog.events.listen(
-    goog.dom.getElement('container'),
-    goog.events.EventType.CLICK,
-    function(e) {
-        // ...
-    }
-);
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="c1">// jQuery</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#container&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+<span class="p">});</span>
+
+<span class="c1">// closure</span>
+<span class="nx">goog</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span>
+    <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getElement</span><span class="p">(</span><span class="s1">&#39;container&#39;</span><span class="p">),</span>
+    <span class="nx">goog</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">EventType</span><span class="p">.</span><span class="nx">CLICK</span><span class="p">,</span>
+    <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// ...</span>
+    <span class="p">}</span>
+<span class="p">);</span>
+</pre></div>
                 
                   
                 

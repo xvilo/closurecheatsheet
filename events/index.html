@@ -612,280 +612,291 @@
                 
                 <h2 id="listen">Listen</h2>
 <h3 id="googeventslisten">goog.events.listen</h3>
-<pre><code class="javascript">/**
- * Adds an event listener for a specific event on a DOM Node or goog.events.EventTarget
- *
- * @param {goog.events.ListenableType} src The node to listen to events on.
- * @param {string|Array.&lt;string&gt;} type Event type or array of event types.
- * @param {Function|Object} listener Callback method
- * @param {boolean=} opt_capt Whether to fire in capture phase (defaults to false)
- * @param {Object=} opt_handler Element in whose scope to call the listener.
- * @return {goog.events.Key} Unique key for the listener.
- */
-goog.events.listen = function(src, type, listener, opt_capt, opt_handler) {}
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * Adds an event listener for a specific event on a DOM Node or goog.events.EventTarget</span>
+<span class="cm"> *</span>
+<span class="cm"> * @param {goog.events.ListenableType} src The node to listen to events on.</span>
+<span class="cm"> * @param {string|Array.&lt;string&gt;} type Event type or array of event types.</span>
+<span class="cm"> * @param {Function|Object} listener Callback method</span>
+<span class="cm"> * @param {boolean=} opt_capt Whether to fire in capture phase (defaults to false)</span>
+<span class="cm"> * @param {Object=} opt_handler Element in whose scope to call the listener.</span>
+<span class="cm"> * @return {goog.events.Key} Unique key for the listener.</span>
+<span class="cm"> */</span>
+<span class="nx">goog</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">listen</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">src</span><span class="p">,</span> <span class="nx">type</span><span class="p">,</span> <span class="nx">listener</span><span class="p">,</span> <span class="nx">opt_capt</span><span class="p">,</span> <span class="nx">opt_handler</span><span class="p">)</span> <span class="p">{}</span>
+</pre></div>
 
-<pre><code class="javascript">var container = goog.dom.getElement('container');
 
-goog.events.listen(
-    container,
-    goog.events.EventType.CLICK,
-    function(e) {
-        // ...
-    }
-);
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">container</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getElement</span><span class="p">(</span><span class="s1">&#39;container&#39;</span><span class="p">);</span>
 
-goog.events.listen(
-    container,
-    [goog.events.EventType.MOUSEOVER, goog.events.EventType.MOUSEOUT],
-    function(e) {
-        // ...
-    }
-);
-</code></pre>
+<span class="nx">goog</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span>
+    <span class="nx">container</span><span class="p">,</span>
+    <span class="nx">goog</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">EventType</span><span class="p">.</span><span class="nx">CLICK</span><span class="p">,</span>
+    <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// ...</span>
+    <span class="p">}</span>
+<span class="p">);</span>
 
-<pre><code class="javascript">/**
- * @constructor
- */
-app.Foo = function() {
-    var container = goog.dom.getElement('container');
+<span class="nx">goog</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span>
+    <span class="nx">container</span><span class="p">,</span>
+    <span class="p">[</span><span class="nx">goog</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">EventType</span><span class="p">.</span><span class="nx">MOUSEOVER</span><span class="p">,</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">EventType</span><span class="p">.</span><span class="nx">MOUSEOUT</span><span class="p">],</span>
+    <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// ...</span>
+    <span class="p">}</span>
+<span class="p">);</span>
+</pre></div>
 
-    goog.events.listen(
-        container,
-        goog.events.EventType.CLICK,
-        this.handleClick_,
-        false, // capture phase (means from parent to child)
-        this // run in THIS scope
-    );
-};
 
-/**
- * @param {goog.events.Event} e
- * @private
- */
-app.Foo.prototype.handleClick_ = function(e) {
-    // ...
-};
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * @constructor</span>
+<span class="cm"> */</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">Foo</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">container</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getElement</span><span class="p">(</span><span class="s1">&#39;container&#39;</span><span class="p">);</span>
+
+    <span class="nx">goog</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span>
+        <span class="nx">container</span><span class="p">,</span>
+        <span class="nx">goog</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">EventType</span><span class="p">.</span><span class="nx">CLICK</span><span class="p">,</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">handleClick_</span><span class="p">,</span>
+        <span class="kc">false</span><span class="p">,</span> <span class="c1">// capture phase (means from parent to child)</span>
+        <span class="k">this</span> <span class="c1">// run in THIS scope</span>
+    <span class="p">);</span>
+<span class="p">};</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * @param {goog.events.Event} e</span>
+<span class="cm"> * @private</span>
+<span class="cm"> */</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">Foo</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">handleClick_</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+<span class="p">};</span>
+</pre></div>
+
 
 <h2 id="unlisten">Unlisten</h2>
 <h3 id="googeventsunlisten">goog.events.unlisten</h3>
-<pre><code class="javascript">/**
- * Removes an event listener which was added with listen().
- * @param {goog.events.ListenableType} src The target to stop listening to events on.
- * @param {string|Array.&lt;string&gt;} type The name of the event.
- * @param {Function|Object} listener The listener function to remove.
- * @param {boolean=} opt_capt
- * @param {Object=} opt_handler
- * @return {?boolean} indicating whether the listener was there to remove.
- */
-goog.events.unlisten = function(src, type, listener, opt_capt, opt_handler) {}
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * Removes an event listener which was added with listen().</span>
+<span class="cm"> * @param {goog.events.ListenableType} src The target to stop listening to events on.</span>
+<span class="cm"> * @param {string|Array.&lt;string&gt;} type The name of the event.</span>
+<span class="cm"> * @param {Function|Object} listener The listener function to remove.</span>
+<span class="cm"> * @param {boolean=} opt_capt</span>
+<span class="cm"> * @param {Object=} opt_handler</span>
+<span class="cm"> * @return {?boolean} indicating whether the listener was there to remove.</span>
+<span class="cm"> */</span>
+<span class="nx">goog</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">unlisten</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">src</span><span class="p">,</span> <span class="nx">type</span><span class="p">,</span> <span class="nx">listener</span><span class="p">,</span> <span class="nx">opt_capt</span><span class="p">,</span> <span class="nx">opt_handler</span><span class="p">)</span> <span class="p">{}</span>
+</pre></div>
 
-<pre><code class="javascript">var container = goog.dom.getElement('container');
-var clickHandler = function(e) {
-    // ...
-};
 
-goog.events.listen(
-    container,
-    goog.events.EventType.CLICK,
-    clickHandler
-);
-// ...
-goog.events.unlisten(
-    container,
-    goog.events.EventType.CLICK,
-    clickHandler
-);
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">container</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getElement</span><span class="p">(</span><span class="s1">&#39;container&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">clickHandler</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+<span class="p">};</span>
+
+<span class="nx">goog</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span>
+    <span class="nx">container</span><span class="p">,</span>
+    <span class="nx">goog</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">EventType</span><span class="p">.</span><span class="nx">CLICK</span><span class="p">,</span>
+    <span class="nx">clickHandler</span>
+<span class="p">);</span>
+<span class="c1">// ...</span>
+<span class="nx">goog</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">unlisten</span><span class="p">(</span>
+    <span class="nx">container</span><span class="p">,</span>
+    <span class="nx">goog</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">EventType</span><span class="p">.</span><span class="nx">CLICK</span><span class="p">,</span>
+    <span class="nx">clickHandler</span>
+<span class="p">);</span>
+</pre></div>
+
 
 <h2 id="event-handler">Event Handler</h2>
 <h3 id="googeventseventhandler">goog.events.EventHandler</h3>
 <p>By extending <code>EventHandler</code>, event handlers will have the same lifecycle as the object. (As opposed to <code>goog.events.listen</code> which ties event handler lifecycle to the element.) When instances of an <code>EventHandler</code> class are disposed, the event handlers are removed, even if the element is still present in the DOM.</p>
 <p>This approach also avoids the need for using <code>goog.bind</code> on the event method, or having to pass <code>this</code> as parameter to <code>listen()</code>.</p>
 <p><strong>Do not forget</strong> to call <code>object.dispose()</code> for cleanup (destructing object). Dispose method will also remove all listeners.</p>
-<pre><code class="javascript">/**
- * Example {@code EventHandler} class.
- * @constructor
- * @extends {goog.events.EventHandler}
- * @final
- */
-app.Foo = function() {
-    app.Foo.base(this, 'constructor');
+<div class="codehilite"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * Example {@code EventHandler} class.</span>
+<span class="cm"> * @constructor</span>
+<span class="cm"> * @extends {goog.events.EventHandler}</span>
+<span class="cm"> * @final</span>
+<span class="cm"> */</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">Foo</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">app</span><span class="p">.</span><span class="nx">Foo</span><span class="p">.</span><span class="nx">base</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s1">&#39;constructor&#39;</span><span class="p">);</span>
 
-    var container = goog.dom.getRequiredElement('container');
+    <span class="kd">var</span> <span class="nx">container</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getRequiredElement</span><span class="p">(</span><span class="s1">&#39;container&#39;</span><span class="p">);</span>
 
-    // listen for CLICK -&gt; handled by this.handleClick_ 
-    // note: this.listenOnce() is also useful.
-    this.listen(
-        container,
-        goog.events.EventType.CLICK, 
-        this.handleClick_
-    );
+    <span class="c1">// listen for CLICK -&gt; handled by this.handleClick_ </span>
+    <span class="c1">// note: this.listenOnce() is also useful.</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span>
+        <span class="nx">container</span><span class="p">,</span>
+        <span class="nx">goog</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">EventType</span><span class="p">.</span><span class="nx">CLICK</span><span class="p">,</span> 
+        <span class="k">this</span><span class="p">.</span><span class="nx">handleClick_</span>
+    <span class="p">);</span>
 
-    // listen for MOUSEOVER, MOUSEOUT -&gt; handled by this.handleMouseEvent_
-    this.listen(
-        container,
-        [goog.events.EventType.MOUSEOVER, goog.events.EventType.MOUSEOUT],
-        this.handleMouseEvent_
-    );
-};
-goog.inherits(app.Foo, goog.events.EventHandler);
-
-
-/**
- * Handles mouse being hovered over container.
- * @param {!goog.events.BrowserEvent} e
- * @private
- */
-app.Foo.prototype.handleMouseEvent_ = function(e) {
-    var type = e.type;  // e.g. goog.events.EventType.MOUSEOVER
-    // ...
-};
+    <span class="c1">// listen for MOUSEOVER, MOUSEOUT -&gt; handled by this.handleMouseEvent_</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span>
+        <span class="nx">container</span><span class="p">,</span>
+        <span class="p">[</span><span class="nx">goog</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">EventType</span><span class="p">.</span><span class="nx">MOUSEOVER</span><span class="p">,</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">EventType</span><span class="p">.</span><span class="nx">MOUSEOUT</span><span class="p">],</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">handleMouseEvent_</span>
+    <span class="p">);</span>
+<span class="p">};</span>
+<span class="nx">goog</span><span class="p">.</span><span class="nx">inherits</span><span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="nx">Foo</span><span class="p">,</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">EventHandler</span><span class="p">);</span>
 
 
-/**
- * Handles container being clicked.
- * @param {!goog.events.BrowserEvent} e
- * @private
- */
-app.Foo.prototype.handleClick_ = function(e) {
-    // ...
-};
-</code></pre>
+<span class="cm">/**</span>
+<span class="cm"> * Handles mouse being hovered over container.</span>
+<span class="cm"> * @param {!goog.events.BrowserEvent} e</span>
+<span class="cm"> * @private</span>
+<span class="cm"> */</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">Foo</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">handleMouseEvent_</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">type</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">type</span><span class="p">;</span>  <span class="c1">// e.g. goog.events.EventType.MOUSEOVER</span>
+    <span class="c1">// ...</span>
+<span class="p">};</span>
+
+
+<span class="cm">/**</span>
+<span class="cm"> * Handles container being clicked.</span>
+<span class="cm"> * @param {!goog.events.BrowserEvent} e</span>
+<span class="cm"> * @private</span>
+<span class="cm"> */</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">Foo</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">handleClick_</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+<span class="p">};</span>
+</pre></div>
+
 
 <h2 id="history">History</h2>
-<pre><code class="javascript">var history = new goog.History();
-history.setEnabled(true);
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">history</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">History</span><span class="p">();</span>
+<span class="nx">history</span><span class="p">.</span><span class="nx">setEnabled</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
 
-goog.events.listen(
-    history,
-    goog.history.EventType.NAVIGATE,
-    function(/** goog.history.Event */ e) {
-        // e.token
-        // e.isNavigation
-        // ...
-    }
-);
-</code></pre>
+<span class="nx">goog</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span>
+    <span class="nx">history</span><span class="p">,</span>
+    <span class="nx">goog</span><span class="p">.</span><span class="nx">history</span><span class="p">.</span><span class="nx">EventType</span><span class="p">.</span><span class="nx">NAVIGATE</span><span class="p">,</span>
+    <span class="kd">function</span><span class="p">(</span><span class="cm">/** goog.history.Event */</span> <span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// e.token</span>
+        <span class="c1">// e.isNavigation</span>
+        <span class="c1">// ...</span>
+    <span class="p">}</span>
+<span class="p">);</span>
+</pre></div>
+
 
 <h2 id="key-handler">Key Handler</h2>
 <h3 id="googeventskeyhandler">goog.events.KeyHandler</h3>
-<pre><code class="javascript">var keyHandler = new goog.events.KeyHandler(goog.dom.getDocument().body);
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">keyHandler</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">KeyHandler</span><span class="p">(</span><span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getDocument</span><span class="p">().</span><span class="nx">body</span><span class="p">);</span>
 
-goog.events.listen(
-    keyHandler,
-    goog.events.KeyHandler.EventType.KEY,
-    function(e) {
-        // e.repeat
-        // e.keyCode goog.events.KeyCodes
-        // e.charCode String.fromCharCode()
-        // e.altKey
-        // e.shiftKey
-    }
-);
-</code></pre>
+<span class="nx">goog</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span>
+    <span class="nx">keyHandler</span><span class="p">,</span>
+    <span class="nx">goog</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">KeyHandler</span><span class="p">.</span><span class="nx">EventType</span><span class="p">.</span><span class="nx">KEY</span><span class="p">,</span>
+    <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// e.repeat</span>
+        <span class="c1">// e.keyCode goog.events.KeyCodes</span>
+        <span class="c1">// e.charCode String.fromCharCode()</span>
+        <span class="c1">// e.altKey</span>
+        <span class="c1">// e.shiftKey</span>
+    <span class="p">}</span>
+<span class="p">);</span>
+</pre></div>
+
 
 <p>More complex example</p>
-<pre><code class="javascript">/**
- * @constructor
- * @extends {goog.Disposable}
- */
-app.Foo = function() {
-    goog.base(this);
+<div class="codehilite"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * @constructor</span>
+<span class="cm"> * @extends {goog.Disposable}</span>
+<span class="cm"> */</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">Foo</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">goog</span><span class="p">.</span><span class="nx">base</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
 
-    this.keyHandler_ = new goog.events.KeyHandler(goog.dom.getDocument().body);
+    <span class="k">this</span><span class="p">.</span><span class="nx">keyHandler_</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">KeyHandler</span><span class="p">(</span><span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getDocument</span><span class="p">().</span><span class="nx">body</span><span class="p">);</span>
 
-    this.getHandler().listen(
-        this.keyHandler_,
-        goog.events.KeyHandler.EventType.KEY,
-        this.handleKey_
-    );
-};
+    <span class="k">this</span><span class="p">.</span><span class="nx">getHandler</span><span class="p">().</span><span class="nx">listen</span><span class="p">(</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">keyHandler_</span><span class="p">,</span>
+        <span class="nx">goog</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">KeyHandler</span><span class="p">.</span><span class="nx">EventType</span><span class="p">.</span><span class="nx">KEY</span><span class="p">,</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">handleKey_</span>
+    <span class="p">);</span>
+<span class="p">};</span>
 
-goog.inherits(app.Foo, goog.Disposable);
+<span class="nx">goog</span><span class="p">.</span><span class="nx">inherits</span><span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="nx">Foo</span><span class="p">,</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">Disposable</span><span class="p">);</span>
 
-/**
- * @type {goog.events.EventHandler}
- */
-app.Foo.prototype.handler_;
+<span class="cm">/**</span>
+<span class="cm"> * @type {goog.events.EventHandler}</span>
+<span class="cm"> */</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">Foo</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">handler_</span><span class="p">;</span>
 
-/**
- * @type {goog.events.KeyHandler}
- */
-app.Foo.prototype.keyHandler_;
+<span class="cm">/**</span>
+<span class="cm"> * @type {goog.events.KeyHandler}</span>
+<span class="cm"> */</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">Foo</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">keyHandler_</span><span class="p">;</span>
 
-/**
- * Create/return EventHandler which has default SCOPE to THIS
- *
- * @returns {goog.events.EventHandler}
- */
-app.Foo.prototype.getHandler = function() {
-    return this.handler_ || (this.handler_ = new goog.events.EventHandler(this));
-};
+<span class="cm">/**</span>
+<span class="cm"> * Create/return EventHandler which has default SCOPE to THIS</span>
+<span class="cm"> *</span>
+<span class="cm"> * @returns {goog.events.EventHandler}</span>
+<span class="cm"> */</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">Foo</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">getHandler</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">handler_</span> <span class="o">||</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">handler_</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">EventHandler</span><span class="p">(</span><span class="k">this</span><span class="p">));</span>
+<span class="p">};</span>
 
-/**
- * @override
- */
-app.Foo.prototype.disposeInternal = function() {
-    if (this.handler_) {
-        this.handler_.dispose();
-        this.handler_ = null;
-    }
-    if (this.keyHandler_) {
-        this.keyHandler_.dispose();
-        this.keyHandler_ = null;
-    }
+<span class="cm">/**</span>
+<span class="cm"> * @override</span>
+<span class="cm"> */</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">Foo</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">disposeInternal</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">handler_</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">handler_</span><span class="p">.</span><span class="nx">dispose</span><span class="p">();</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">handler_</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">keyHandler_</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">keyHandler_</span><span class="p">.</span><span class="nx">dispose</span><span class="p">();</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">keyHandler_</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+    <span class="p">}</span>
 
-    goog.base(this, 'disposeInternal');
-};
+    <span class="nx">goog</span><span class="p">.</span><span class="nx">base</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s1">&#39;disposeInternal&#39;</span><span class="p">);</span>
+<span class="p">};</span>
 
-/**
- * @param {goog.events.KeyEvent} e
- * @private
- */
-app.Foo.prototype.handleKey_ = function(e) {
-    // e.repeat
-    // e.keyCode goog.events.KeyCodes
-    // e.charCode String.fromCharCode()
-    // e.altKey
-    // e.shiftKey
-};
-</code></pre>
+<span class="cm">/**</span>
+<span class="cm"> * @param {goog.events.KeyEvent} e</span>
+<span class="cm"> * @private</span>
+<span class="cm"> */</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">Foo</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">handleKey_</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// e.repeat</span>
+    <span class="c1">// e.keyCode goog.events.KeyCodes</span>
+    <span class="c1">// e.charCode String.fromCharCode()</span>
+    <span class="c1">// e.altKey</span>
+    <span class="c1">// e.shiftKey</span>
+<span class="p">};</span>
+</pre></div>
+
 
 <h2 id="event">Event</h2>
 <p>Use unique ID for custom event</p>
-<pre><code class="javascript">/**
- * @enum {string}
- */
-app.Foo.EventType = {
-    START: goog.events.getUniqueId('start'),
-    STOP: goog.events.getUniqueId('stop')
-};
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * @enum {string}</span>
+<span class="cm"> */</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">Foo</span><span class="p">.</span><span class="nx">EventType</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">START</span><span class="o">:</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">getUniqueId</span><span class="p">(</span><span class="s1">&#39;start&#39;</span><span class="p">),</span>
+    <span class="nx">STOP</span><span class="o">:</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">getUniqueId</span><span class="p">(</span><span class="s1">&#39;stop&#39;</span><span class="p">)</span>
+<span class="p">};</span>
+</pre></div>
+
 
 <h3 id="custom-event">Custom event</h3>
-<pre><code class="javascript">/**
- * @param {number=} opt_start
- * @constructor
- * @extends {goog.events.Event}
- */
-app.Foo.StartEvent = function(opt_start) {
-    goog.base(this, app.Foo.EventType.START);
+<div class="codehilite"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * @param {number=} opt_start</span>
+<span class="cm"> * @constructor</span>
+<span class="cm"> * @extends {goog.events.Event}</span>
+<span class="cm"> */</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">Foo</span><span class="p">.</span><span class="nx">StartEvent</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">opt_start</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">goog</span><span class="p">.</span><span class="nx">base</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">app</span><span class="p">.</span><span class="nx">Foo</span><span class="p">.</span><span class="nx">EventType</span><span class="p">.</span><span class="nx">START</span><span class="p">);</span>
 
-    if (goog.isDef(opt_start)) {
-        this.start = opt_start;
-    }
-};
+    <span class="k">if</span> <span class="p">(</span><span class="nx">goog</span><span class="p">.</span><span class="nx">isDef</span><span class="p">(</span><span class="nx">opt_start</span><span class="p">))</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">start</span> <span class="o">=</span> <span class="nx">opt_start</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
 
-goog.inherits(app.Foo.StartEvent, goog.events.Event);
+<span class="nx">goog</span><span class="p">.</span><span class="nx">inherits</span><span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="nx">Foo</span><span class="p">.</span><span class="nx">StartEvent</span><span class="p">,</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">Event</span><span class="p">);</span>
 
-/**
- * @type {number}
- */
-app.Foo.StartEvent.prototype.start;
-</code></pre>
+<span class="cm">/**</span>
+<span class="cm"> * @type {number}</span>
+<span class="cm"> */</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">Foo</span><span class="p">.</span><span class="nx">StartEvent</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">start</span><span class="p">;</span>
+</pre></div>
+
 
 <h2 id="event-target">Event Target</h2>
 <p>Create your own EventTarget object on which you can:</p>
@@ -894,58 +905,60 @@ app.Foo.StartEvent.prototype.start;
 <li>dispatch events</li>
 <li>be part of structure (like a DOM)</li>
 </ol>
-<pre><code class="javascript">/**
- * @constructor
- * @extends {goog.events.EventTarget}
- */
-app.EventTarget = function() {
-    goog.base(this);
-};
+<div class="codehilite"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * @constructor</span>
+<span class="cm"> * @extends {goog.events.EventTarget}</span>
+<span class="cm"> */</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">EventTarget</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">goog</span><span class="p">.</span><span class="nx">base</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+<span class="p">};</span>
 
-goog.inherits(app.EventTarget, goog.events.EventTarget);
-</code></pre>
+<span class="nx">goog</span><span class="p">.</span><span class="nx">inherits</span><span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="nx">EventTarget</span><span class="p">,</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">EventTarget</span><span class="p">);</span>
+</pre></div>
 
-<pre><code class="javascript">var target = new app.EventTarget();
 
-goog.events.listen(
-    target,
-    'custom-event',
-    function(e) {
-        // ...
-    }
-);
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">target</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">app</span><span class="p">.</span><span class="nx">EventTarget</span><span class="p">();</span>
 
-// ...
+<span class="nx">goog</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span>
+    <span class="nx">target</span><span class="p">,</span>
+    <span class="s1">&#39;custom-event&#39;</span><span class="p">,</span>
+    <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// ...</span>
+    <span class="p">}</span>
+<span class="p">);</span>
 
-goog.events.dispatchEvent(
-    target,
-    'custom-event'
-);
-</code></pre>
+<span class="c1">// ...</span>
 
-<pre><code class="javascript">var parent = new app.EventTarget();
-var child = new app.EventTarget();
+<span class="nx">goog</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">dispatchEvent</span><span class="p">(</span>
+    <span class="nx">target</span><span class="p">,</span>
+    <span class="s1">&#39;custom-event&#39;</span>
+<span class="p">);</span>
+</pre></div>
 
-// set parent for child, so event will bubble up (capture) to parent
-child.setParentEventTarget(parent);
 
-// listen on parent
-goog.events.listen(
-    parent,
-    'custom-event',
-    function(e) {
-        // ...
-    }
-);
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">parent</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">app</span><span class="p">.</span><span class="nx">EventTarget</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">child</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">app</span><span class="p">.</span><span class="nx">EventTarget</span><span class="p">();</span>
 
-// ...
+<span class="c1">// set parent for child, so event will bubble up (capture) to parent</span>
+<span class="nx">child</span><span class="p">.</span><span class="nx">setParentEventTarget</span><span class="p">(</span><span class="nx">parent</span><span class="p">);</span>
 
-// dispatch on child
-goog.events.dispatchEvent(
-    child,
-    'custom-event'
-);
-</code></pre>
+<span class="c1">// listen on parent</span>
+<span class="nx">goog</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span>
+    <span class="nx">parent</span><span class="p">,</span>
+    <span class="s1">&#39;custom-event&#39;</span><span class="p">,</span>
+    <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// ...</span>
+    <span class="p">}</span>
+<span class="p">);</span>
+
+<span class="c1">// ...</span>
+
+<span class="c1">// dispatch on child</span>
+<span class="nx">goog</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">dispatchEvent</span><span class="p">(</span>
+    <span class="nx">child</span><span class="p">,</span>
+    <span class="s1">&#39;custom-event&#39;</span>
+<span class="p">);</span>
+</pre></div>
                 
                   
                 

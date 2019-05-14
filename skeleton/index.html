@@ -564,175 +564,186 @@
                 
                 <h2 id="basic">Basic</h2>
 <h3 id="directory-structure">Directory structure</h3>
-<pre><code>.
-├── bin
-│   └── closure (SoyToJsSrcCompiler.jar, XtbGenerator.jar, compiler.jar)
-│
-└── www
-    ├── css
-    │
-    ├── js
-    │   ├── DIRECTORY_1 (example application directory)
-    │   ├── DIRECTORY_2
-    │   │
-    │   ├── app.js (application entry point)
-    │   └── ... (app-compiled.js, app-deps.js, app-messages.js)
-    │
-    ├── js-closure (cloned closure GIT repository)
-    │   └── closure
-    │       ├── bin
-    │       └── goog
-    │
-    ├── js-externs
-    │
-    ├── js-soy (soyutils_usegoog.js)
-    │
-    └── index.html
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="p">.</span>
+<span class="err">├──</span> <span class="n">bin</span>
+<span class="err">│  </span> <span class="err">└──</span> <span class="n">closure</span> <span class="p">(</span><span class="n">SoyToJsSrcCompiler</span><span class="p">.</span><span class="n">jar</span><span class="p">,</span> <span class="n">XtbGenerator</span><span class="p">.</span><span class="n">jar</span><span class="p">,</span> <span class="n">compiler</span><span class="p">.</span><span class="n">jar</span><span class="p">)</span>
+<span class="err">│</span>
+<span class="err">└──</span> <span class="n">www</span>
+    <span class="err">├──</span> <span class="n">css</span>
+    <span class="err">│</span>
+    <span class="err">├──</span> <span class="n">js</span>
+    <span class="err">│  </span> <span class="err">├──</span> <span class="n">DIRECTORY_1</span> <span class="p">(</span><span class="n">example</span> <span class="n">application</span> <span class="n">directory</span><span class="p">)</span>
+    <span class="err">│  </span> <span class="err">├──</span> <span class="n">DIRECTORY_2</span>
+    <span class="err">│</span>   <span class="err">│</span>
+    <span class="err">│  </span> <span class="err">├──</span> <span class="n">app</span><span class="p">.</span><span class="n">js</span> <span class="p">(</span><span class="n">application</span> <span class="n">entry</span> <span class="n">point</span><span class="p">)</span>
+    <span class="err">│  </span> <span class="err">└──</span> <span class="p">...</span> <span class="p">(</span><span class="n">app</span><span class="o">-</span><span class="n">compiled</span><span class="p">.</span><span class="n">js</span><span class="p">,</span> <span class="n">app</span><span class="o">-</span><span class="n">deps</span><span class="p">.</span><span class="n">js</span><span class="p">,</span> <span class="n">app</span><span class="o">-</span><span class="n">messages</span><span class="p">.</span><span class="n">js</span><span class="p">)</span>
+    <span class="err">│</span>
+    <span class="err">├──</span> <span class="n">js</span><span class="o">-</span><span class="n">closure</span> <span class="p">(</span><span class="n">cloned</span> <span class="n">closure</span> <span class="n">GIT</span> <span class="n">repository</span><span class="p">)</span>
+    <span class="err">│  </span> <span class="err">└──</span> <span class="n">closure</span>
+    <span class="err">│  </span>  <span class="err">  </span> <span class="err">├──</span> <span class="n">bin</span>
+    <span class="err">│  </span>  <span class="err">  </span> <span class="err">└──</span> <span class="n">goog</span>
+    <span class="err">│</span>
+    <span class="err">├──</span> <span class="n">js</span><span class="o">-</span><span class="n">externs</span>
+    <span class="err">│</span>
+    <span class="err">├──</span> <span class="n">js</span><span class="o">-</span><span class="n">soy</span> <span class="p">(</span><span class="n">soyutils_usegoog</span><span class="p">.</span><span class="n">js</span><span class="p">)</span>
+    <span class="err">│</span>
+    <span class="err">└──</span> <span class="k">index</span><span class="p">.</span><span class="n">html</span>
+</pre></div>
+
 
 <h3 id="bash-variables">BASH variables</h3>
 <p>Relative to <code>./bin</code> directory</p>
-<pre><code class="bash">PYTHON_BIN=&quot;python&quot;
-JVM_ARCH=&quot;-d64&quot;
-CLOSURE_BUILD_DIR=&quot;../www/js-closure/closure/bin/build&quot;
-CLOSURE_UTIL_DIR=&quot;closure&quot;
+<div class="codehilite"><pre><span></span><span class="nv">PYTHON_BIN</span><span class="o">=</span><span class="s2">&quot;python&quot;</span>
+<span class="nv">JVM_ARCH</span><span class="o">=</span><span class="s2">&quot;-d64&quot;</span>
+<span class="nv">CLOSURE_BUILD_DIR</span><span class="o">=</span><span class="s2">&quot;../www/js-closure/closure/bin/build&quot;</span>
+<span class="nv">CLOSURE_UTIL_DIR</span><span class="o">=</span><span class="s2">&quot;closure&quot;</span>
 
-JS_APP_DIR=&quot;../www/js&quot;
-JS_APP_INPUT=&quot;../www/js/app.js&quot;
+<span class="nv">JS_APP_DIR</span><span class="o">=</span><span class="s2">&quot;../www/js&quot;</span>
+<span class="nv">JS_APP_INPUT</span><span class="o">=</span><span class="s2">&quot;../www/js/app.js&quot;</span>
 
-JS_APP_COMPILED=&quot;../www/js/app-compiled.js&quot;
-JS_APP_DEPS=&quot;../www/js/app-deps.js&quot;
-JS_APP_MESSAGES=&quot;../www/js/app-messages.xtb&quot;
+<span class="nv">JS_APP_COMPILED</span><span class="o">=</span><span class="s2">&quot;../www/js/app-compiled.js&quot;</span>
+<span class="nv">JS_APP_DEPS</span><span class="o">=</span><span class="s2">&quot;../www/js/app-deps.js&quot;</span>
+<span class="nv">JS_APP_MESSAGES</span><span class="o">=</span><span class="s2">&quot;../www/js/app-messages.xtb&quot;</span>
 
-JS_CLOSURE_LIB_DIR=&quot;../www/js-closure/closure/goog&quot;
-JS_CLOSURE_THIRD_PARTY_DIR=&quot;../www/js-closure/third_party/closure/goog&quot;
-JS_CLOSURE_SOY_DIR=&quot;../www/js-soy&quot;
+<span class="nv">JS_CLOSURE_LIB_DIR</span><span class="o">=</span><span class="s2">&quot;../www/js-closure/closure/goog&quot;</span>
+<span class="nv">JS_CLOSURE_THIRD_PARTY_DIR</span><span class="o">=</span><span class="s2">&quot;../www/js-closure/third_party/closure/goog&quot;</span>
+<span class="nv">JS_CLOSURE_SOY_DIR</span><span class="o">=</span><span class="s2">&quot;../www/js-soy&quot;</span>
 
-TEMPLATE_DIR=&quot;../www/js&quot;
+<span class="nv">TEMPLATE_DIR</span><span class="o">=</span><span class="s2">&quot;../www/js&quot;</span>
 
-URL_APP=&quot;../../../js&quot;
-URL_SOY=&quot;../../../js-soy&quot;
+<span class="nv">URL_APP</span><span class="o">=</span><span class="s2">&quot;../../../js&quot;</span>
+<span class="nv">URL_SOY</span><span class="o">=</span><span class="s2">&quot;../../../js-soy&quot;</span>
 
-LANG=&quot;cs&quot;
-LOCALE=&quot;cs_CZ&quot;
-</code></pre>
+<span class="nv">LANG</span><span class="o">=</span><span class="s2">&quot;cs&quot;</span>
+<span class="nv">LOCALE</span><span class="o">=</span><span class="s2">&quot;cs_CZ&quot;</span>
+</pre></div>
+
 
 <h3 id="index-develhtml">index-devel.html</h3>
-<pre><code class="html">&lt;!doctype html&gt;
-&lt;html&gt;
-&lt;head&gt;
-    &lt;script src=&quot;/js-closure/closure/goog/base.js&quot;&gt;&lt;/script&gt;
-    &lt;script src=&quot;/js/app-deps.js&quot;&gt;&lt;/script&gt;
-    &lt;script&gt;
-        goog.require('app.start');
-    &lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;!-- HTML CONTENT --&gt;
-    &lt;script&gt;
-        app.start();
-    &lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;!doctype html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;/js-closure/closure/goog/base.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;/js/app-deps.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+        <span class="nx">goog</span><span class="p">.</span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;app.start&#39;</span><span class="p">);</span>
+    <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="c">&lt;!-- HTML CONTENT --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+        <span class="nx">app</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
+    <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+
 
 <h3 id="index-prodhtml">index-prod.html</h3>
-<pre><code class="html">&lt;!doctype html&gt;
-&lt;html&gt;
-&lt;head&gt;
-    &lt;script src=&quot;/js/app-compiled.js&quot;&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;!-- HTML CONTENT --&gt;
-    &lt;script&gt;
-        app.start();
-    &lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;!doctype html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;/js/app-compiled.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="c">&lt;!-- HTML CONTENT --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+        <span class="nx">app</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
+    <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+
 
 <h3 id="deps">Deps</h3>
 <p>Scan and generate <code>./www/js/app-deps.js</code> (dependencies) based on <code>goog.provide()</code> and <code>goog.require()</code></p>
-<pre><code class="bash">${PYTHON_BIN} ${CLOSURE_BUILD_DIR}/depswriter.py \
-    --root_with_prefix=&quot;${JS_APP_DIR} ${URL_APP}&quot; \
-    --root_with_prefix=&quot;${JS_CLOSURE_SOY_DIR} ${URL_SOY}&quot; \
-    --output_file=${JS_APP_DEPS}
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="si">${</span><span class="nv">PYTHON_BIN</span><span class="si">}</span> <span class="si">${</span><span class="nv">CLOSURE_BUILD_DIR</span><span class="si">}</span>/depswriter.py <span class="se">\</span>
+    --root_with_prefix<span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">JS_APP_DIR</span><span class="si">}</span><span class="s2"> </span><span class="si">${</span><span class="nv">URL_APP</span><span class="si">}</span><span class="s2">&quot;</span> <span class="se">\</span>
+    --root_with_prefix<span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">JS_CLOSURE_SOY_DIR</span><span class="si">}</span><span class="s2"> </span><span class="si">${</span><span class="nv">URL_SOY</span><span class="si">}</span><span class="s2">&quot;</span> <span class="se">\</span>
+    --output_file<span class="o">=</span><span class="si">${</span><span class="nv">JS_APP_DEPS</span><span class="si">}</span>
+</pre></div>
+
 
 <h3 id="templates-soy">Templates (soy)</h3>
 <p>Find all templates <code>*.soy</code> and compile it to JS source.</p>
-<pre><code class="bash">java -jar ${CLOSURE_UTIL_DIR}/SoyToJsSrcCompiler.jar \
-    --outputPathFormat {INPUT_DIRECTORY}/{INPUT_FILE_NAME}.js \
-    --shouldGenerateJsdoc \
-    --shouldProvideRequireSoyNamespaces \
-    --shouldGenerateGoogMsgDefs \
-    --bidiGlobalDir 1 \
-    --srcs $(find ${TEMPLATE_DIR} -iname '*.soy' -type f -print0 | xargs -0 echo)
-</code></pre>
+<div class="codehilite"><pre><span></span>java -jar <span class="si">${</span><span class="nv">CLOSURE_UTIL_DIR</span><span class="si">}</span>/SoyToJsSrcCompiler.jar <span class="se">\</span>
+    --outputPathFormat <span class="o">{</span>INPUT_DIRECTORY<span class="o">}</span>/<span class="o">{</span>INPUT_FILE_NAME<span class="o">}</span>.js <span class="se">\</span>
+    --shouldGenerateJsdoc <span class="se">\</span>
+    --shouldProvideRequireSoyNamespaces <span class="se">\</span>
+    --shouldGenerateGoogMsgDefs <span class="se">\</span>
+    --bidiGlobalDir <span class="m">1</span> <span class="se">\</span>
+    --srcs <span class="k">$(</span>find <span class="si">${</span><span class="nv">TEMPLATE_DIR</span><span class="si">}</span> -iname <span class="s1">&#39;*.soy&#39;</span> -type f -print0 <span class="p">|</span> xargs -0 <span class="nb">echo</span><span class="k">)</span>
+</pre></div>
+
 
 <h3 id="messages">Messages</h3>
 <p>Generate XTB translation file <code>./www/js/app-messages.xtb</code></p>
-<pre><code class="bash">${PYTHON_BIN} ${CLOSURE_BUILD_DIR}/closurebuilder.py \
-    --root=${JS_APP_DIR} \
-    --root=${JS_CLOSURE_LIB_DIR} \
-    --root=${JS_CLOSURE_THIRD_PARTY_DIR} \
-    --root=${JS_CLOSURE_SOY_DIR} \
-    --input=${JS_APP_INPUT} \
-    --output_mode=compiled \
-    --compiler_jar=${CLOSURE_UTIL_DIR}/XtbGenerator.jar \
-    --jvm_flags=&quot;${JVM_ARCH}&quot; \
-    --compiler_flags=&quot;--translations_file=${JS_APP_MESSAGES}&quot; \
-    --compiler_flags=&quot;--xtb_output_file=${JS_APP_MESSAGES}&quot; \
-    --compiler_flags=&quot;--lang=${LANG}&quot;
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="si">${</span><span class="nv">PYTHON_BIN</span><span class="si">}</span> <span class="si">${</span><span class="nv">CLOSURE_BUILD_DIR</span><span class="si">}</span>/closurebuilder.py <span class="se">\</span>
+    --root<span class="o">=</span><span class="si">${</span><span class="nv">JS_APP_DIR</span><span class="si">}</span> <span class="se">\</span>
+    --root<span class="o">=</span><span class="si">${</span><span class="nv">JS_CLOSURE_LIB_DIR</span><span class="si">}</span> <span class="se">\</span>
+    --root<span class="o">=</span><span class="si">${</span><span class="nv">JS_CLOSURE_THIRD_PARTY_DIR</span><span class="si">}</span> <span class="se">\</span>
+    --root<span class="o">=</span><span class="si">${</span><span class="nv">JS_CLOSURE_SOY_DIR</span><span class="si">}</span> <span class="se">\</span>
+    --input<span class="o">=</span><span class="si">${</span><span class="nv">JS_APP_INPUT</span><span class="si">}</span> <span class="se">\</span>
+    --output_mode<span class="o">=</span>compiled <span class="se">\</span>
+    --compiler_jar<span class="o">=</span><span class="si">${</span><span class="nv">CLOSURE_UTIL_DIR</span><span class="si">}</span>/XtbGenerator.jar <span class="se">\</span>
+    --jvm_flags<span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">JVM_ARCH</span><span class="si">}</span><span class="s2">&quot;</span> <span class="se">\</span>
+    --compiler_flags<span class="o">=</span><span class="s2">&quot;--translations_file=</span><span class="si">${</span><span class="nv">JS_APP_MESSAGES</span><span class="si">}</span><span class="s2">&quot;</span> <span class="se">\</span>
+    --compiler_flags<span class="o">=</span><span class="s2">&quot;--xtb_output_file=</span><span class="si">${</span><span class="nv">JS_APP_MESSAGES</span><span class="si">}</span><span class="s2">&quot;</span> <span class="se">\</span>
+    --compiler_flags<span class="o">=</span><span class="s2">&quot;--lang=</span><span class="si">${</span><span class="nv">LANG</span><span class="si">}</span><span class="s2">&quot;</span>
+</pre></div>
+
 
 <h3 id="compile">Compile</h3>
 <p>Compile application into <code>./www/js/app-compiled/js</code></p>
-<pre><code class="bash">${PYTHON_BIN} ${CLOSURE_BUILD_DIR}/closurebuilder.py \
-    --root=${JS_APP_DIR} \
-    --root=${JS_CLOSURE_LIB_DIR} \
-    --root=${JS_CLOSURE_THIRD_PARTY_DIR} \
-    --root=${JS_CLOSURE_SOY_DIR} \
-    --input=${JS_APP_INPUT} \
-    --output_mode=compiled \
-    --compiler_jar=${CLOSURE_UTIL_DIR}/compiler.jar \
-    --jvm_flags=&quot;${JVM_ARCH}&quot; \
-    --compiler_flags=&quot;--compilation_level=ADVANCED_OPTIMIZATIONS&quot; \
-    --compiler_flags=&quot;--warning_level=verbose&quot; \
-    --compiler_flags=&quot;--define=goog.DEBUG=false&quot; \
-    --compiler_flags=&quot;--define=goog.LOCALE='${LOCALE}'&quot; \
-    --output_file=${JS_APP_COMPILED}
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="si">${</span><span class="nv">PYTHON_BIN</span><span class="si">}</span> <span class="si">${</span><span class="nv">CLOSURE_BUILD_DIR</span><span class="si">}</span>/closurebuilder.py <span class="se">\</span>
+    --root<span class="o">=</span><span class="si">${</span><span class="nv">JS_APP_DIR</span><span class="si">}</span> <span class="se">\</span>
+    --root<span class="o">=</span><span class="si">${</span><span class="nv">JS_CLOSURE_LIB_DIR</span><span class="si">}</span> <span class="se">\</span>
+    --root<span class="o">=</span><span class="si">${</span><span class="nv">JS_CLOSURE_THIRD_PARTY_DIR</span><span class="si">}</span> <span class="se">\</span>
+    --root<span class="o">=</span><span class="si">${</span><span class="nv">JS_CLOSURE_SOY_DIR</span><span class="si">}</span> <span class="se">\</span>
+    --input<span class="o">=</span><span class="si">${</span><span class="nv">JS_APP_INPUT</span><span class="si">}</span> <span class="se">\</span>
+    --output_mode<span class="o">=</span>compiled <span class="se">\</span>
+    --compiler_jar<span class="o">=</span><span class="si">${</span><span class="nv">CLOSURE_UTIL_DIR</span><span class="si">}</span>/compiler.jar <span class="se">\</span>
+    --jvm_flags<span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">JVM_ARCH</span><span class="si">}</span><span class="s2">&quot;</span> <span class="se">\</span>
+    --compiler_flags<span class="o">=</span><span class="s2">&quot;--compilation_level=ADVANCED_OPTIMIZATIONS&quot;</span> <span class="se">\</span>
+    --compiler_flags<span class="o">=</span><span class="s2">&quot;--warning_level=verbose&quot;</span> <span class="se">\</span>
+    --compiler_flags<span class="o">=</span><span class="s2">&quot;--define=goog.DEBUG=false&quot;</span> <span class="se">\</span>
+    --compiler_flags<span class="o">=</span><span class="s2">&quot;--define=goog.LOCALE=&#39;</span><span class="si">${</span><span class="nv">LOCALE</span><span class="si">}</span><span class="s2">&#39;&quot;</span> <span class="se">\</span>
+    --output_file<span class="o">=</span><span class="si">${</span><span class="nv">JS_APP_COMPILED</span><span class="si">}</span>
+</pre></div>
+
 
 <h3 id="externs">Externs</h3>
 <p>If you are using another JS lib in your application, you need to provide <code>externs</code> option to compiler. The file must contain annotation definition for each function, object, ...</p>
-<pre><code class="bash">${PYTHON_BIN} ${CLOSURE_BUILD_DIR}/closurebuilder.py \
+<div class="codehilite"><pre><span></span><span class="si">${</span><span class="nv">PYTHON_BIN</span><span class="si">}</span> <span class="si">${</span><span class="nv">CLOSURE_BUILD_DIR</span><span class="si">}</span>/closurebuilder.py <span class="se">\</span>
     ...
-    --output_mode=compiled \
-    --compiler_jar=${CLOSURE_UTIL_DIR}/compiler.jar \
-    --compiler_flags=&quot;--externs=${EXTERNS_DIR}/externs.js&quot;
+    --output_mode<span class="o">=</span>compiled <span class="se">\</span>
+    --compiler_jar<span class="o">=</span><span class="si">${</span><span class="nv">CLOSURE_UTIL_DIR</span><span class="si">}</span>/compiler.jar <span class="se">\</span>
+    --compiler_flags<span class="o">=</span><span class="s2">&quot;--externs=</span><span class="si">${</span><span class="nv">EXTERNS_DIR</span><span class="si">}</span><span class="s2">/externs.js&quot;</span>
     ...
-</code></pre>
+</pre></div>
+
 
 <p>Mostly used <code>externs</code> is already on <a href="https://github.com/google/closure-compiler/tree/master/contrib/externs">compiler externs</a></p>
 <h3 id="source-map">Source map</h3>
 <p>Generating source map (for debugging compiled application)</p>
-<pre><code class="bash">${PYTHON_BIN} ${CLOSURE_BUILD_DIR}/closurebuilder.py \
+<div class="codehilite"><pre><span></span><span class="si">${</span><span class="nv">PYTHON_BIN</span><span class="si">}</span> <span class="si">${</span><span class="nv">CLOSURE_BUILD_DIR</span><span class="si">}</span>/closurebuilder.py <span class="se">\</span>
     ...
-    --output_mode=compiled \
-    --compiler_jar=${CLOSURE_UTIL_DIR}/compiler.jar \
-    --compiler_flags=&quot;--create_source_map=../www/js/source.map&quot; \
+    --output_mode<span class="o">=</span>compiled <span class="se">\</span>
+    --compiler_jar<span class="o">=</span><span class="si">${</span><span class="nv">CLOSURE_UTIL_DIR</span><span class="si">}</span>/compiler.jar <span class="se">\</span>
+    --compiler_flags<span class="o">=</span><span class="s2">&quot;--create_source_map=../www/js/source.map&quot;</span> <span class="se">\</span>
     ...
-</code></pre>
+</pre></div>
+
 
 <p>Add comment to end of <code>./www/js/app-compiled.js</code></p>
-<pre><code class="javascript">
-//@ sourceMappingURL=/js/source.map
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="c1">//@ sourceMappingURL=/js/source.map</span>
+</pre></div>
+
 
 <p>And fix path in source map (replace <code>../www/</code> to <code>/</code>)</p>
-<pre><code class="bash">%s/..\/www\//\//g
-</code></pre>
+<div class="codehilite"><pre><span></span>%s/..<span class="se">\/</span>www<span class="se">\/</span>/<span class="se">\/</span>/g
+</pre></div>
+
 
 <h2 id="basic-example">Basic example</h2>
 <p>Complete skeleton/example:</p>
@@ -745,20 +756,21 @@ LOCALE=&quot;cs_CZ&quot;
 </li>
 </ol>
 <p>Development:</p>
-<pre><code class="bash"># compile SOY templates - when you change SOY template
+<div class="codehilite"><pre><span></span><span class="c1"># compile SOY templates - when you change SOY template</span>
 ./bin/build.sh soy
 
-# generate JS dependencies - when you add/change goog.require or goog.provide
+<span class="c1"># generate JS dependencies - when you add/change goog.require or goog.provide</span>
 ./bin/build.sh deps
 
-# generate messages - when you add/change goog.getMsg
+<span class="c1"># generate messages - when you add/change goog.getMsg</span>
 ./bin/build.sh messages
-</code></pre>
+</pre></div>
+
 
 <p>Production:</p>
-<pre><code class="bash"># compile application - js/app-compiled.js
+<div class="codehilite"><pre><span></span><span class="c1"># compile application - js/app-compiled.js</span>
 ./bin/build.sh build
-</code></pre>
+</pre></div>
                 
                   
                 

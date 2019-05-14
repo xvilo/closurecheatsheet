@@ -453,235 +453,246 @@
                   <h1>Oop</h1>
                 
                 <h2 id="inheritance">Inheritance</h2>
-<pre><code class="javascript">/**
- * @param {string} foo
- * @constructor
- */
-app.Parent = function(foo) {
-    this.foo = foo;
-};
+<div class="codehilite"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * @param {string} foo</span>
+<span class="cm"> * @constructor</span>
+<span class="cm"> */</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">Parent</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">foo</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">foo</span> <span class="o">=</span> <span class="nx">foo</span><span class="p">;</span>
+<span class="p">};</span>
 
-/**
- * @type {string}
- */
-app.Parent.prototype.foo;
+<span class="cm">/**</span>
+<span class="cm"> * @type {string}</span>
+<span class="cm"> */</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">Parent</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">foo</span><span class="p">;</span>
 
-/**
- * @param {string} param
- */
-app.Parent.prototype.doSomething = function(param) {
-    // ...
-};
-</code></pre>
+<span class="cm">/**</span>
+<span class="cm"> * @param {string} param</span>
+<span class="cm"> */</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">Parent</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">doSomething</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">param</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+<span class="p">};</span>
+</pre></div>
 
-<pre><code class="javascript">/**
- * @param {string} foo
- * @param {string} bar
- * @constructor
- * @extends {app.Parent}
- */
-app.Child = function(foo, bar) {
-    app.Child.base(this, 'constructor', foo); // call parent constructor
-    this.bar = bar;
-};
 
-goog.inherits(app.Child, app.Parent);
+<div class="codehilite"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * @param {string} foo</span>
+<span class="cm"> * @param {string} bar</span>
+<span class="cm"> * @constructor</span>
+<span class="cm"> * @extends {app.Parent}</span>
+<span class="cm"> */</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">Child</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">foo</span><span class="p">,</span> <span class="nx">bar</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">app</span><span class="p">.</span><span class="nx">Child</span><span class="p">.</span><span class="nx">base</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s1">&#39;constructor&#39;</span><span class="p">,</span> <span class="nx">foo</span><span class="p">);</span> <span class="c1">// call parent constructor</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">bar</span> <span class="o">=</span> <span class="nx">bar</span><span class="p">;</span>
+<span class="p">};</span>
 
-/**
- * @type {string}
- */
-app.Child.prototype.bar;
+<span class="nx">goog</span><span class="p">.</span><span class="nx">inherits</span><span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="nx">Child</span><span class="p">,</span> <span class="nx">app</span><span class="p">.</span><span class="nx">Parent</span><span class="p">);</span>
 
-/**
- * @override
- */
-app.Child.prototype.doSomething = function(param) {
-    app.Child.base(this, 'doSomething', param); // call super doSomething
+<span class="cm">/**</span>
+<span class="cm"> * @type {string}</span>
+<span class="cm"> */</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">Child</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">bar</span><span class="p">;</span>
 
-    // ...
-};
+<span class="cm">/**</span>
+<span class="cm"> * @override</span>
+<span class="cm"> */</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">Child</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">doSomething</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">param</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">app</span><span class="p">.</span><span class="nx">Child</span><span class="p">.</span><span class="nx">base</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s1">&#39;doSomething&#39;</span><span class="p">,</span> <span class="nx">param</span><span class="p">);</span> <span class="c1">// call super doSomething</span>
 
-</code></pre>
+    <span class="c1">// ...</span>
+<span class="p">};</span>
+</pre></div>
+
 
 <h2 id="singleton">Singleton</h2>
-<pre><code class="javascript">/**
- * @constructor
- */
-app.Foo = function() {
+<div class="codehilite"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * @constructor</span>
+<span class="cm"> */</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">Foo</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
 
-};
+<span class="p">};</span>
 
-goog.addSingletonGetter(app.Foo);
-</code></pre>
+<span class="nx">goog</span><span class="p">.</span><span class="nx">addSingletonGetter</span><span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="nx">Foo</span><span class="p">);</span>
+</pre></div>
 
-<pre><code class="javascript">var fooInstance = /** @type {app.Foo} */ (app.Foo.getInstance());
-</code></pre>
+
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">fooInstance</span> <span class="o">=</span> <span class="cm">/** @type {app.Foo} */</span> <span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="nx">Foo</span><span class="p">.</span><span class="nx">getInstance</span><span class="p">());</span>
+</pre></div>
+
 
 <h2 id="mixin">Mixin</h2>
-<pre><code class="javascript">/**
- * @constructor
- */
-app.Mixin = function() {};
+<div class="codehilite"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * @constructor</span>
+<span class="cm"> */</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">Mixin</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{};</span>
 
-/**
- *
- */
-app.Mixin.prototype.mixinFunction = function() {
+<span class="cm">/**</span>
+<span class="cm"> *</span>
+<span class="cm"> */</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">Mixin</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">mixinFunction</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
 
-};
-</code></pre>
+<span class="p">};</span>
+</pre></div>
 
-<pre><code class="javascript">/**
- * @constructor
- */
-app.Foo = function() {
 
-};
+<div class="codehilite"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * @constructor</span>
+<span class="cm"> */</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">Foo</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
 
-/**
- *
- */
-app.Foo.prototype.fooFunction = function() {
+<span class="p">};</span>
 
-};
+<span class="cm">/**</span>
+<span class="cm"> *</span>
+<span class="cm"> */</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">Foo</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">fooFunction</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
 
-goog.mixin(app.Foo.prototype, app.Mixin.prototype);
-</code></pre>
+<span class="p">};</span>
 
-<pre><code class="javascript">var foo = new app.Foo();
-foo.fooFunction();
-foo.mixinFunction();
-</code></pre>
+<span class="nx">goog</span><span class="p">.</span><span class="nx">mixin</span><span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="nx">Foo</span><span class="p">.</span><span class="nx">prototype</span><span class="p">,</span> <span class="nx">app</span><span class="p">.</span><span class="nx">Mixin</span><span class="p">.</span><span class="nx">prototype</span><span class="p">);</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">foo</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">app</span><span class="p">.</span><span class="nx">Foo</span><span class="p">();</span>
+<span class="nx">foo</span><span class="p">.</span><span class="nx">fooFunction</span><span class="p">();</span>
+<span class="nx">foo</span><span class="p">.</span><span class="nx">mixinFunction</span><span class="p">();</span>
+</pre></div>
+
 
 <h2 id="abstract-interface">Abstract, Interface</h2>
-<pre><code class="javascript">/**
- * Abstract object
- *
- * @constructor
- */
-app.AParent = function() {
+<div class="codehilite"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * Abstract object</span>
+<span class="cm"> *</span>
+<span class="cm"> * @constructor</span>
+<span class="cm"> */</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">AParent</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
 
-};
+<span class="p">};</span>
 
-/**
- * This function must be implemented in child
- */
-app.AParent.prototype.someFunction = goog.abstractMethod;
-</code></pre>
+<span class="cm">/**</span>
+<span class="cm"> * This function must be implemented in child</span>
+<span class="cm"> */</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">AParent</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">someFunction</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">abstractMethod</span><span class="p">;</span>
+</pre></div>
 
-<pre><code class="javascript">/**
- * Interface
- *
- * @interface
- */
-app.Interface = function() {};
 
-/**
- * Interface function
- */
-app.Interface.prototype.interfaceFunction;
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * Interface</span>
+<span class="cm"> *</span>
+<span class="cm"> * @interface</span>
+<span class="cm"> */</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">Interface</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{};</span>
 
-<pre><code class="javascript">/**
- * Child which extends abstract object and implements interface
- *
- * @constructor
- * @extends {app.AParent}
- * @implements {app.Interface}
- */
-app.Child = function() {
-    app.Child.base(this, 'constructor');
-};
+<span class="cm">/**</span>
+<span class="cm"> * Interface function</span>
+<span class="cm"> */</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">Interface</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">interfaceFunction</span><span class="p">;</span>
+</pre></div>
 
-goog.inherits(app.Child, app.AParent)
 
-/**
- * @override
- */
-app.Child.prototype.someFunction = function() {
-    // ...
-};
+<div class="codehilite"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * Child which extends abstract object and implements interface</span>
+<span class="cm"> *</span>
+<span class="cm"> * @constructor</span>
+<span class="cm"> * @extends {app.AParent}</span>
+<span class="cm"> * @implements {app.Interface}</span>
+<span class="cm"> */</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">Child</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">app</span><span class="p">.</span><span class="nx">Child</span><span class="p">.</span><span class="nx">base</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s1">&#39;constructor&#39;</span><span class="p">);</span>
+<span class="p">};</span>
 
-/**
- * @override
- */
-app.Child.prototype.interfaceFunction = function() {
-    // ...
-};
-</code></pre>
+<span class="nx">goog</span><span class="p">.</span><span class="nx">inherits</span><span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="nx">Child</span><span class="p">,</span> <span class="nx">app</span><span class="p">.</span><span class="nx">AParent</span><span class="p">)</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * @override</span>
+<span class="cm"> */</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">Child</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">someFunction</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+<span class="p">};</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * @override</span>
+<span class="cm"> */</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">Child</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">interfaceFunction</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+<span class="p">};</span>
+</pre></div>
+
 
 <h2 id="disposable">Disposable</h2>
-<pre><code class="javascript">/**
- * @constructor
- * @extends {goog.Disposable}
- */
-app.Foo = function() {
-    app.Foo.base(this, 'constructor');
+<div class="codehilite"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * @constructor</span>
+<span class="cm"> * @extends {goog.Disposable}</span>
+<span class="cm"> */</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">Foo</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">app</span><span class="p">.</span><span class="nx">Foo</span><span class="p">.</span><span class="nx">base</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s1">&#39;constructor&#39;</span><span class="p">);</span>
 
-    // non-disposable object (NOT @extends goog.Disposable)
-    this.element = goog.dom.getElement('bar');
-    this.button = goog.dom.createDom(goog.dom.TagName.BUTTON);
+    <span class="c1">// non-disposable object (NOT @extends goog.Disposable)</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">element</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getElement</span><span class="p">(</span><span class="s1">&#39;bar&#39;</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">button</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">createDom</span><span class="p">(</span><span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">TagName</span><span class="p">.</span><span class="nx">BUTTON</span><span class="p">);</span>
 
-    // disposable objects (@extends goog.Disposable)
-    this.handler = new goog.events.EventHandler(this);
+    <span class="c1">// disposable objects (@extends goog.Disposable)</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">handler</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">EventHandler</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
 
-    // register for dispose in disposeInternal()
-    // Alternatively: Call goog.dispose(this.handler) in disposeInternal().
-    this.registerDisposable(this.handler);
-};
+    <span class="c1">// register for dispose in disposeInternal()</span>
+    <span class="c1">// Alternatively: Call goog.dispose(this.handler) in disposeInternal().</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">registerDisposable</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">handler</span><span class="p">);</span>
+<span class="p">};</span>
 
-goog.inherits(app.Foo, goog.Disposable);
+<span class="nx">goog</span><span class="p">.</span><span class="nx">inherits</span><span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="nx">Foo</span><span class="p">,</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">Disposable</span><span class="p">);</span>
 
-/**
- * Reference to DOM object
- *
- * @type {Element}
- */
-app.Foo.prototype.element;
+<span class="cm">/**</span>
+<span class="cm"> * Reference to DOM object</span>
+<span class="cm"> *</span>
+<span class="cm"> * @type {Element}</span>
+<span class="cm"> */</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">Foo</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">element</span><span class="p">;</span>
 
-/**
- * Reference to DOM object
- *
- * @type {!Element}
- */
-app.Foo.prototype.button;
+<span class="cm">/**</span>
+<span class="cm"> * Reference to DOM object</span>
+<span class="cm"> *</span>
+<span class="cm"> * @type {!Element}</span>
+<span class="cm"> */</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">Foo</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">button</span><span class="p">;</span>
 
-/**
- * Another disposable object
- *
- * @type {goog.events.EventHandler}
- */
-app.Foo.prototype.handler;
+<span class="cm">/**</span>
+<span class="cm"> * Another disposable object</span>
+<span class="cm"> *</span>
+<span class="cm"> * @type {goog.events.EventHandler}</span>
+<span class="cm"> */</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">Foo</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">handler</span><span class="p">;</span>
 
-/**
- * Clean/dispose all object, references, ...
- *
- * @override
- */
-app.Foo.prototype.disposeInternal = function() {
-    // cleanup
-    this.element = null;  // Preferred for nullable fields (faster).
-    delete this.button;  // Necessary for non-null fields.
-    this.handler = null;
+<span class="cm">/**</span>
+<span class="cm"> * Clean/dispose all object, references, ...</span>
+<span class="cm"> *</span>
+<span class="cm"> * @override</span>
+<span class="cm"> */</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">Foo</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">disposeInternal</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// cleanup</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">element</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>  <span class="c1">// Preferred for nullable fields (faster).</span>
+    <span class="k">delete</span> <span class="k">this</span><span class="p">.</span><span class="nx">button</span><span class="p">;</span>  <span class="c1">// Necessary for non-null fields.</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">handler</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
 
-    // dispose all disposable object registered as this.registerDisposable()
-    app.Foo.base(this, 'disposeInternal');
-};
-</code></pre>
+    <span class="c1">// dispose all disposable object registered as this.registerDisposable()</span>
+    <span class="nx">app</span><span class="p">.</span><span class="nx">Foo</span><span class="p">.</span><span class="nx">base</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s1">&#39;disposeInternal&#39;</span><span class="p">);</span>
+<span class="p">};</span>
+</pre></div>
 
-<pre><code class="javascript">var a = new app.Foo();
-// ...
-a.dispose();  // Alternatively: goog.dispose(a); which permits null/undefined.
-</code></pre>
+
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">app</span><span class="p">.</span><span class="nx">Foo</span><span class="p">();</span>
+<span class="c1">// ...</span>
+<span class="nx">a</span><span class="p">.</span><span class="nx">dispose</span><span class="p">();</span>  <span class="c1">// Alternatively: goog.dispose(a); which permits null/undefined.</span>
+</pre></div>
+
 
 <p>Monitoring disposable object</p>
-<pre><code class="javascript">// set monitoring mode
-goog.Disposable.MONITORING_MODE = goog.Disposable.MonitoringMode.PERMANENT;
-//goog.Disposable.MONITORING_MODE = goog.Disposable.MonitoringMode.INTERACTIVE;
+<div class="codehilite"><pre><span></span><span class="c1">// set monitoring mode</span>
+<span class="nx">goog</span><span class="p">.</span><span class="nx">Disposable</span><span class="p">.</span><span class="nx">MONITORING_MODE</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">Disposable</span><span class="p">.</span><span class="nx">MonitoringMode</span><span class="p">.</span><span class="nx">PERMANENT</span><span class="p">;</span>
+<span class="c1">//goog.Disposable.MONITORING_MODE = goog.Disposable.MonitoringMode.INTERACTIVE;</span>
 
-// get array of 'undisposed' objects
-console.log(goog.Disposable.getUndisposedObjects());
-</code></pre>
+<span class="c1">// get array of &#39;undisposed&#39; objects</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">goog</span><span class="p">.</span><span class="nx">Disposable</span><span class="p">.</span><span class="nx">getUndisposedObjects</span><span class="p">());</span>
+</pre></div>
                 
                   
                 

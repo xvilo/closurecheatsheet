@@ -538,220 +538,237 @@
                 
                 <p>For more examples visit <a href="https://developers.google.com/closure/compiler/docs/js-for-compiler">compiler annotation</a></p>
 <h2 id="usage">Usage</h2>
-<pre><code class="javascript">/**
- * @param {type} a
- * @return {type}
- */
-function foo(a) {
-    return a;
-}
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * @param {type} a</span>
+<span class="cm"> * @return {type}</span>
+<span class="cm"> */</span>
+<span class="kd">function</span> <span class="nx">foo</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">a</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
 
-<pre><code class="javascript">var b = /** @type {type} */ (a);
-</code></pre>
 
-<pre><code class="javascript">foo(/** @type {type} */ (a));
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="cm">/** @type {type} */</span> <span class="p">(</span><span class="nx">a</span><span class="p">);</span>
+</pre></div>
 
-<pre><code class="javascript">/**
- * @type {type}
- */
-Foo.prototype.a;
-</code></pre>
 
-<pre><code class="javascript">/**
- * @type {*} Whatever
- */
-Foo.prototype.a;
+<div class="codehilite"><pre><span></span><span class="nx">foo</span><span class="p">(</span><span class="cm">/** @type {type} */</span> <span class="p">(</span><span class="nx">a</span><span class="p">));</span>
+</pre></div>
 
-/**
- * @type {string|number|undefined} String or number or undefined
- */
-Foo.prototype.b;
 
-/**
- * @type {?string} String or null
- */
-Foo.prototype.c;
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * @type {type}</span>
+<span class="cm"> */</span>
+<span class="nx">Foo</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">a</span><span class="p">;</span>
+</pre></div>
 
-<pre><code class="javascript">/**
- * @param {!string} a Required parameter
- * @param {string=} opt_b Optional parameter
- */
-Foo.prototype.bar = function(a, opt_b) {
 
-}
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * @type {*} Whatever</span>
+<span class="cm"> */</span>
+<span class="nx">Foo</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">a</span><span class="p">;</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * @type {string|number|undefined} String or number or undefined</span>
+<span class="cm"> */</span>
+<span class="nx">Foo</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">b</span><span class="p">;</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * @type {?string} String or null</span>
+<span class="cm"> */</span>
+<span class="nx">Foo</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">c</span><span class="p">;</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * @param {!string} a Required parameter</span>
+<span class="cm"> * @param {string=} opt_b Optional parameter</span>
+<span class="cm"> */</span>
+<span class="nx">Foo</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">bar</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">opt_b</span><span class="p">)</span> <span class="p">{</span>
+
+<span class="p">}</span>
+</pre></div>
+
 
 <h2 id="primitive-types">Primitive types</h2>
-<pre><code class="javascript">/** @type {number} */
-/** @type {string} */
-/** @type {boolean} */
-/** @type {undefined} */
-/** @type {null} */
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="cm">/** @type {number} */</span>
+<span class="cm">/** @type {string} */</span>
+<span class="cm">/** @type {boolean} */</span>
+<span class="cm">/** @type {undefined} */</span>
+<span class="cm">/** @type {null} */</span>
+</pre></div>
+
 
 <h2 id="const">Const</h2>
-<pre><code class="javascript">/**
- * @const
- * @type {number}
- */
-Foo.A = 1;
+<div class="codehilite"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * @const</span>
+<span class="cm"> * @type {number}</span>
+<span class="cm"> */</span>
+<span class="nx">Foo</span><span class="p">.</span><span class="nx">A</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 
-/**
- * @const
- * @type {string}
- */
-Foo.B = 'text';
-</code></pre>
+<span class="cm">/**</span>
+<span class="cm"> * @const</span>
+<span class="cm"> * @type {string}</span>
+<span class="cm"> */</span>
+<span class="nx">Foo</span><span class="p">.</span><span class="nx">B</span> <span class="o">=</span> <span class="s1">&#39;text&#39;</span><span class="p">;</span>
+</pre></div>
+
 
 <h2 id="array">Array</h2>
-<pre><code class="javascript">/**
- * @param {Array}
- */
+<div class="codehilite"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * @param {Array}</span>
+<span class="cm"> */</span>
 
-/**
- * @param {Array.&lt;*&gt;} Array of unknown/whatever items
- * @param {Array.&lt;string&gt;} Items in array are strings
- * @param {Array.&lt;Object&gt;} Items in array are Objects
- */
+<span class="cm">/**</span>
+<span class="cm"> * @param {Array.&lt;*&gt;} Array of unknown/whatever items</span>
+<span class="cm"> * @param {Array.&lt;string&gt;} Items in array are strings</span>
+<span class="cm"> * @param {Array.&lt;Object&gt;} Items in array are Objects</span>
+<span class="cm"> */</span>
 
-/**
- * @param {Array.&lt;Array.&lt;string&gt;&gt;} Items in array are Arrays of strings
- */
-</code></pre>
+<span class="cm">/**</span>
+<span class="cm"> * @param {Array.&lt;Array.&lt;string&gt;&gt;} Items in array are Arrays of strings</span>
+<span class="cm"> */</span>
+</pre></div>
+
 
 <h2 id="object">Object</h2>
-<pre><code class="javascript">/**
- * @param {Object}
- */
+<div class="codehilite"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * @param {Object}</span>
+<span class="cm"> */</span>
 
-/**
- * @param {Object.&lt;number, string&gt;} Object with number keys and string values
- */
-</code></pre>
+<span class="cm">/**</span>
+<span class="cm"> * @param {Object.&lt;number, string&gt;} Object with number keys and string values</span>
+<span class="cm"> */</span>
+</pre></div>
+
 
 <h2 id="function">Function</h2>
-<pre><code class="javascript">/**
- * @param {Function}
- */
+<div class="codehilite"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * @param {Function}</span>
+<span class="cm"> */</span>
 
-/**
- * @param {function(): boolean} Param is a function which return boolean
- * @param {function(number): boolean} Function with number as parameter and return boolean
- */
-</code></pre>
+<span class="cm">/**</span>
+<span class="cm"> * @param {function(): boolean} Param is a function which return boolean</span>
+<span class="cm"> * @param {function(number): boolean} Function with number as parameter and return boolean</span>
+<span class="cm"> */</span>
+</pre></div>
+
 
 <h2 id="html">Html</h2>
-<pre><code class="javascript">/** @type {Element} */
-/** @type {Document} */
-/** @type {DocumentFragment} */
-/** @type {Node} */
-/** @type {NodeList} */
-/** @type {Window} */
+<div class="codehilite"><pre><span></span><span class="cm">/** @type {Element} */</span>
+<span class="cm">/** @type {Document} */</span>
+<span class="cm">/** @type {DocumentFragment} */</span>
+<span class="cm">/** @type {Node} */</span>
+<span class="cm">/** @type {NodeList} */</span>
+<span class="cm">/** @type {Window} */</span>
 
-/** @type {HTMLAnchorElement} */
-/** @type {HTMLDocument} */
-/** @type {HTMLElement} */
-/** @type {HTMLFormElement} */
-/** @type {HTMLImageElement} */
-</code></pre>
+<span class="cm">/** @type {HTMLAnchorElement} */</span>
+<span class="cm">/** @type {HTMLDocument} */</span>
+<span class="cm">/** @type {HTMLElement} */</span>
+<span class="cm">/** @type {HTMLFormElement} */</span>
+<span class="cm">/** @type {HTMLImageElement} */</span>
+</pre></div>
+
 
 <h2 id="typedef">Typedef</h2>
-<pre><code class="javascript">/**
- * @typedef {{
- *      id: number,
- *      direction: string
- *  }}
- */
-Foo.NAVIGATE_INFO;
+<div class="codehilite"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * @typedef {{</span>
+<span class="cm"> *      id: number,</span>
+<span class="cm"> *      direction: string</span>
+<span class="cm"> *  }}</span>
+<span class="cm"> */</span>
+<span class="nx">Foo</span><span class="p">.</span><span class="nx">NAVIGATE_INFO</span><span class="p">;</span>
 
-/**
- * @type {Foo.NAVIGATE_INFO}
- */
-Foo.prototype.info;
-</code></pre>
+<span class="cm">/**</span>
+<span class="cm"> * @type {Foo.NAVIGATE_INFO}</span>
+<span class="cm"> */</span>
+<span class="nx">Foo</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">info</span><span class="p">;</span>
+</pre></div>
 
-<pre><code class="javascript">/**
- * Function returning &quot;typedef&quot;. Property &quot;style&quot; can be string or null.
- *
- * @return {{link: string, href: string, style: (string|null)}}
- */
-Foo.prototype.getLink = function() {
-    // ...
-    return {
-        link: 'Link',
-        href: 'http://...',
-        style: null
-    };
-}
-</code></pre>
+
+<div class="codehilite"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * Function returning &quot;typedef&quot;. Property &quot;style&quot; can be string or null.</span>
+<span class="cm"> *</span>
+<span class="cm"> * @return {{link: string, href: string, style: (string|null)}}</span>
+<span class="cm"> */</span>
+<span class="nx">Foo</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">getLink</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="nx">link</span><span class="o">:</span> <span class="s1">&#39;Link&#39;</span><span class="p">,</span>
+        <span class="nx">href</span><span class="o">:</span> <span class="s1">&#39;http://...&#39;</span><span class="p">,</span>
+        <span class="nx">style</span><span class="o">:</span> <span class="kc">null</span>
+    <span class="p">};</span>
+<span class="p">}</span>
+</pre></div>
+
 
 <h2 id="enum">Enum</h2>
-<pre><code class="javascript">/**
- * @enum {string}
- */
-Foo.Api = {
-    GET: '/get',
-    PUT: '/put'
-}
+<div class="codehilite"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * @enum {string}</span>
+<span class="cm"> */</span>
+<span class="nx">Foo</span><span class="p">.</span><span class="nx">Api</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">GET</span><span class="o">:</span> <span class="s1">&#39;/get&#39;</span><span class="p">,</span>
+    <span class="nx">PUT</span><span class="o">:</span> <span class="s1">&#39;/put&#39;</span>
+<span class="p">}</span>
 
-/**
- * @enum {number}
- */
-Foo.Direction= {
-    UP: 1,
-    DOWN: 2
-}
-</code></pre>
+<span class="cm">/**</span>
+<span class="cm"> * @enum {number}</span>
+<span class="cm"> */</span>
+<span class="nx">Foo</span><span class="p">.</span><span class="nx">Direction</span><span class="o">=</span> <span class="p">{</span>
+    <span class="nx">UP</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nx">DOWN</span><span class="o">:</span> <span class="mi">2</span>
+<span class="p">}</span>
+</pre></div>
+
 
 <h2 id="varargs">VarArgs</h2>
-<pre><code class="javascript">/**
- * @param {...string} var_args
- */
-Foo.prototype.insertAll = function(var_args) {
-    // arguments, arguments.length
-};
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * @param {...string} var_args</span>
+<span class="cm"> */</span>
+<span class="nx">Foo</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">insertAll</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">var_args</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// arguments, arguments.length</span>
+<span class="p">};</span>
+</pre></div>
+
 
 <h2 id="oop">OOP</h2>
-<pre><code class="javascript">/**
- * @interface
- */
-Foo = function() {};
+<div class="codehilite"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * @interface</span>
+<span class="cm"> */</span>
+<span class="nx">Foo</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{};</span>
 
-/**
- * @param {number} a
- */
-Foo.prototype.bar = function(a) {};
-</code></pre>
+<span class="cm">/**</span>
+<span class="cm"> * @param {number} a</span>
+<span class="cm"> */</span>
+<span class="nx">Foo</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">bar</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span> <span class="p">{};</span>
+</pre></div>
 
-<pre><code class="javascript">/**
- * @constructor
- * @implements {Foo}
- */
-app.Some = () {
 
-};
+<div class="codehilite"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * @constructor</span>
+<span class="cm"> * @implements {Foo}</span>
+<span class="cm"> */</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">Some</span> <span class="o">=</span> <span class="p">()</span> <span class="p">{</span>
 
-/**
- * @param {number} a
- */
-app.Some.prototype.bar = function(a) {
+<span class="p">};</span>
 
-};
+<span class="cm">/**</span>
+<span class="cm"> * @param {number} a</span>
+<span class="cm"> */</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">Some</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">bar</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span> <span class="p">{</span>
 
-</code></pre>
+<span class="p">};</span>
+</pre></div>
 
-<pre><code class="javascript">/**
- * @constructor
- * @extends {app.Some}
- */
-app.Other = () {
-    goog.base(this);
-};
-</code></pre>
+
+<div class="codehilite"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * @constructor</span>
+<span class="cm"> * @extends {app.Some}</span>
+<span class="cm"> */</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">Other</span> <span class="o">=</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">goog</span><span class="p">.</span><span class="nx">base</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+<span class="p">};</span>
+</pre></div>
                 
                   
                 

@@ -453,130 +453,138 @@
                   <h1>I18n</h1>
                 
                 <h2 id="googgetmsg">goog.getMsg</h2>
-<pre><code class="javascript">/** @desc Test */
-var MSG_TEST = goog.getMsg('Test');
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="cm">/** @desc Test */</span>
+<span class="kd">var</span> <span class="nx">MSG_TEST</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">getMsg</span><span class="p">(</span><span class="s1">&#39;Test&#39;</span><span class="p">);</span>
+</pre></div>
 
-<pre><code class="javascript">/**
- * @meaning Meaning
- * @desc Test
- */
-var MSG_TEST_MEANING = goog.getMsg('Test meaning');
-</code></pre>
 
-<pre><code class="javascript">/** @desc Test with placeholder */
-var MSG_TEST_PLACEHOLDER = goog.getMsg('Test with {$ph}', {
-    ph: 'placeholder'
-});
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * @meaning Meaning</span>
+<span class="cm"> * @desc Test</span>
+<span class="cm"> */</span>
+<span class="kd">var</span> <span class="nx">MSG_TEST_MEANING</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">getMsg</span><span class="p">(</span><span class="s1">&#39;Test meaning&#39;</span><span class="p">);</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="cm">/** @desc Test with placeholder */</span>
+<span class="kd">var</span> <span class="nx">MSG_TEST_PLACEHOLDER</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">getMsg</span><span class="p">(</span><span class="s1">&#39;Test with {$ph}&#39;</span><span class="p">,</span> <span class="p">{</span>
+    <span class="nx">ph</span><span class="o">:</span> <span class="s1">&#39;placeholder&#39;</span>
+<span class="p">});</span>
+</pre></div>
+
 
 <h2 id="googlocale">goog.LOCALE</h2>
-<pre><code>af, af_ZA
-am, am_ET
-ar, ar_001, ar_EG
-bg, bg_BG
-bn, bn_BD
-ca, ca_AD, ca_ES
-cs, cs_CZ
-da, da_DK
-de, de_AT, de_BE, de_CH, de_DE, de_LU
-el, el_GR
-en, en_AS, en_AU, en_Dsrt_US, en_FM, en_GB, en_GU, en_IE, en_IN, ...
-es, es_419, es_EA, es_ES, es_IC
-et, et_EE
-eu, eu_ES
-fa, fa_IR
-fi, fi_FI
-fil, fil_PH
-fr, fr_BL, fr_CA, fr_FR, fr_GF, fr_GP, fr_MC, fr_MF, fr_MQ, fr_RE, fr_YT
-gl, gl_ES
-gsw, gsw_CH
-gu, gu_IN
-he, he_IL
-hi, hi_IN
-hr, hr_HR
-hu, hu_HU
-id, id_ID
-in
-is, is_IS
-it, it_IT, it_SM
-iw
-ja, ja_JP
-kn, kn_IN
-ko, ko_KR
-ln, ln_CD
-lt, lt_LT
-lv, lv_LV
-ml, ml_IN
-mr, mr_IN
-ms, ms_MY
-mt, mt_MT
-nl, nl_CW, nl_NL, nl_SX
-no
-or, or_IN
-pl, pl_PL
-pt, pt_BR, pt_PT
-ro, ro_RO
-ru, ru_RU
-sk, sk_SK
-sl, sl_SI
-sq, sq_AL
-sr, sr_Cyrl_RS, sr_Latn_RS
-sv, sv_SE
-sw, sw_TZ
-ta, ta_IN
-te, te_IN
-th, th_TH
-tl
-tr, tr_TR
-uk, uk_UA
-ur, ur_PK
-vi, vi_VN
-zh, zh_CN, zh_HK, zh_Hans_CN, zh_TW
-zu, zu_ZA
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">af</span><span class="p">,</span> <span class="n">af_ZA</span>
+<span class="n">am</span><span class="p">,</span> <span class="n">am_ET</span>
+<span class="n">ar</span><span class="p">,</span> <span class="n">ar_001</span><span class="p">,</span> <span class="n">ar_EG</span>
+<span class="n">bg</span><span class="p">,</span> <span class="n">bg_BG</span>
+<span class="n">bn</span><span class="p">,</span> <span class="n">bn_BD</span>
+<span class="n">ca</span><span class="p">,</span> <span class="n">ca_AD</span><span class="p">,</span> <span class="n">ca_ES</span>
+<span class="n">cs</span><span class="p">,</span> <span class="n">cs_CZ</span>
+<span class="n">da</span><span class="p">,</span> <span class="n">da_DK</span>
+<span class="n">de</span><span class="p">,</span> <span class="n">de_AT</span><span class="p">,</span> <span class="n">de_BE</span><span class="p">,</span> <span class="n">de_CH</span><span class="p">,</span> <span class="n">de_DE</span><span class="p">,</span> <span class="n">de_LU</span>
+<span class="n">el</span><span class="p">,</span> <span class="n">el_GR</span>
+<span class="n">en</span><span class="p">,</span> <span class="n">en_AS</span><span class="p">,</span> <span class="n">en_AU</span><span class="p">,</span> <span class="n">en_Dsrt_US</span><span class="p">,</span> <span class="n">en_FM</span><span class="p">,</span> <span class="n">en_GB</span><span class="p">,</span> <span class="n">en_GU</span><span class="p">,</span> <span class="n">en_IE</span><span class="p">,</span> <span class="n">en_IN</span><span class="p">,</span> <span class="p">...</span>
+<span class="n">es</span><span class="p">,</span> <span class="n">es_419</span><span class="p">,</span> <span class="n">es_EA</span><span class="p">,</span> <span class="n">es_ES</span><span class="p">,</span> <span class="n">es_IC</span>
+<span class="n">et</span><span class="p">,</span> <span class="n">et_EE</span>
+<span class="n">eu</span><span class="p">,</span> <span class="n">eu_ES</span>
+<span class="n">fa</span><span class="p">,</span> <span class="n">fa_IR</span>
+<span class="n">fi</span><span class="p">,</span> <span class="n">fi_FI</span>
+<span class="n">fil</span><span class="p">,</span> <span class="n">fil_PH</span>
+<span class="n">fr</span><span class="p">,</span> <span class="n">fr_BL</span><span class="p">,</span> <span class="n">fr_CA</span><span class="p">,</span> <span class="n">fr_FR</span><span class="p">,</span> <span class="n">fr_GF</span><span class="p">,</span> <span class="n">fr_GP</span><span class="p">,</span> <span class="n">fr_MC</span><span class="p">,</span> <span class="n">fr_MF</span><span class="p">,</span> <span class="n">fr_MQ</span><span class="p">,</span> <span class="n">fr_RE</span><span class="p">,</span> <span class="n">fr_YT</span>
+<span class="n">gl</span><span class="p">,</span> <span class="n">gl_ES</span>
+<span class="n">gsw</span><span class="p">,</span> <span class="n">gsw_CH</span>
+<span class="n">gu</span><span class="p">,</span> <span class="n">gu_IN</span>
+<span class="n">he</span><span class="p">,</span> <span class="n">he_IL</span>
+<span class="n">hi</span><span class="p">,</span> <span class="n">hi_IN</span>
+<span class="n">hr</span><span class="p">,</span> <span class="n">hr_HR</span>
+<span class="n">hu</span><span class="p">,</span> <span class="n">hu_HU</span>
+<span class="n">id</span><span class="p">,</span> <span class="n">id_ID</span>
+<span class="k">in</span>
+<span class="k">is</span><span class="p">,</span> <span class="n">is_IS</span>
+<span class="n">it</span><span class="p">,</span> <span class="n">it_IT</span><span class="p">,</span> <span class="n">it_SM</span>
+<span class="n">iw</span>
+<span class="n">ja</span><span class="p">,</span> <span class="n">ja_JP</span>
+<span class="n">kn</span><span class="p">,</span> <span class="n">kn_IN</span>
+<span class="n">ko</span><span class="p">,</span> <span class="n">ko_KR</span>
+<span class="n">ln</span><span class="p">,</span> <span class="n">ln_CD</span>
+<span class="n">lt</span><span class="p">,</span> <span class="n">lt_LT</span>
+<span class="n">lv</span><span class="p">,</span> <span class="n">lv_LV</span>
+<span class="n">ml</span><span class="p">,</span> <span class="n">ml_IN</span>
+<span class="n">mr</span><span class="p">,</span> <span class="n">mr_IN</span>
+<span class="n">ms</span><span class="p">,</span> <span class="n">ms_MY</span>
+<span class="n">mt</span><span class="p">,</span> <span class="n">mt_MT</span>
+<span class="n">nl</span><span class="p">,</span> <span class="n">nl_CW</span><span class="p">,</span> <span class="n">nl_NL</span><span class="p">,</span> <span class="n">nl_SX</span>
+<span class="k">no</span>
+<span class="k">or</span><span class="p">,</span> <span class="n">or_IN</span>
+<span class="n">pl</span><span class="p">,</span> <span class="n">pl_PL</span>
+<span class="n">pt</span><span class="p">,</span> <span class="n">pt_BR</span><span class="p">,</span> <span class="n">pt_PT</span>
+<span class="n">ro</span><span class="p">,</span> <span class="n">ro_RO</span>
+<span class="n">ru</span><span class="p">,</span> <span class="n">ru_RU</span>
+<span class="n">sk</span><span class="p">,</span> <span class="n">sk_SK</span>
+<span class="n">sl</span><span class="p">,</span> <span class="n">sl_SI</span>
+<span class="n">sq</span><span class="p">,</span> <span class="n">sq_AL</span>
+<span class="n">sr</span><span class="p">,</span> <span class="n">sr_Cyrl_RS</span><span class="p">,</span> <span class="n">sr_Latn_RS</span>
+<span class="n">sv</span><span class="p">,</span> <span class="n">sv_SE</span>
+<span class="n">sw</span><span class="p">,</span> <span class="n">sw_TZ</span>
+<span class="n">ta</span><span class="p">,</span> <span class="n">ta_IN</span>
+<span class="n">te</span><span class="p">,</span> <span class="n">te_IN</span>
+<span class="n">th</span><span class="p">,</span> <span class="n">th_TH</span>
+<span class="n">tl</span>
+<span class="n">tr</span><span class="p">,</span> <span class="n">tr_TR</span>
+<span class="n">uk</span><span class="p">,</span> <span class="n">uk_UA</span>
+<span class="n">ur</span><span class="p">,</span> <span class="n">ur_PK</span>
+<span class="n">vi</span><span class="p">,</span> <span class="n">vi_VN</span>
+<span class="n">zh</span><span class="p">,</span> <span class="n">zh_CN</span><span class="p">,</span> <span class="n">zh_HK</span><span class="p">,</span> <span class="n">zh_Hans_CN</span><span class="p">,</span> <span class="n">zh_TW</span>
+<span class="n">zu</span><span class="p">,</span> <span class="n">zu_ZA</span>
+</pre></div>
+
 
 <p>development</p>
-<pre><code class="javascript">goog.LOCALE = 'cs';
-goog.require(/** goog.i18n. */);
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="nx">goog</span><span class="p">.</span><span class="nx">LOCALE</span> <span class="o">=</span> <span class="s1">&#39;cs&#39;</span><span class="p">;</span>
+<span class="nx">goog</span><span class="p">.</span><span class="nx">require</span><span class="p">(</span><span class="cm">/** goog.i18n. */</span><span class="p">);</span>
+</pre></div>
+
 
 <p>production</p>
-<pre><code class="bash">closurebuilder.py \
+<div class="codehilite"><pre><span></span>closurebuilder.py <span class="se">\</span>
     ...
-    --output_mode=compiled \
-    --compiler_flags=&quot;--define=goog.LOCALE='cs'&quot; \
+    --output_mode<span class="o">=</span>compiled <span class="se">\</span>
+    --compiler_flags<span class="o">=</span><span class="s2">&quot;--define=goog.LOCALE=&#39;cs&#39;&quot;</span> <span class="se">\</span>
     ...
-</code></pre>
+</pre></div>
+
 
 <h2 id="googi18ndatetimeformat">goog.i18n.DateTimeFormat</h2>
-<pre><code class="javascript">var fmt = new goog.i18n.DateTimeFormat(
-    goog.i18n.DateTimeFormat.Format.FULL_DATETIME
-);
-var formattedDateTime = fmt.format(new Date());
-// CS pondělí, 25. března 2013 16:38:36 UTC+1
-// EN Monday, March 25, 2013 4:38:36 PM UTC+1
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">fmt</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">DateTimeFormat</span><span class="p">(</span>
+    <span class="nx">goog</span><span class="p">.</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">DateTimeFormat</span><span class="p">.</span><span class="nx">Format</span><span class="p">.</span><span class="nx">FULL_DATETIME</span>
+<span class="p">);</span>
+<span class="kd">var</span> <span class="nx">formattedDateTime</span> <span class="o">=</span> <span class="nx">fmt</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">());</span>
+<span class="c1">// CS pondělí, 25. března 2013 16:38:36 UTC+1</span>
+<span class="c1">// EN Monday, March 25, 2013 4:38:36 PM UTC+1</span>
+</pre></div>
+
 
 <h2 id="googi18nmessageformat">goog.i18n.MessageFormat</h2>
-<pre><code class="javascript">var fmt = new goog.i18n.MessageFormat(
-    'There {EXAMPLE, select, ' +
-        '0 {is no example} ' +
-        '1 {is one example} ' +
-        'other {are many examples}} '+
-    'in messageformat_test.html'
-);
-var msg = fmt.format({'EXAMPLE': 0}); // There is no example in messageformat_test.html
-var msg = fmt.format({'EXAMPLE': 1}); // There is one example in messageformat_test.html
-var msg = fmt.format({'EXAMPLE': 2}); // There are many examples in messageformat_test.html
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">fmt</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">MessageFormat</span><span class="p">(</span>
+    <span class="s1">&#39;There {EXAMPLE, select, &#39;</span> <span class="o">+</span>
+        <span class="s1">&#39;0 {is no example} &#39;</span> <span class="o">+</span>
+        <span class="s1">&#39;1 {is one example} &#39;</span> <span class="o">+</span>
+        <span class="s1">&#39;other {are many examples}} &#39;</span><span class="o">+</span>
+    <span class="s1">&#39;in messageformat_test.html&#39;</span>
+<span class="p">);</span>
+<span class="kd">var</span> <span class="nx">msg</span> <span class="o">=</span> <span class="nx">fmt</span><span class="p">.</span><span class="nx">format</span><span class="p">({</span><span class="s1">&#39;EXAMPLE&#39;</span><span class="o">:</span> <span class="mi">0</span><span class="p">});</span> <span class="c1">// There is no example in messageformat_test.html</span>
+<span class="kd">var</span> <span class="nx">msg</span> <span class="o">=</span> <span class="nx">fmt</span><span class="p">.</span><span class="nx">format</span><span class="p">({</span><span class="s1">&#39;EXAMPLE&#39;</span><span class="o">:</span> <span class="mi">1</span><span class="p">});</span> <span class="c1">// There is one example in messageformat_test.html</span>
+<span class="kd">var</span> <span class="nx">msg</span> <span class="o">=</span> <span class="nx">fmt</span><span class="p">.</span><span class="nx">format</span><span class="p">({</span><span class="s1">&#39;EXAMPLE&#39;</span><span class="o">:</span> <span class="mi">2</span><span class="p">});</span> <span class="c1">// There are many examples in messageformat_test.html</span>
+</pre></div>
+
 
 <h2 id="googi18nnumberformat">goog.i18n.NumberFormat</h2>
-<pre><code class="javascript">var fmt = new goog.i18n.NumberFormat(goog.i18n.NumberFormat.Format.CURRENCY);
-var currency = fmt.format(9999.99);
-// CS currency 9 999,99 Kč
-// EN currency $9,999.99
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">fmt</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">NumberFormat</span><span class="p">(</span><span class="nx">goog</span><span class="p">.</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">NumberFormat</span><span class="p">.</span><span class="nx">Format</span><span class="p">.</span><span class="nx">CURRENCY</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">currency</span> <span class="o">=</span> <span class="nx">fmt</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="mf">9999.99</span><span class="p">);</span>
+<span class="c1">// CS currency 9 999,99 Kč</span>
+<span class="c1">// EN currency $9,999.99</span>
+</pre></div>
                 
                   
                 

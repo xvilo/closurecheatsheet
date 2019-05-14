@@ -440,56 +440,59 @@
                 
                 <h2 id="googprovide">goog.provide</h2>
 <p>file: <code>app/some.js</code></p>
-<pre><code class="javascript">goog.provide('app.Some');
+<div class="codehilite"><pre><span></span><span class="nx">goog</span><span class="p">.</span><span class="nx">provide</span><span class="p">(</span><span class="s1">&#39;app.Some&#39;</span><span class="p">);</span>
 
-/**
- * @constructor
- */
-app.Some = function() {
+<span class="cm">/**</span>
+<span class="cm"> * @constructor</span>
+<span class="cm"> */</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">Some</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
 
-};
-</code></pre>
+<span class="p">};</span>
+</pre></div>
+
 
 <h2 id="googrequire">goog.require</h2>
 <p>file: <code>app/other.js</code></p>
-<pre><code class="javascript">goog.provide('app.Other');
+<div class="codehilite"><pre><span></span><span class="nx">goog</span><span class="p">.</span><span class="nx">provide</span><span class="p">(</span><span class="s1">&#39;app.Other&#39;</span><span class="p">);</span>
 
-goog.require('app.Some');
-goog.require('goog.dom');
+<span class="nx">goog</span><span class="p">.</span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;app.Some&#39;</span><span class="p">);</span>
+<span class="nx">goog</span><span class="p">.</span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;goog.dom&#39;</span><span class="p">);</span>
 
-/**
- * @constructor
- * @extends {app.Some}
- */
-app.Other = function() {
-    goog.base(this);
-    this.element = goog.dom.getElement('other');
-};
-</code></pre>
+<span class="cm">/**</span>
+<span class="cm"> * @constructor</span>
+<span class="cm"> * @extends {app.Some}</span>
+<span class="cm"> */</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">Other</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">goog</span><span class="p">.</span><span class="nx">base</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">element</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">getElement</span><span class="p">(</span><span class="s1">&#39;other&#39;</span><span class="p">);</span>
+<span class="p">};</span>
+</pre></div>
+
 
 <h2 id="googexportsymbol">goog.exportSymbol</h2>
-<pre><code class="javascript">goog.provide('app.start');
+<div class="codehilite"><pre><span></span><span class="nx">goog</span><span class="p">.</span><span class="nx">provide</span><span class="p">(</span><span class="s1">&#39;app.start&#39;</span><span class="p">);</span>
 
-app.start = function() {
-    // ...
-};
+<span class="nx">app</span><span class="p">.</span><span class="nx">start</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+<span class="p">};</span>
 
-// make app.start 'accessible' after ADVANCED_OPTIMIZATIONS
-goog.exportSymbol('app.start', app.start);
-</code></pre>
+<span class="c1">// make app.start &#39;accessible&#39; after ADVANCED_OPTIMIZATIONS</span>
+<span class="nx">goog</span><span class="p">.</span><span class="nx">exportSymbol</span><span class="p">(</span><span class="s1">&#39;app.start&#39;</span><span class="p">,</span> <span class="nx">app</span><span class="p">.</span><span class="nx">start</span><span class="p">);</span>
+</pre></div>
+
 
 <h2 id="export-annotation">@export annotation</h2>
 <p>When using the <code>@export</code> annotation, be certain that you use the <code>--generate_exports</code> compiler flag.</p>
-<pre><code class="javascript">goog.provide('app.start');
+<div class="codehilite"><pre><span></span><span class="nx">goog</span><span class="p">.</span><span class="nx">provide</span><span class="p">(</span><span class="s1">&#39;app.start&#39;</span><span class="p">);</span>
 
-/**
- * Make {@code app.start} accessible after {@code ADVANCED_OPTIMIZATIONS}.
- * @export
- */
-app.start = function() {
-    // ...
-};
-</code></pre>
+<span class="cm">/**</span>
+<span class="cm"> * Make {@code app.start} accessible after {@code ADVANCED_OPTIMIZATIONS}.</span>
+<span class="cm"> * @export</span>
+<span class="cm"> */</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">start</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+<span class="p">};</span>
+</pre></div>
                 
                   
                 
