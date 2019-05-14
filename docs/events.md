@@ -1,7 +1,7 @@
 ## Listen
 
 ### goog.events.listen
-```javascript
+```js
 /**
  * Adds an event listener for a specific event on a DOM Node or goog.events.EventTarget
  *
@@ -15,7 +15,7 @@
 goog.events.listen = function(src, type, listener, opt_capt, opt_handler) {}
 ```
 
-```javascript
+```js
 var container = goog.dom.getElement('container');
 
 goog.events.listen(
@@ -35,7 +35,7 @@ goog.events.listen(
 );
 ```
 
-```javascript
+```js
 /**
  * @constructor
  */
@@ -63,7 +63,7 @@ app.Foo.prototype.handleClick_ = function(e) {
 ## Unlisten
 
 ### goog.events.unlisten
-```javascript
+```js
 /**
  * Removes an event listener which was added with listen().
  * @param {goog.events.ListenableType} src The target to stop listening to events on.
@@ -76,7 +76,7 @@ app.Foo.prototype.handleClick_ = function(e) {
 goog.events.unlisten = function(src, type, listener, opt_capt, opt_handler) {}
 ```
 
-```javascript
+```js
 var container = goog.dom.getElement('container');
 var clickHandler = function(e) {
 	// ...
@@ -105,7 +105,7 @@ This approach also avoids the need for using `goog.bind` on the event method, or
 
 **Do not forget** to call `object.dispose()` for cleanup (destructing object). Dispose method will also remove all listeners.
 
-```javascript
+```js
 /**
  * Example {@code EventHandler} class.
  * @constructor
@@ -157,7 +157,7 @@ app.Foo.prototype.handleClick_ = function(e) {
 ```
 
 ## History
-```javascript
+```js
 var history = new goog.History();
 history.setEnabled(true);
 
@@ -176,7 +176,7 @@ goog.events.listen(
 
 ### goog.events.KeyHandler
 
-```javascript
+```js
 var keyHandler = new goog.events.KeyHandler(goog.dom.getDocument().body);
 
 goog.events.listen(
@@ -193,7 +193,7 @@ goog.events.listen(
 ```
 
 More complex example
-```javascript
+```js
 /**
  * @constructor
  * @extends {goog.Disposable}
@@ -262,7 +262,7 @@ app.Foo.prototype.handleKey_ = function(e) {
 
 ## Event
 Use unique ID for custom event
-```javascript
+```js
 /**
  * @enum {string}
  */
@@ -273,7 +273,7 @@ app.Foo.EventType = {
 ```
 
 ### Custom event
-```javascript
+```js
 /**
  * @param {number=} opt_start
  * @constructor
@@ -302,7 +302,7 @@ Create your own EventTarget object on which you can:
 2. dispatch events
 3. be part of structure (like a DOM)
 
-```javascript
+```js
 /**
  * @constructor
  * @extends {goog.events.EventTarget}
@@ -314,7 +314,7 @@ app.EventTarget = function() {
 goog.inherits(app.EventTarget, goog.events.EventTarget);
 ```
 
-```javascript
+```js
 var target = new app.EventTarget();
 
 goog.events.listen(
@@ -333,7 +333,7 @@ goog.events.dispatchEvent(
 );
 ```
 
-```javascript
+```js
 var parent = new app.EventTarget();
 var child = new app.EventTarget();
 

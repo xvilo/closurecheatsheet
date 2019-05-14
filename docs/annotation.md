@@ -11,22 +11,22 @@ function foo(a) {
 }
 ```
 
-```javascript
+```js
 var b = /** @type {type} */ (a);
 ```
 
-```javascript
+```js
 foo(/** @type {type} */ (a));
 ```
 
-```javascript
+```js
 /**
  * @type {type}
  */
 Foo.prototype.a;
 ```
 
-```javascript
+```js
 /**
  * @type {*} Whatever
  */
@@ -43,7 +43,7 @@ Foo.prototype.b;
 Foo.prototype.c;
 ```
 
-```javascript
+```js
 /**
  * @param {!string} a Required parameter
  * @param {string=} opt_b Optional parameter
@@ -54,7 +54,7 @@ Foo.prototype.bar = function(a, opt_b) {
 ```
 
 ## Primitive types
-```javascript
+```js
 /** @type {number} */
 /** @type {string} */
 /** @type {boolean} */
@@ -63,7 +63,7 @@ Foo.prototype.bar = function(a, opt_b) {
 ```
 
 ## Const
-```javascript
+```js
 /**
  * @const
  * @type {number}
@@ -78,7 +78,7 @@ Foo.B = 'text';
 ```
 
 ## Array
-```javascript
+```js
 /**
  * @param {Array}
  */
@@ -95,7 +95,7 @@ Foo.B = 'text';
 ```
 
 ## Object
-```javascript
+```js
 /**
  * @param {Object}
  */
@@ -106,7 +106,7 @@ Foo.B = 'text';
 ```
 
 ## Function
-```javascript
+```js
 /**
  * @param {Function}
  */
@@ -118,7 +118,7 @@ Foo.B = 'text';
 ```
 
 ## Html
-```javascript
+```js
 /** @type {Element} */
 /** @type {Document} */
 /** @type {DocumentFragment} */
@@ -134,7 +134,7 @@ Foo.B = 'text';
 ```
 
 ## Typedef
-```javascript
+```js
 /**
  * @typedef {{
  *      id: number,
@@ -149,7 +149,7 @@ Foo.NAVIGATE_INFO;
 Foo.prototype.info;
 ```
 
-```javascript
+```js
 /**
  * Function returning "typedef". Property "style" can be string or null.
  *
@@ -166,7 +166,7 @@ Foo.prototype.getLink = function() {
 ```
 
 ## Enum
-```javascript
+```js
 /**
  * @enum {string}
  */
@@ -185,7 +185,7 @@ Foo.Direction= {
 ```
 
 ## VarArgs
-```javascript
+```js
 /**
  * @param {...string} var_args
  */
@@ -195,7 +195,7 @@ Foo.prototype.insertAll = function(var_args) {
 ```
 ## Type casting
 
-```javascript
+```js
 /**
  * @type {?string}
  */
@@ -208,7 +208,7 @@ let onlyString = /** @type {string} */ (dataAttr);
 ```
 
 ## OOP
-```javascript
+```js
 /**
  * @interface
  */
@@ -220,7 +220,7 @@ Foo = function() {};
 Foo.prototype.bar = function(a) {};
 ```
 
-```javascript
+```js
 /**
  * @constructor
  * @implements {Foo}
@@ -238,7 +238,7 @@ app.Some.prototype.bar = function(a) {
 
 ```
 
-```javascript
+```js
 /**
  * @constructor
  * @extends {app.Some}

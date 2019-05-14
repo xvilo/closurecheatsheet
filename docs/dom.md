@@ -1,7 +1,7 @@
 ## DOM
 
 ### goog.dom.append
-```javascript
+```js
 /*
  * Appends a node with text or other nodes.
  * @param {!Node} parent The node to append nodes to.
@@ -10,7 +10,7 @@
 goog.dom.append = function(parent, var_args) {}
 ```
 
-```javascript
+```js
 var container = goog.dom.getElement('container'); // get <div id="container>
 var child = goog.dom.createDom('div'); // create empty <div>
 goog.dom.append(container, child); // append <div> into <div id="container">
@@ -27,7 +27,7 @@ goog.dom.append(container, child); // append <div> into <div id="container">
 ```
 
 ### goog.dom.createDom
-```javascript
+```js
 /**
  * @param {string} tagName Tag to create.
  * @param {(Object|Array.<string>|string)=} opt_attributes
@@ -37,12 +37,12 @@ goog.dom.append(container, child); // append <div> into <div id="container">
 goog.dom.createDom = function(tagName, opt_attributes, var_args) {
 ```
 
-```javascript
+```js
 var div = goog.dom.createDom('div', undefined, 'Div text content');
 // <div>Div text content</div>
 ```
 
-```javascript
+```js
 var a = goog.dom.createDom('a', {'href': '#href'}, 'Link');
 var li = goog.dom.createDom('li', {'class': 'menu-item'}, a);
 
@@ -50,7 +50,7 @@ var li = goog.dom.createDom('li', {'class': 'menu-item'}, a);
 ```
 
 ### goog.dom.getDocument
-```javascript
+```js
 /**
  * Gets the document object being used by the dom library.
  * @return {!Document} Document object.
@@ -59,7 +59,7 @@ goog.dom.getDocument = function() {}
 ```
 
 goog.dom.getElement
-```javascript
+```js
 /**
  * Get Element by ID
  * @param {string|Element} element Element ID or a DOM node.
@@ -68,13 +68,13 @@ goog.dom.getElement
 goog.dom.getElement = function(element) {};
 ```
 
-```javascript
+```js
 var container = goog.dom.getElement('container');
 // <div id="container"></div>
 ```
 
 ### goog.dom.getElementsByTagNameAndClass
-```javascript
+```js
 /*
  * @param {?string=} opt_tag Element tag name.
  * @param {?string=} opt_class Optional class name.
@@ -101,7 +101,7 @@ goog.dom.getElementsByTagNameAndClass = function(opt_tag, opt_class, opt_el) {}
 </body>
 ```
 
-```javascript
+```js
 var allLi = goog.dom.getElementsByTagNameAndClass('li');
 // allLi.length 4
 // allLi[0] <li>Menu item 1</li>
@@ -122,7 +122,7 @@ var navigationLi = goog.dom.getElementsByTagNameAndClass('li', undefined, naviga
 
 
 ### goog.dom.getNextElementSibling
-```javascript
+```js
 /**
  * Returns the first next sibling that is an element.
  * @param {Node} node The node to get the next sibling element of.
@@ -138,14 +138,14 @@ goog.dom.getNextElementSibling = function(node) {}
 </ul>
 ```
 
-```javascript
+```js
 var first = goog.dom.getElementsByTagNameAndClass('li', undefined)[0];
 var next = goog.dom.getNextElementSibling(first);
 // next <li>Item 2</li>
 ```
 
 ### goog.dom.getParentElement
-```javascript
+```js
 /**
  * Returns an element's parent, if it's an Element.
  * @param {Element} element The DOM element.
@@ -161,14 +161,14 @@ goog.dom.getParentElement = function(element) {}
 </ul>
 ```
 
-```javascript
+```js
 var li = goog.dom.getElementsByTagNameAndClass('li', undefined)[0];
 var ul = goog.dom.getParentElement(li);
 // ul <ul></ul>
 ```
 
 ### goog.dom.getTextContent
-```javascript
+```js
 /*
  * @param {Node} node The node from which we are getting content.
  * @return {string} The text content.
@@ -184,27 +184,27 @@ goog.dom.getTextContent = function(node) {}
 </div>
 ```
 
-```javascript
+```js
 var container = goog.dom.getElement('container');
 var text = goog.dom.getTextContent(container); // Span		Link		Text
 ```
 
 ### goog.dom.getViewportSize
-```javascript
+```js
 /**
  * @return {!goog.math.Size} The dimensions of the viewport (window)
  */
 goog.dom.getViewportSize = function() {}
 ```
 
-```javascript
+```js
 var viewPort = goog.dom.getViewportSize();
 // viewPort.width [px]
 // viewPort.height [px]
 ```
 
 ### goog.dom.insertSibling...
-```javascript
+```js
 /**
  * @param {Node} newNode Node to insert.
  * @param {Node} refNode Reference node to insert after.
@@ -220,7 +220,7 @@ goog.dom.insertSiblingAfter = function(newNode, refNode) {}
 </ul>
 ```
 
-```javascript
+```js
 var firstLi = goog.dom.getElementsByTagNameAndClass('li')[0];
 
 var before = goog.dom.createDom('li', undefined, 'Item before');
@@ -240,7 +240,7 @@ goog.dom.insertSiblingAfter(after, firstLi);
 ```
 
 ### goog.dom.removeNode
-```javascript
+```js
 /**
  * Removes a node from its parent.
  * @param {Node} node The node to remove.
@@ -250,7 +250,7 @@ goog.dom.removeNode = function(node) {}
 ```
 
 ### goog.dom.setProperties
-```javascript
+```js
 /**
  * Sets multiple properties on a node.
  * @param {Element} element DOM node to set properties on.
@@ -259,7 +259,7 @@ goog.dom.removeNode = function(node) {}
 goog.dom.setProperties = function(element, properties) {}
 ```
 
-```javascript
+```js
 var div = goog.dom.createDom('div');
 goog.dom.setProperties(div, {
 	'style': 'background-color: red',
@@ -274,7 +274,7 @@ goog.dom.setProperties(div, {
 
 ## DataSet
 
-```javascript
+```js
 /**
  * Gets a custom data attribute from an element.
  * @param {Element} element DOM node to get the custom data attribute from.
@@ -296,7 +296,7 @@ goog.dom.dataset.has = function(element, key) {}
 <div id="container" data-action="test"></div>
 ```
 
-```javascript
+```js
 var container = goog.dom.getElement('container');
 var hasDataActionAttribute = goog.dom.dataset.has(container, 'action');
 var dataActionAttribute = goog.dom.dataset.get(container, 'action');
@@ -306,7 +306,7 @@ var dataActionAttribute = goog.dom.dataset.get(container, 'action');
 
 ## Forms
 ### goog.dom.forms.getFormDataMap
-```javascript
+```js
 /**
  * Returns form data as a map of name to value arrays.
  * @param {HTMLFormElement} form The form.
@@ -326,7 +326,7 @@ goog.dom.forms.getFormDataMap = function(form) {}
 </form>
 ```
 
-```javascript
+```js
 var form = /** @type {HTMLFormElement} */ (goog.dom.getElement('form'));
 var data = goog.dom.forms.getFormDataMap(form);
 // data.get('text')[0] text
@@ -336,7 +336,7 @@ var data = goog.dom.forms.getFormDataMap(form);
 ```
 
 ### goog.dom.forms.setDisabled
-```javascript
+```js
 /**
  * Enables or disables either all elements in a form or a single form element.
  * @param {Element} el The element, either a form or an element within a form.
@@ -345,7 +345,7 @@ var data = goog.dom.forms.getFormDataMap(form);
 goog.dom.forms.setDisabled = function(el, disabled) {}
 ```
 
-```javascript
+```js
 var form = /** @type {HTMLFormElement} */ (goog.dom.getElement('form'));
 goog.dom.forms.setDisabled(form, true);
 goog.dom.forms.setDisabled(form.elements['text'], true);
@@ -356,7 +356,7 @@ goog.dom.forms.setDisabled(form.elements['text'], true);
 ```
 
 ### goog.dom.forms.setValue
-```javascript
+```js
 /**
  * Sets the current value of any element with a type.
  * @param {Element} el The element.
@@ -365,14 +365,14 @@ goog.dom.forms.setDisabled(form.elements['text'], true);
 goog.dom.forms.setValue = function(el, opt_value) {}
 ```
 
-```javascript
+```js
 goog.dom.forms.setValue(form.elements['text'], 'new text');
 ```
 
 ## ClassList
 
 ### goog.dom.classlist.add, goog.dom.classlist.addAll
-```javascript
+```js
 /**
  * Adds a class to an element.  Does not add multiples of class names.  This
  * method may throw a DOM exception for an invalid or empty class name if
@@ -393,13 +393,13 @@ goog.dom.classlist.add = function(element, className) {}
 goog.dom.classlist.addAll = function(element, classesToAdd) {}
 ```
 
-```javascript
+```js
 var container = goog.dom.getElement('container');
 goog.dom.classlist.add(container, 'cls1');
 ```
 
 ### goog.dom.classlist.get
-```javascript
+```js
 /**
  * Gets an array-like object of class names on an element.
  * @param {Element} element DOM node to get the classes of.
@@ -408,14 +408,14 @@ goog.dom.classlist.add(container, 'cls1');
 goog.dom.classlist.get = function(element) {
 ```
 
-```javascript
+```js
 var container = goog.dom.getElement('container');
 var classes = goog.dom.classlist.get(container);
 // classes ['class1', 'class2']
 ```
 
 ### goog.dom.classlist.remove, goog.dom.classlist.removeAll
-```javascript
+```js
 /**
  * Removes a class from an element.  This method may throw a DOM exception
  * for an invalid or empty class name if DOMTokenList is used.
@@ -437,7 +437,7 @@ goog.dom.classlist.remove = function(element, className) {}
 goog.dom.classlist.removeAll = function(element, classesToRemove) {}
 ```
 
-```javascript
+```js
 var container = goog.dom.getElement('container');
 goog.dom.classlist.remove(container, 'cls1');
 ```
@@ -445,7 +445,7 @@ goog.dom.classlist.remove(container, 'cls1');
 ## Style
 
 ### goog.style.getSize
-```javascript
+```js
 /**
  * Gets the height and width of an element
  * @param {Element} element Element to get size of.
@@ -454,7 +454,7 @@ goog.dom.classlist.remove(container, 'cls1');
 goog.style.getSize = function(element) {}
 ```
 
-```javascript
+```js
 var container =  goog.dom.getElement('container');
 var size = goog.style.getSize(container);
 // size.width [px]
@@ -462,7 +462,7 @@ var size = goog.style.getSize(container);
 ```
 
 ### goog.style.setElementShown
-```javascript
+```js
 /**
  * Shows or hides an element from the page
  * @param {Element} el Element to show or hide.
@@ -471,13 +471,13 @@ var size = goog.style.getSize(container);
 goog.style.setElementShown = function(el, isShown) {}
 ```
 
-```javascript
+```js
 var container =  goog.dom.getElement('container');
 goog.style.setElementShown(container, false);
 ```
 
 ### goog.style.setHeight
-```javascript
+```js
 /**
  * Set the height of an element.
  * @param {Element} element Element to set the height of.
@@ -486,13 +486,13 @@ goog.style.setElementShown(container, false);
 goog.style.setHeight = function(element, height) {
 ```
 
-```javascript
+```js
 var container =  goog.dom.getElement('container');
 goog.style.setHeight(container, 100);
 ```
 
 ### goog.style.setOpacity
-```javascript
+```js
 /**
  * Sets the opacity of a node (x-browser).
  * @param {Element} el Elements whose opacity has to be set.
@@ -501,13 +501,13 @@ goog.style.setHeight(container, 100);
 goog.style.setOpacity = function(el, alpha) {}
 ```
 
-```javascript
+```js
 var container =  goog.dom.getElement('container');
 goog.style.setOpacity(container, 0.5);
 ```
 
 ### goog.style.setStyle
-```javascript
+```js
 /**
  * Sets a style value on an element.
  * @param {Element} element The element to change.
@@ -517,7 +517,7 @@ goog.style.setOpacity(container, 0.5);
 goog.style.setStyle = function(element, style, opt_value) {}
 ```
 
-```javascript
+```js
 var container =  goog.dom.getElement('container');
 goog.style.setStyle(container, {
 	'background-color': 'red',

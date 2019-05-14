@@ -11,7 +11,7 @@
                     [goog.net.EventType.READY]
 ```
 ### Simple GET
-```javascript
+```js
 goog.net.XhrIo.send('/about', function(e) {
 	var xhr = /** @type {goog.net.XhrIo} */ (e.target);
 	var response = xhr.getResponse();
@@ -20,7 +20,7 @@ goog.net.XhrIo.send('/about', function(e) {
 ```
 
 ### POST with query data
-```javascript
+```js
 var queryData = new goog.Uri.QueryData();
 queryData.set('param1', 'value1');
 queryData.set('param2', 'value2');
@@ -50,7 +50,7 @@ xhr.send('/about', 'POST', queryData.toString());
     [goog.net.EventType.SUCCESS]        [goog.net.EventType.ERROR]
 ```
 
-```javascript
+```js
 var xhrManager = new goog.net.XhrManager(/** opt_maxRetries */ 0);
 
 goog.events.listen(
@@ -78,7 +78,7 @@ Very usefully for sending FORM 'behind' the scene (especially file upload).
                     [goog.net.EventType.READY]
 ```
 
-```javascript
+```js
 var iFrameIo = new goog.net.IframeIo();
 var form = /** @type {HTMLFormElement} */ (goog.dom.getElement('form'));
 
@@ -103,7 +103,7 @@ iFrameIo.sendFromForm(form);
                  [goog.net.EventType.COMPLETE]
 ```
 
-```javascript
+```js
 var imageLoader = new goog.net.ImageLoader();
 
 goog.events.listen(
@@ -124,14 +124,14 @@ imageLoader.start();
 ## Cookies
 
 ### goog.net.cookies.isEnabled
-```javascript
+```js
 var cookiesEnabled = goog.net.cookies.isEnabled();
 // true if cookies are enabled
 // false if cookies are disabled
 ```
 
 ### goog.net.cookies.containsKey
-```javascript
+```js
 /**
  * Returns whether there is a cookie with the given name.
  * @param {string} key The name of the cookie to test for.
@@ -141,7 +141,7 @@ goog.net.cookies.containsKey = function(key) {}
 ```
 
 ### goog.net.cookies.get
-```javascript
+```js
 /**
  * Returns the value for the first cookie with the given name.
  * @param {string} name  The name of the cookie to get.
@@ -152,7 +152,7 @@ goog.net.cookies.get = function(name, opt_default) {}
 ```
 
 ### goog.net.cookies.remove
-```javascript
+```js
 /**
  * Removes and expires a cookie.
  * @param {string} name  The cookie name.
@@ -164,7 +164,7 @@ goog.net.cookies.remove = function(name, opt_path, opt_domain) {}
 ```
 
 ### goog.net.cookies.set
-```javascript
+```js
 /**
  * @param {string} name
  * @param {string} value
@@ -179,13 +179,13 @@ goog.net.cookies.set = function(
 
 ## Uri
 ### goog.uri.utils.getFragment
-```javascript
+```js
 var fragment = goog.uri.utils.getFragment('http://www.closurecheatsheet.com/about#xtb-generator');
 // xtb-generator
 ```
 
 ### goog.uri.utils.getPath
-```javascript
+```js
 var path = goog.uri.utils.getPath('http://www.closurecheatsheet.com/about#xtb-generator');
 // /about
 ```

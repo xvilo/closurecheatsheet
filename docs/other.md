@@ -1,6 +1,6 @@
 ## goog.array
 ### goog.array.forEach
-```javascript
+```js
 app.Foo = function() {
 	var dataToAdd = [1, 2, 3];
 	this.bar = 0;
@@ -20,7 +20,7 @@ app.Foo.prototype.bar;
 
 
 ## goog.is...
-```javascript
+```js
 // @return true/false
 goog.isArrayLike(val);
 goog.isDef(val);
@@ -35,7 +35,7 @@ goog.isString(val);
 ## goog.json
 
 ### goog.json.parse
-```javascript
+```js
 /**
  * Safe parse
  *
@@ -46,7 +46,7 @@ goog.json.parse = function(s) {}
 ```
 
 ### goog.json.serialize
-```javascript
+```js
 /**
  * Serializes an object or a value to a JSON string.
  *
@@ -59,7 +59,7 @@ goog.json.serialize = function(object, opt_replacer) {}
 ```
 
 ### goog.json.unsafeParse
-```javascript
+```js
 /**
  * @param {string} s The JSON string to parse.
  * @return {Object} The object generated from the JSON string.
@@ -70,7 +70,7 @@ goog.json.unsafeParse = function(s) {}
 ## goog.object
 
 ### goog.object.getValues
-```javascript
+```js
 var obj = {
 	"key1": "value1",
 	"key2": "value2"
@@ -80,7 +80,7 @@ var arr = goog.object.getValues(obj); // ["value1", "value2"]
 ```
 
 ### goog.object.setIfUndefined
-```javascript
+```js
 var obj = {
 	"key1": "value1",
 	"key2": "value2"
@@ -94,18 +94,18 @@ var set2 = goog.object.setIfUndefined(obj, 'key3', 'value3'); // value3
 ## goog.string
 
 ### goog.string.padNumber
-```javascript
+```js
 goog.string.padNumber(1.5, 2, 2)); // 01.50
 goog.string.padNumber(1.5, 2, 0)); // 02
 ```
 
 ### goog.string.trim
-```javascript
+```js
 goog.string.trim('    string-to-trim     '); // string-to-trim
 ```
 
 goog.string.htmlEscape
-```javascript
+```js
 goog.string.htmlEscape(
 	'<a href="href">Link</a>' // &lt;a href=&quot;href&quot;&gt;Link&lt;/a&gt;
 );
@@ -113,12 +113,12 @@ goog.string.htmlEscape(
 ```
 
 ### goog.string.regExpEscape
-```javascript
+```js
 goog.string.regExpEscape('Strange (character)'); // Strange \(character\)
 ```
 
 ### goog.string.whitespaceEscape
-```javascript
+```js
 goog.string.whitespaceEscape(
 	'Text\nwith whitespace', // Text<br />with &nbsp;whitespace
 	true
@@ -126,7 +126,7 @@ goog.string.whitespaceEscape(
 ```
 
 ## goog.userAgent
-```javascript
+```js
 if (goog.userAgent.IE) {
 	// run away
 };
@@ -148,7 +148,7 @@ if (goog.userAgent.IE && goog.userAgent.isVersionOrHigher(10)) {
 ```
 
 ## goog.typeOf
-```javascript
+```js
 var a = ...;
 goog.typeOf(a);
 // 'array', 'object', 'function', 'null', 'string', 'number', 'boolean', 'undefined'

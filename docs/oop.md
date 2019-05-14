@@ -1,5 +1,5 @@
 ## Inheritance
-```javascript
+```js
 /**
  * @param {string} foo
  * @constructor
@@ -21,7 +21,7 @@ app.Parent.prototype.doSomething = function(param) {
 };
 ```
 
-```javascript
+```js
 /**
  * @param {string} foo
  * @param {string} bar
@@ -52,7 +52,7 @@ app.Child.prototype.doSomething = function(param) {
 ```
 
 ## Singleton
-```javascript
+```js
 /**
  * @constructor
  */
@@ -63,12 +63,12 @@ app.Foo = function() {
 goog.addSingletonGetter(app.Foo);
 ```
 
-```javascript
+```js
 var fooInstance = /** @type {app.Foo} */ (app.Foo.getInstance());
 ```
 
 ## Mixin
-```javascript
+```js
 /**
  * @constructor
  */
@@ -82,7 +82,7 @@ app.Mixin.prototype.mixinFunction = function() {
 };
 ```
 
-```javascript
+```js
 /**
  * @constructor
  */
@@ -100,14 +100,14 @@ app.Foo.prototype.fooFunction = function() {
 goog.mixin(app.Foo.prototype, app.Mixin.prototype);
 ```
 
-```javascript
+```js
 var foo = new app.Foo();
 foo.fooFunction();
 foo.mixinFunction();
 ```
 
 ## Abstract, Interface
-```javascript
+```js
 /**
  * Abstract object
  *
@@ -123,7 +123,7 @@ app.AParent = function() {
 app.AParent.prototype.someFunction = goog.abstractMethod;
 ```
 
-```javascript
+```js
 /**
  * Interface
  *
@@ -137,7 +137,7 @@ app.Interface = function() {};
 app.Interface.prototype.interfaceFunction;
 ```
 
-```javascript
+```js
 /**
  * Child which extends abstract object and implements interface
  *
@@ -167,7 +167,7 @@ app.Child.prototype.interfaceFunction = function() {
 ```
 
 ## Disposable
-```javascript
+```js
 /**
  * @constructor
  * @extends {goog.Disposable}
@@ -226,14 +226,14 @@ app.Foo.prototype.disposeInternal = function() {
 };
 ```
 
-```javascript
+```js
 var a = new app.Foo();
 // ...
 a.dispose();  // Alternatively: goog.dispose(a); which permits null/undefined.
 ```
 
 Monitoring disposable object
-```javascript
+```js
 // set monitoring mode
 goog.Disposable.MONITORING_MODE = goog.Disposable.MonitoringMode.PERMANENT;
 //goog.Disposable.MONITORING_MODE = goog.Disposable.MonitoringMode.INTERACTIVE;

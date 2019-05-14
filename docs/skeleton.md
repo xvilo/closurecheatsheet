@@ -181,7 +181,7 @@ ${PYTHON_BIN} ${CLOSURE_BUILD_DIR}/closurebuilder.py \
 ```
 
 Add comment to end of ```./www/js/app-compiled.js```
-```javascript
+```js
 
 //@ sourceMappingURL=/js/source.map
 ```

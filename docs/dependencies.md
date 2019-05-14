@@ -1,6 +1,6 @@
 ## goog.provide
 file: `app/some.js`
-```javascript
+```js
 goog.provide('app.Some');
 
 /**
@@ -13,7 +13,7 @@ app.Some = function() {
 
 ## goog.require
 file: `app/other.js`
-```javascript
+```js
 goog.provide('app.Other');
 
 goog.require('app.Some');
@@ -30,7 +30,7 @@ app.Other = function() {
 ```
 
 ## goog.exportSymbol
-```javascript
+```js
 goog.provide('app.start');
 
 app.start = function() {
@@ -45,7 +45,7 @@ goog.exportSymbol('app.start', app.start);
 
 When using the `@export` annotation, be certain that you use the `--generate_exports` compiler flag.
 
-```javascript
+```js
 goog.provide('app.start');
 
 /**

@@ -8,7 +8,7 @@
 	<li>Item 3</li>
 </ul>
 ```
-```javascript
+```js
 // jQuery
 var firstItem = $('#menu li:first')[0];
 var lastItem = $('#menu li:last')[0];
@@ -32,7 +32,7 @@ var firstItem = menuLi[0],
 	<li>Item 3</li>
 </ul>
 ```
-```javascript
+```js
 // jQuery
 $('#menu').prepend('<li>Item 0</li>');
 
@@ -50,7 +50,7 @@ goog.dom.insertChildAt(menu, newItem, 0);
 <div id="container" style="width: 100px; height: 100px;"></div>
 ```
 
-```javascript
+```js
 // jQuery
 $('#container').click(function(e) {
 	// ...

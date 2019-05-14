@@ -13,7 +13,7 @@
           [dispose]
 ```
 ## Component
-```javascript
+```js
 /**
  * @param {goog.dom.DomHelper=} opt_domHelper
  * @constructor
@@ -81,7 +81,7 @@ app.Component.prototype.disposeInternal = function() {
 };
 ```
 
-```javascript
+```js
 var component = new app.Component();
 component.render();
 
@@ -89,13 +89,13 @@ component.render();
 // component.render(body);
 ```
 
-```javascript
+```js
 var item = goog.dom.getElement('item');
 var component = new app.Component();
 component.decorate(item);
 ```
 ## Control
-```javascript
+```js
 /**
  * @param {goog.ui.ControlContent} content
  * @param {goog.ui.ControlRenderer=} opt_renderer
@@ -146,7 +146,7 @@ goog.ui.registry.setDefaultRenderer(
 ```
 
 ## ControlRenderer
-```javascript
+```js
 /**
  * @constructor
  * @extends {goog.ui.ControlRenderer}
@@ -207,7 +207,7 @@ goog.ui.registry.setDecoratorByClassName(
 ```
 
 ## Container
-```javascript
+```js
 /**
  * @param {?goog.ui.Container.Orientation=} opt_orientation
  * @param {goog.ui.ContainerRenderer=} opt_renderer
@@ -244,7 +244,7 @@ app.Container.prototype.enterDocument = function() {
 ```
 
 ## ContainerRenderer
-```javascript
+```js
 /**
  * @constructor
  * @extends {goog.ui.ContainerRenderer}

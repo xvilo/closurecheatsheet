@@ -212,7 +212,7 @@ Value for b = {$b}
 ```
 
 ### Call function outside SOY
-```javascript
+```js
 goog.provide('app.helpers');
 
 /**
@@ -251,7 +251,7 @@ app.helpers.sum = function(opt_data, opt_ignored) {
 {/template}
 ```
 
-```javascript
+```js
 var template = app.templates.test({
 	first: 1,
 	second: 5
@@ -259,7 +259,7 @@ var template = app.templates.test({
 ```
 
 ## goog.soy.renderElement
-```javascript
+```js
 var templateData = {
 	first: 1,
 	second: 5
