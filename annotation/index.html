@@ -273,6 +273,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#type-casting" title="Type casting" class="md-nav__link">
+    Type casting
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#oop" title="OOP" class="md-nav__link">
     OOP
   </a>
@@ -511,6 +518,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#type-casting" title="Type casting" class="md-nav__link">
+    Type casting
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#oop" title="OOP" class="md-nav__link">
     OOP
   </a>
@@ -728,6 +742,19 @@
 <span class="nx">Foo</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">insertAll</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">var_args</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// arguments, arguments.length</span>
 <span class="p">};</span>
+</pre></div>
+
+
+<h2 id="type-casting">Type casting</h2>
+<div class="codehilite"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * @type {?string}</span>
+<span class="cm"> */</span>
+<span class="kd">let</span> <span class="nx">dataAttr</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">dataset</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">el</span><span class="p">,</span> <span class="s1">&#39;attrName&#39;</span><span class="p">);</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * @type {string}</span>
+<span class="cm"> */</span>
+<span class="kd">let</span> <span class="nx">onlyString</span> <span class="o">=</span> <span class="cm">/** @type {string} */</span> <span class="p">(</span><span class="nx">dataAttr</span><span class="p">);</span>
 </pre></div>
 
 
