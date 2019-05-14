@@ -252,7 +252,7 @@ app.helpers.sum = function(opt_data, opt_ignored) {
 ```
 
 ```js
-var template = app.templates.test({
+let template = app.templates.test({
 	first: 1,
 	second: 5
 });
@@ -260,7 +260,7 @@ var template = app.templates.test({
 
 ## goog.soy.renderElement
 ```js
-var templateData = {
+let templateData = {
 	first: 1,
 	second: 5
 };

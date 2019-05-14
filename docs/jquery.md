@@ -10,17 +10,17 @@
 ```
 ```js
 // jQuery
-var firstItem = $('#menu li:first')[0];
-var lastItem = $('#menu li:last')[0];
+let firstItem = $('#menu li:first')[0];
+let lastItem = $('#menu li:last')[0];
 
 // closure
-var menuLi = goog.dom.getElementsByTagNameAndClass(
+let menuLi = goog.dom.getElementsByTagNameAndClass(
 	'li',
 	undefined,
 	goog.dom.getElement('menu')
 );
 
-var firstItem = menuLi[0],
+let firstItem = menuLi[0],
 	lastItem =  menuLi[menuLi.length - 1];
 ```
 
@@ -37,8 +37,8 @@ var firstItem = menuLi[0],
 $('#menu').prepend('<li>Item 0</li>');
 
 // closure
-var menu = goog.dom.getElement('menu');
-var newItem = goog.dom.createDom('li', undefined, 'Item 0');
+let menu = goog.dom.getElement('menu');
+let newItem = goog.dom.createDom('li', undefined, 'Item 0');
 goog.dom.insertChildAt(menu, newItem, 0);
 ```
 

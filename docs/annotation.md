@@ -12,7 +12,7 @@ function foo(a) {
 ```
 
 ```js
-var b = /** @type {type} */ (a);
+let b = /** @type {type} */ (a);
 ```
 
 ```js

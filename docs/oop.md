@@ -64,7 +64,7 @@ goog.addSingletonGetter(app.Foo);
 ```
 
 ```js
-var fooInstance = /** @type {app.Foo} */ (app.Foo.getInstance());
+let fooInstance = /** @type {app.Foo} */ (app.Foo.getInstance());
 ```
 
 ## Mixin
@@ -101,7 +101,7 @@ goog.mixin(app.Foo.prototype, app.Mixin.prototype);
 ```
 
 ```js
-var foo = new app.Foo();
+let foo = new app.Foo();
 foo.fooFunction();
 foo.mixinFunction();
 ```
@@ -227,7 +227,7 @@ app.Foo.prototype.disposeInternal = function() {
 ```
 
 ```js
-var a = new app.Foo();
+let a = new app.Foo();
 // ...
 a.dispose();  // Alternatively: goog.dispose(a); which permits null/undefined.
 ```

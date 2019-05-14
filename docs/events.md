@@ -16,7 +16,7 @@ goog.events.listen = function(src, type, listener, opt_capt, opt_handler) {}
 ```
 
 ```js
-var container = goog.dom.getElement('container');
+let container = goog.dom.getElement('container');
 
 goog.events.listen(
 	container,
@@ -40,7 +40,7 @@ goog.events.listen(
  * @constructor
  */
 app.Foo = function() {
-	var container = goog.dom.getElement('container');
+	let container = goog.dom.getElement('container');
 
 	goog.events.listen(
 		container,
@@ -77,8 +77,8 @@ goog.events.unlisten = function(src, type, listener, opt_capt, opt_handler) {}
 ```
 
 ```js
-var container = goog.dom.getElement('container');
-var clickHandler = function(e) {
+let container = goog.dom.getElement('container');
+let clickHandler = function(e) {
 	// ...
 };
 
@@ -115,7 +115,7 @@ This approach also avoids the need for using `goog.bind` on the event method, or
 app.Foo = function() {
 	app.Foo.base(this, 'constructor');
 
-	var container = goog.dom.getRequiredElement('container');
+	let container = goog.dom.getRequiredElement('container');
 
 	// listen for CLICK -> handled by this.handleClick_ 
 	// note: this.listenOnce() is also useful.
@@ -141,7 +141,7 @@ goog.inherits(app.Foo, goog.events.EventHandler);
  * @private
  */
 app.Foo.prototype.handleMouseEvent_ = function(e) {
-	var type = e.type;  // e.g. goog.events.EventType.MOUSEOVER
+	let type = e.type;  // e.g. goog.events.EventType.MOUSEOVER
 	// ...
 };
 
@@ -158,7 +158,7 @@ app.Foo.prototype.handleClick_ = function(e) {
 
 ## History
 ```js
-var history = new goog.History();
+let history = new goog.History();
 history.setEnabled(true);
 
 goog.events.listen(
@@ -177,7 +177,7 @@ goog.events.listen(
 ### goog.events.KeyHandler
 
 ```js
-var keyHandler = new goog.events.KeyHandler(goog.dom.getDocument().body);
+let keyHandler = new goog.events.KeyHandler(goog.dom.getDocument().body);
 
 goog.events.listen(
 	keyHandler,
@@ -315,7 +315,7 @@ goog.inherits(app.EventTarget, goog.events.EventTarget);
 ```
 
 ```js
-var target = new app.EventTarget();
+let target = new app.EventTarget();
 
 goog.events.listen(
 	target,
@@ -334,8 +334,8 @@ goog.events.dispatchEvent(
 ```
 
 ```js
-var parent = new app.EventTarget();
-var child = new app.EventTarget();
+let parent = new app.EventTarget();
+let child = new app.EventTarget();
 
 // set parent for child, so event will bubble up (capture) to parent
 child.setParentEventTarget(parent);

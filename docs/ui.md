@@ -30,7 +30,7 @@ goog.inherits(app.Component, goog.ui.Component);
  * @override
  */
 app.Component.prototype.createDom = function() {
-	var element = this.getDomHelper().createDom('div');
+	let element = this.getDomHelper().createDom('div');
 	// ...
 	this.setElementInternal(element);
 };
@@ -82,16 +82,16 @@ app.Component.prototype.disposeInternal = function() {
 ```
 
 ```js
-var component = new app.Component();
+let component = new app.Component();
 component.render();
 
-// var container = goog.dom.getDocument().body;
+// let container = goog.dom.getDocument().body;
 // component.render(body);
 ```
 
 ```js
-var item = goog.dom.getElement('item');
-var component = new app.Component();
+let item = goog.dom.getElement('item');
+let component = new app.Component();
 component.decorate(item);
 ```
 ## Control
@@ -174,7 +174,7 @@ app.ControlRenderer.prototype.getCssClass = function() {
  * @override
  */
 app.ControlRenderer.prototype.createDom = function(control) {
-	var element = control.getDomHelper().createDom('div');
+	let element = control.getDomHelper().createDom('div');
 	// ...
 	return element;
 };
@@ -190,7 +190,7 @@ app.ControlRenderer.prototype.canDecorate = function(element) {
  * @override
  */
 app.ControlRenderer.prototype.decorate = function(control, element) {
-	var element = goog.base(this, 'decorate', control, element);
+	let element = goog.base(this, 'decorate', control, element);
 	// ...
 	return element;
 };
@@ -234,10 +234,10 @@ app.Container.prototype.enterDocument = function() {
 };
 
 // get control based on event target:
-// 		var control = this.getOwnerControl(/** @type {Node} */ (e.target));
+// 		let control = this.getOwnerControl(/** @type {Node} */ (e.target));
 
 // get control
-//		var control = this.getChild(id);
+//		let control = this.getChild(id);
 
 // remove all children
 //		this.removeChildren(true);
@@ -272,7 +272,7 @@ app.ContainerRenderer.prototype.getCssClass = function() {
  * @override
  */
 app.ContainerRenderer.prototype.createDom = function(container) {
-	var element = container.getDomHelper().createDom(
+	let element = container.getDomHelper().createDom(
 		'div', this.getClassNames(container).join(' ')
 	);
 	// ...
@@ -290,7 +290,7 @@ app.ContainerRenderer.prototype.canDecorate = function(element) {
  * @override
  */
 app.ContainerRenderer.prototype.decorate = function(container, element) {
-	var element = goog.base(this, 'decorate', container, element);
+	let element = goog.base(this, 'decorate', container, element);
 	// ...
 	return element;
 };

@@ -11,8 +11,8 @@ goog.dom.append = function(parent, var_args) {}
 ```
 
 ```js
-var container = goog.dom.getElement('container'); // get <div id="container>
-var child = goog.dom.createDom('div'); // create empty <div>
+let container = goog.dom.getElement('container'); // get <div id="container>
+let child = goog.dom.createDom('div'); // create empty <div>
 goog.dom.append(container, child); // append <div> into <div id="container">
 ```
 
@@ -38,13 +38,13 @@ goog.dom.createDom = function(tagName, opt_attributes, var_args) {
 ```
 
 ```js
-var div = goog.dom.createDom('div', undefined, 'Div text content');
+let div = goog.dom.createDom('div', undefined, 'Div text content');
 // <div>Div text content</div>
 ```
 
 ```js
-var a = goog.dom.createDom('a', {'href': '#href'}, 'Link');
-var li = goog.dom.createDom('li', {'class': 'menu-item'}, a);
+let a = goog.dom.createDom('a', {'href': '#href'}, 'Link');
+let li = goog.dom.createDom('li', {'class': 'menu-item'}, a);
 
 // <li class="menu-item"><a href="#href">Link</a></li>
 ```
@@ -69,7 +69,7 @@ goog.dom.getElement = function(element) {};
 ```
 
 ```js
-var container = goog.dom.getElement('container');
+let container = goog.dom.getElement('container');
 // <div id="container"></div>
 ```
 
@@ -102,19 +102,19 @@ goog.dom.getElementsByTagNameAndClass = function(opt_tag, opt_class, opt_el) {}
 ```
 
 ```js
-var allLi = goog.dom.getElementsByTagNameAndClass('li');
+let allLi = goog.dom.getElementsByTagNameAndClass('li');
 // allLi.length 4
 // allLi[0] <li>Menu item 1</li>
 // ...
 // allLi[3] <li>Navigation item 2</li>
 
-var menuLi = goog.dom.getElementsByTagNameAndClass('li', 'menu');
+let menuLi = goog.dom.getElementsByTagNameAndClass('li', 'menu');
 // menuLi.length 2
 // menuLi[0] <li class="menu">Menu item 1</li>
 // menuLi[1] <li class="menu">Menu item 2</li>
 
-var navigation = goog.dom.getElement('navigation');
-var navigationLi = goog.dom.getElementsByTagNameAndClass('li', undefined, navigation);
+let navigation = goog.dom.getElement('navigation');
+let navigationLi = goog.dom.getElementsByTagNameAndClass('li', undefined, navigation);
 // navigationLi.length 2
 // navigationLi[0] <li>Navigation item 1</li>
 // navigationLi[1] <li>Navigation item 2</li>
@@ -139,8 +139,8 @@ goog.dom.getNextElementSibling = function(node) {}
 ```
 
 ```js
-var first = goog.dom.getElementsByTagNameAndClass('li', undefined)[0];
-var next = goog.dom.getNextElementSibling(first);
+let first = goog.dom.getElementsByTagNameAndClass('li', undefined)[0];
+let next = goog.dom.getNextElementSibling(first);
 // next <li>Item 2</li>
 ```
 
@@ -162,8 +162,8 @@ goog.dom.getParentElement = function(element) {}
 ```
 
 ```js
-var li = goog.dom.getElementsByTagNameAndClass('li', undefined)[0];
-var ul = goog.dom.getParentElement(li);
+let li = goog.dom.getElementsByTagNameAndClass('li', undefined)[0];
+let ul = goog.dom.getParentElement(li);
 // ul <ul></ul>
 ```
 
@@ -185,8 +185,8 @@ goog.dom.getTextContent = function(node) {}
 ```
 
 ```js
-var container = goog.dom.getElement('container');
-var text = goog.dom.getTextContent(container); // Span		Link		Text
+let container = goog.dom.getElement('container');
+let text = goog.dom.getTextContent(container); // Span		Link		Text
 ```
 
 ### goog.dom.getViewportSize
@@ -198,7 +198,7 @@ goog.dom.getViewportSize = function() {}
 ```
 
 ```js
-var viewPort = goog.dom.getViewportSize();
+let viewPort = goog.dom.getViewportSize();
 // viewPort.width [px]
 // viewPort.height [px]
 ```
@@ -221,10 +221,10 @@ goog.dom.insertSiblingAfter = function(newNode, refNode) {}
 ```
 
 ```js
-var firstLi = goog.dom.getElementsByTagNameAndClass('li')[0];
+let firstLi = goog.dom.getElementsByTagNameAndClass('li')[0];
 
-var before = goog.dom.createDom('li', undefined, 'Item before');
-var after = goog.dom.createDom('li', undefined, 'Item after');
+let before = goog.dom.createDom('li', undefined, 'Item before');
+let after = goog.dom.createDom('li', undefined, 'Item after');
 
 goog.dom.insertSiblingBefore(before, firstLi);
 goog.dom.insertSiblingAfter(after, firstLi);
@@ -260,7 +260,7 @@ goog.dom.setProperties = function(element, properties) {}
 ```
 
 ```js
-var div = goog.dom.createDom('div');
+let div = goog.dom.createDom('div');
 goog.dom.setProperties(div, {
 	'style': 'background-color: red',
 	'class': 'div-class',
@@ -297,9 +297,9 @@ goog.dom.dataset.has = function(element, key) {}
 ```
 
 ```js
-var container = goog.dom.getElement('container');
-var hasDataActionAttribute = goog.dom.dataset.has(container, 'action');
-var dataActionAttribute = goog.dom.dataset.get(container, 'action');
+let container = goog.dom.getElement('container');
+let hasDataActionAttribute = goog.dom.dataset.has(container, 'action');
+let dataActionAttribute = goog.dom.dataset.get(container, 'action');
 // hasDataActionAttribute true
 // dataActionAttribute test
 ```
@@ -327,8 +327,8 @@ goog.dom.forms.getFormDataMap = function(form) {}
 ```
 
 ```js
-var form = /** @type {HTMLFormElement} */ (goog.dom.getElement('form'));
-var data = goog.dom.forms.getFormDataMap(form);
+let form = /** @type {HTMLFormElement} */ (goog.dom.getElement('form'));
+let data = goog.dom.forms.getFormDataMap(form);
 // data.get('text')[0] text
 // data.get('radio')[0] 1
 // data.get('checkbox')[0] on
@@ -346,7 +346,7 @@ goog.dom.forms.setDisabled = function(el, disabled) {}
 ```
 
 ```js
-var form = /** @type {HTMLFormElement} */ (goog.dom.getElement('form'));
+let form = /** @type {HTMLFormElement} */ (goog.dom.getElement('form'));
 goog.dom.forms.setDisabled(form, true);
 goog.dom.forms.setDisabled(form.elements['text'], true);
 ```
@@ -394,7 +394,7 @@ goog.dom.classlist.addAll = function(element, classesToAdd) {}
 ```
 
 ```js
-var container = goog.dom.getElement('container');
+let container = goog.dom.getElement('container');
 goog.dom.classlist.add(container, 'cls1');
 ```
 
@@ -409,8 +409,8 @@ goog.dom.classlist.get = function(element) {
 ```
 
 ```js
-var container = goog.dom.getElement('container');
-var classes = goog.dom.classlist.get(container);
+let container = goog.dom.getElement('container');
+let classes = goog.dom.classlist.get(container);
 // classes ['class1', 'class2']
 ```
 
@@ -438,7 +438,7 @@ goog.dom.classlist.removeAll = function(element, classesToRemove) {}
 ```
 
 ```js
-var container = goog.dom.getElement('container');
+let container = goog.dom.getElement('container');
 goog.dom.classlist.remove(container, 'cls1');
 ```
 
@@ -455,8 +455,8 @@ goog.style.getSize = function(element) {}
 ```
 
 ```js
-var container =  goog.dom.getElement('container');
-var size = goog.style.getSize(container);
+let container =  goog.dom.getElement('container');
+let size = goog.style.getSize(container);
 // size.width [px]
 // size.height [px]
 ```
@@ -472,7 +472,7 @@ goog.style.setElementShown = function(el, isShown) {}
 ```
 
 ```js
-var container =  goog.dom.getElement('container');
+let container =  goog.dom.getElement('container');
 goog.style.setElementShown(container, false);
 ```
 
@@ -487,7 +487,7 @@ goog.style.setHeight = function(element, height) {
 ```
 
 ```js
-var container =  goog.dom.getElement('container');
+let container =  goog.dom.getElement('container');
 goog.style.setHeight(container, 100);
 ```
 
@@ -502,7 +502,7 @@ goog.style.setOpacity = function(el, alpha) {}
 ```
 
 ```js
-var container =  goog.dom.getElement('container');
+let container =  goog.dom.getElement('container');
 goog.style.setOpacity(container, 0.5);
 ```
 
@@ -518,7 +518,7 @@ goog.style.setStyle = function(element, style, opt_value) {}
 ```
 
 ```js
-var container =  goog.dom.getElement('container');
+let container =  goog.dom.getElement('container');
 goog.style.setStyle(container, {
 	'background-color': 'red',
 	'height': '100px'

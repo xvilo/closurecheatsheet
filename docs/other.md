@@ -2,7 +2,7 @@
 ### goog.array.forEach
 ```js
 app.Foo = function() {
-	var dataToAdd = [1, 2, 3];
+	let dataToAdd = [1, 2, 3];
 	this.bar = 0;
 
 	goog.array.forEach(dataToAdd, function(item) {
@@ -71,23 +71,23 @@ goog.json.unsafeParse = function(s) {}
 
 ### goog.object.getValues
 ```js
-var obj = {
+let obj = {
 	"key1": "value1",
 	"key2": "value2"
 };
 
-var arr = goog.object.getValues(obj); // ["value1", "value2"]
+let arr = goog.object.getValues(obj); // ["value1", "value2"]
 ```
 
 ### goog.object.setIfUndefined
 ```js
-var obj = {
+let obj = {
 	"key1": "value1",
 	"key2": "value2"
 };
 
-var set1 = goog.object.setIfUndefined(obj, 'key1', 'value11111'); // value1
-var set2 = goog.object.setIfUndefined(obj, 'key3', 'value3'); // value3
+let set1 = goog.object.setIfUndefined(obj, 'key1', 'value11111'); // value1
+let set2 = goog.object.setIfUndefined(obj, 'key3', 'value3'); // value3
 // obj {key1: "value1", key2: "value2", key3: "value3"}
 ```
 
@@ -149,7 +149,7 @@ if (goog.userAgent.IE && goog.userAgent.isVersionOrHigher(10)) {
 
 ## goog.typeOf
 ```js
-var a = ...;
+let a = ...;
 goog.typeOf(a);
 // 'array', 'object', 'function', 'null', 'string', 'number', 'boolean', 'undefined'
 ```

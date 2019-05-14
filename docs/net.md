@@ -13,24 +13,24 @@
 ### Simple GET
 ```js
 goog.net.XhrIo.send('/about', function(e) {
-	var xhr = /** @type {goog.net.XhrIo} */ (e.target);
-	var response = xhr.getResponse();
-	//var jsonResponse = xhr.getResponseJson();
+	let xhr = /** @type {goog.net.XhrIo} */ (e.target);
+	let response = xhr.getResponse();
+	//let jsonResponse = xhr.getResponseJson();
 });
 ```
 
 ### POST with query data
 ```js
-var queryData = new goog.Uri.QueryData();
+let queryData = new goog.Uri.QueryData();
 queryData.set('param1', 'value1');
 queryData.set('param2', 'value2');
 
-var responseHandler = function(e) {
-	var xhr = /** @type {goog.net.XhrIo} */ (e.target);
+let responseHandler = function(e) {
+	let xhr = /** @type {goog.net.XhrIo} */ (e.target);
 	// ...
 };
 
-var xhr = new goog.net.XhrIo();
+let xhr = new goog.net.XhrIo();
 
 goog.events.listen(
 	xhr,
@@ -51,18 +51,18 @@ xhr.send('/about', 'POST', queryData.toString());
 ```
 
 ```js
-var xhrManager = new goog.net.XhrManager(/** opt_maxRetries */ 0);
+let xhrManager = new goog.net.XhrManager(/** opt_maxRetries */ 0);
 
 goog.events.listen(
 	xhrManager,
 	goog.net.EventType.SUCCESS,
 	function(e) {
-		var xhr = /** @type {goog.net.XhrIo} */ (e.target);
+		let xhr = /** @type {goog.net.XhrIo} */ (e.target);
 		// ...
 	}
 );
 
-var requestId = 'my-id';
+let requestId = 'my-id';
 // xhrManager.abort(requestId, true);
 xhrManager.send(requestId, '/about');
 ```
@@ -79,14 +79,14 @@ Very usefully for sending FORM 'behind' the scene (especially file upload).
 ```
 
 ```js
-var iFrameIo = new goog.net.IframeIo();
-var form = /** @type {HTMLFormElement} */ (goog.dom.getElement('form'));
+let iFrameIo = new goog.net.IframeIo();
+let form = /** @type {HTMLFormElement} */ (goog.dom.getElement('form'));
 
 goog.events.listen(
 	iFrameIo,
 	goog.net.EventType.SUCCESS,
 	function(e) {
-		var iFrameIo = /** @type {goog.net.IframeIo} */ (e.target);
+		let iFrameIo = /** @type {goog.net.IframeIo} */ (e.target);
 		// iFrameIo.getResponseHtml()
 		// iFrameIo.getResponseJson() -> response Content-type: text/plain
 		// ...
@@ -104,19 +104,19 @@ iFrameIo.sendFromForm(form);
 ```
 
 ```js
-var imageLoader = new goog.net.ImageLoader();
+let imageLoader = new goog.net.ImageLoader();
 
 goog.events.listen(
 	imageLoader,
 	goog.events.EventType.LOAD,
 	function(e) {
-		var image = /** @type {HTMLImageElement} */ (e.target);
+		let image = /** @type {HTMLImageElement} */ (e.target);
 		// ...
 	}
 );
 
-var imageId = 'image-id';
-var imageUrl = 'http://.../....jpg';
+let imageId = 'image-id';
+let imageUrl = 'http://.../....jpg';
 imageLoader.addImage(imageId, imageUrl);
 imageLoader.start();
 ```
@@ -125,7 +125,7 @@ imageLoader.start();
 
 ### goog.net.cookies.isEnabled
 ```js
-var cookiesEnabled = goog.net.cookies.isEnabled();
+let cookiesEnabled = goog.net.cookies.isEnabled();
 // true if cookies are enabled
 // false if cookies are disabled
 ```
@@ -180,12 +180,12 @@ goog.net.cookies.set = function(
 ## Uri
 ### goog.uri.utils.getFragment
 ```js
-var fragment = goog.uri.utils.getFragment('http://www.closurecheatsheet.com/about#xtb-generator');
+let fragment = goog.uri.utils.getFragment('http://www.closurecheatsheet.com/about#xtb-generator');
 // xtb-generator
 ```
 
 ### goog.uri.utils.getPath
 ```js
-var path = goog.uri.utils.getPath('http://www.closurecheatsheet.com/about#xtb-generator');
+let path = goog.uri.utils.getPath('http://www.closurecheatsheet.com/about#xtb-generator');
 // /about
 ```
