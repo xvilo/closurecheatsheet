@@ -207,6 +207,54 @@
     Usage
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function-types" title="Function types" class="md-nav__link">
+    Function types
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-casting" title="Type casting" class="md-nav__link">
+    Type casting
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#object-types" title="Object types" class="md-nav__link">
+    Object types
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#any-type" title="Any type" class="md-nav__link">
+    Any type
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiple-types" title="Multiple types" class="md-nav__link">
+    Multiple types
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nullable-types" title="Nullable types" class="md-nav__link">
+    Nullable types
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -268,13 +316,6 @@
         <li class="md-nav__item">
   <a href="#varargs" title="VarArgs" class="md-nav__link">
     VarArgs
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#type-casting" title="Type casting" class="md-nav__link">
-    Type casting
   </a>
   
 </li>
@@ -452,6 +493,54 @@
     Usage
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function-types" title="Function types" class="md-nav__link">
+    Function types
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-casting" title="Type casting" class="md-nav__link">
+    Type casting
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#object-types" title="Object types" class="md-nav__link">
+    Object types
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#any-type" title="Any type" class="md-nav__link">
+    Any type
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiple-types" title="Multiple types" class="md-nav__link">
+    Multiple types
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nullable-types" title="Nullable types" class="md-nav__link">
+    Nullable types
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -518,13 +607,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#type-casting" title="Type casting" class="md-nav__link">
-    Type casting
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#oop" title="OOP" class="md-nav__link">
     OOP
   </a>
@@ -552,6 +634,7 @@
                 
                 <p>For more examples visit <a href="https://developers.google.com/closure/compiler/docs/js-for-compiler">compiler annotation</a></p>
 <h2 id="usage">Usage</h2>
+<h3 id="function-types">Function types</h3>
 <div class="codehilite"><pre><span></span><span class="cm">/**</span>
 <span class="cm"> * @param {type} a</span>
 <span class="cm"> * @return {type}</span>
@@ -562,6 +645,7 @@
 </pre></div>
 
 
+<h3 id="type-casting">Type casting</h3>
 <div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nx">b</span> <span class="o">=</span> <span class="cm">/** @type {type} */</span> <span class="p">(</span><span class="nx">a</span><span class="p">);</span>
 </pre></div>
 
@@ -570,6 +654,7 @@
 </pre></div>
 
 
+<h3 id="object-types">Object types</h3>
 <div class="codehilite"><pre><span></span><span class="cm">/**</span>
 <span class="cm"> * @type {type}</span>
 <span class="cm"> */</span>
@@ -577,20 +662,27 @@
 </pre></div>
 
 
+<h3 id="any-type">Any type</h3>
 <div class="codehilite"><pre><span></span><span class="cm">/**</span>
 <span class="cm"> * @type {*} Whatever</span>
 <span class="cm"> */</span>
 <span class="nx">Foo</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">a</span><span class="p">;</span>
+</pre></div>
 
-<span class="cm">/**</span>
+
+<h3 id="multiple-types">Multiple types</h3>
+<div class="codehilite"><pre><span></span><span class="cm">/**</span>
 <span class="cm"> * @type {string|number|undefined} String or number or undefined</span>
 <span class="cm"> */</span>
 <span class="nx">Foo</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">b</span><span class="p">;</span>
+</pre></div>
 
-<span class="cm">/**</span>
+
+<h3 id="nullable-types">Nullable types</h3>
+<div class="codehilite"><pre><span></span><span class="cm">/**</span>
 <span class="cm"> * @type {?string} String or null</span>
-<span class="cm"> */</span>
-<span class="nx">Foo</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">c</span><span class="p">;</span>
+<span class="cm"> */</span><span class="w"></span>
+<span class="n">Foo</span><span class="p">.</span><span class="n">prototype</span><span class="p">.</span><span class="n">c</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 
 
@@ -742,19 +834,6 @@
 <span class="nx">Foo</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">insertAll</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">var_args</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// arguments, arguments.length</span>
 <span class="p">};</span>
-</pre></div>
-
-
-<h2 id="type-casting">Type casting</h2>
-<div class="codehilite"><pre><span></span><span class="cm">/**</span>
-<span class="cm"> * @type {?string}</span>
-<span class="cm"> */</span>
-<span class="kd">let</span> <span class="nx">dataAttr</span> <span class="o">=</span> <span class="nx">goog</span><span class="p">.</span><span class="nx">dom</span><span class="p">.</span><span class="nx">dataset</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">el</span><span class="p">,</span> <span class="s1">&#39;attrName&#39;</span><span class="p">);</span>
-
-<span class="cm">/**</span>
-<span class="cm"> * @type {string}</span>
-<span class="cm"> */</span>
-<span class="kd">let</span> <span class="nx">onlyString</span> <span class="o">=</span> <span class="cm">/** @type {string} */</span> <span class="p">(</span><span class="nx">dataAttr</span><span class="p">);</span>
 </pre></div>
 
 
