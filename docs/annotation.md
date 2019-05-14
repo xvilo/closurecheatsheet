@@ -1,6 +1,8 @@
 For more examples visit [compiler annotation](https://developers.google.com/closure/compiler/docs/js-for-compiler)
 
 ## Usage
+
+### Function types
 ```js
 /**
  * @param {type} a
@@ -11,6 +13,7 @@ function foo(a) {
 }
 ```
 
+### Type casting
 ```js
 let b = /** @type {type} */ (a);
 ```
@@ -19,24 +22,33 @@ let b = /** @type {type} */ (a);
 foo(/** @type {type} */ (a));
 ```
 
+### Object types
+
 ```js
 /**
  * @type {type}
  */
 Foo.prototype.a;
 ```
+### Any type
 
 ```js
 /**
  * @type {*} Whatever
  */
 Foo.prototype.a;
+```
 
+### Multiple types
+```js
 /**
  * @type {string|number|undefined} String or number or undefined
  */
 Foo.prototype.b;
+```
 
+### Nullable types
+```
 /**
  * @type {?string} String or null
  */
@@ -192,19 +204,6 @@ Foo.Direction= {
 Foo.prototype.insertAll = function(var_args) {
 	// arguments, arguments.length
 };
-```
-## Type casting
-
-```js
-/**
- * @type {?string}
- */
-let dataAttr = goog.dom.dataset.get(el, 'attrName');
-
-/**
- * @type {string}
- */
-let onlyString = /** @type {string} */ (dataAttr);
 ```
 
 ## OOP
