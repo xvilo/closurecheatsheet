@@ -248,3 +248,28 @@ app.Other = () {
 };
 ```
 
+### Interface and Record
+
+Marks a function as an interface. An interface specifies the required members of a type. Any class that implements an interface must implement all of the methods and properties defined on the interface's prototype. See @implements.
+
+The compiler verifies that interfaces are not instantiated. If the new keyword is used with an interface function, the compiler produces a warning.
+
+For the differences between @record and @interface, see [Structural Interfaces](https://github.com/google/closure-compiler/wiki/Structural-Interfaces-in-Closure-Compiler)
+
+```js
+/**
+ * A shape.
+ * @interface
+ */
+function Shape() {};
+Shape.prototype.draw = function() {};
+
+/**
+ * A polygon.
+ * @interface
+ * @extends {Shape}
+ */
+function Polygon() {};
+
+Polygon.prototype.getSides = function() {};
+```
