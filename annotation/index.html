@@ -334,6 +334,19 @@
     OOP
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interface-and-record" title="Interface and Record" class="md-nav__link">
+    Interface and Record
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
       
@@ -627,6 +640,19 @@
     OOP
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interface-and-record" title="Interface and Record" class="md-nav__link">
+    Interface and Record
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
       
@@ -891,6 +917,28 @@
 <span class="nx">app</span><span class="p">.</span><span class="nx">Other</span> <span class="o">=</span> <span class="p">()</span> <span class="p">{</span>
     <span class="nx">goog</span><span class="p">.</span><span class="nx">base</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
 <span class="p">};</span>
+</pre></div>
+
+
+<h3 id="interface-and-record">Interface and Record</h3>
+<p>Marks a function as an interface. An interface specifies the required members of a type. Any class that implements an interface must implement all of the methods and properties defined on the interface's prototype. See @implements.</p>
+<p>The compiler verifies that interfaces are not instantiated. If the new keyword is used with an interface function, the compiler produces a warning.</p>
+<p>For the differences between @record and @interface, see <a href="https://github.com/google/closure-compiler/wiki/Structural-Interfaces-in-Closure-Compiler">Structural Interfaces</a></p>
+<div class="codehilite"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * A shape.</span>
+<span class="cm"> * @interface</span>
+<span class="cm"> */</span>
+<span class="kd">function</span> <span class="nx">Shape</span><span class="p">()</span> <span class="p">{};</span>
+<span class="nx">Shape</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">draw</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{};</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * A polygon.</span>
+<span class="cm"> * @interface</span>
+<span class="cm"> * @extends {Shape}</span>
+<span class="cm"> */</span>
+<span class="kd">function</span> <span class="nx">Polygon</span><span class="p">()</span> <span class="p">{};</span>
+
+<span class="nx">Polygon</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">getSides</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{};</span>
 </pre></div>
                 
                   
